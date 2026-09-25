@@ -1,5 +1,6 @@
 import express from 'express';
 import cors from 'cors';
+import prisma from './config/prisma.js';
 import authRoutes from './routes/auth.js';
 import energyDataRoutes from './routes/energyData.js';
 import forecastRoutes from './routes/forecast.js';
@@ -28,14 +29,33 @@ app.get('/api/health', (req, res) => {
 });
 
 //database health endpoint
-app.get('/api/health/database', (req, res) => {
-  res.status(200).json({
-    success: true,
-    data: {
-      status: 'not_connected',
-      message: 'Database health integration will be enabled in Phase 2'
-    }
-  });
+// Database health endpoint
+app.get('/api/health/database', async (req, res) => {
+  try {
+    await prisma.$queryRaw`SELECT 1`;
+
+    return res.status(200).json({
+      success: true,
+      data: {
+        status: 'healthy',
+        database: 'postgresql'
+      }
+    });
+  } catch (error) {
+    console.error('Database health check failed:', error);
+
+    return res.status(503).json({
+      success: false,
+      data: {
+        status: 'unhealthy',
+        database: 'postgresql'
+      },
+      error: {
+        code: 'DATABASE_UNAVAILABLE',
+        message: 'Database connection failed'
+      }
+    });
+  }
 });
 
 //ML health endpoint
