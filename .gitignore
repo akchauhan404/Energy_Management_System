@@ -1,0 +1,94 @@
+# ============================================================
+# Dependencies
+# ============================================================
+
+node_modules/
+**/node_modules/
+
+
+# ============================================================
+# Environment variables / secrets
+# ============================================================
+
+.env
+.env.*
+!.env.example
+
+# Frontend environment files
+frontend/.env
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.production.local
+
+# Backend environment files
+backend/.env
+backend/.env.local
+backend/.env.development.local
+backend/.env.production.local
+
+
+# ============================================================
+# Build output
+# ============================================================
+
+dist/
+build/
+coverage/
+
+
+# ============================================================
+# Logs
+# ============================================================
+
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+
+# ============================================================
+# Python
+# ============================================================
+
+__pycache__/
+*.py[cod]
+*.pyo
+
+.venv/
+venv/
+env/
+
+.pytest_cache/
+.mypy_cache/
+
+
+# ============================================================
+# Python / ML generated files
+# ============================================================
+
+*.pth
+*.pt
+*.ckpt
+*.onnx
+*.joblib
+*.pkl
+
+# Model artifacts will be handled separately later.
+backend/ml/artifacts/*
+
+
+# ============================================================
+# OS / Editor
+# ============================================================
+
+.DS_Store
+Thumbs.db
+
+.vscode/*
+!.vscode/extensions.json
+
+.idea/
+
+*.swp
+*.swo
