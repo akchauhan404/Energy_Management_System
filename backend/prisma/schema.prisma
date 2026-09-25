@@ -1,0 +1,287 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+
+model User {
+  id            String   @id @default(uuid())
+  name          String
+  email         String   @unique
+  password_hash String
+  role          Role     @default(USER)
+  created_at    DateTime @default(now())
+  updated_at    DateTime @updatedAt
+
+  settings            UserSettings?
+  uploads             EnergyDataUpload[]
+  historical_records  HistoricalEnergyRecord[]
+  forecasts           Forecast[]
+  optimization_runs   OptimizationRun[]
+
+  @@map("users")
+}
+
+model UserSettings {
+  id          String   @id @default(uuid())
+  user_id     String   @unique
+  preferences Json     @default("{}")
+  updated_at  DateTime @updatedAt
+
+  user User @relation(fields: [user_id], references: [id], onDelete: Cascade)
+
+  @@map("user_settings")
+}
+
+model EnergyDataUpload {
+  id                        String   @id @default(uuid())
+  user_id                   String
+  file_name                 String
+  file_type                 String   @default("text/csv")
+  record_count              Int
+  start_date                DateTime
+  end_date                  DateTime
+  sampling_interval_minutes Int      @default(30)
+  status                    String   @default("VALIDATED") // VALIDATED, REJECTED, PROCESSED
+  uploaded_at               DateTime @default(now())
+
+  user               User                     @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  historical_records HistoricalEnergyRecord[]
+  dataset_uploads    DatasetUpload[]
+
+  @@map("energy_data_uploads")
+}
+
+model HistoricalEnergyRecord {
+  id         String   @id @default(uuid())
+  upload_id  String
+  user_id    String
+  timestamp  DateTime
+  energy_kwh Float
+  created_at DateTime @default(now())
+
+  upload EnergyDataUpload @relation(fields: [upload_id], references: [id], onDelete: Cascade)
+  user   User             @relation(fields: [user_id], references: [id], onDelete: Cascade)
+
+  @@index([user_id, timestamp])
+  @@map("historical_energy_records")
+}
+
+model DatasetVersion {
+  id            String   @id @default(uuid())
+  version       String   @unique
+  description   String
+  total_records Int
+  start_date    DateTime
+  end_date      DateTime
+  status        String   @default("ACTIVE") // ACTIVE, ARCHIVED
+  created_at    DateTime @default(now())
+
+  dataset_uploads DatasetUpload[]
+  training_runs   ModelTrainingRun[]
+
+  @@map("dataset_versions")
+}
+
+model DatasetUpload {
+  id                 String @id @default(uuid())
+  dataset_version_id String
+  upload_id          String
+
+  dataset_version DatasetVersion   @relation(fields: [dataset_version_id], references: [id], onDelete: Cascade)
+  upload          EnergyDataUpload @relation(fields: [upload_id], references: [id], onDelete: Cascade)
+
+  @@unique([dataset_version_id, upload_id])
+  @@map("dataset_uploads")
+}
+
+model ModelTrainingRun {
+  id                 String    @id @default(uuid())
+  dataset_version_id String?
+  previous_model_id  String?
+  new_model_id       String?
+  model_type         String // FORECAST, PPO
+  status             String    @default("COMPLETED") // QUEUED, RUNNING, COMPLETED, FAILED
+  started_at         DateTime  @default(now())
+  completed_at       DateTime?
+  mae                Float?
+  rmse               Float?
+  mape               Float?
+  r2                 Float?
+
+  dataset_version DatasetVersion? @relation(fields: [dataset_version_id], references: [id], onDelete: SetNull)
+
+  @@map("model_training_runs")
+}
+
+model ForecastModelVersion {
+  id                        String   @id @default(uuid())
+  name                      String   @default("Transformer-24h")
+  version                   String   @unique
+  architecture              String   @default("Horizon-Specific Multi-Scale Transformer")
+  artifact_path             String
+  lookback                  Int      @default(48)
+  horizon                   Int      @default(48)
+  sampling_interval_minutes Int      @default(30)
+  status                    String   @default("ACTIVE") // ACTIVE, INACTIVE, DEPRECATED
+  created_at                DateTime @default(now())
+
+  forecasts Forecast[]
+
+  @@map("forecast_model_versions")
+}
+
+model PPOModelVersion {
+  id                        String   @id @default(uuid())
+  name                      String   @default("PPO-Energy-Optimizer")
+  version                   String   @unique
+  algorithm                 String   @default("Stable-Baselines3 PPO")
+  policy                    String   @default("MlpPolicy")
+  artifact_path             String
+  horizon                   Int      @default(48)
+  sampling_interval_minutes Int      @default(30)
+  status                    String   @default("ACTIVE")
+  created_at                DateTime @default(now())
+
+  optimization_runs OptimizationRun[]
+
+  @@map("ppo_model_versions")
+}
+
+model Forecast {
+  id         String   @id @default(uuid())
+  user_id    String
+  model_id   String
+  start_time DateTime
+  end_time   DateTime
+  horizon    Int      @default(48)
+  created_at DateTime @default(now())
+
+  user         User                 @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  model        ForecastModelVersion @relation(fields: [model_id], references: [id])
+  points       ForecastPoint[]
+  explanations ForecastExplanation[]
+  optimizations OptimizationRun[]
+
+  @@map("forecasts")
+}
+
+model ForecastPoint {
+  id                   String   @id @default(uuid())
+  forecast_id          String
+  timestamp            DateTime
+  predicted_energy_kwh Float
+  step_index           Int
+
+  forecast Forecast @relation(fields: [forecast_id], references: [id], onDelete: Cascade)
+
+  @@index([forecast_id, step_index])
+  @@map("forecast_points")
+}
+
+model ForecastExplanation {
+  id           String @id @default(uuid())
+  forecast_id  String
+  feature      String
+  contribution Float
+  direction    String // POSITIVE, NEGATIVE, NEUTRAL
+  explanation  String
+
+  forecast Forecast @relation(fields: [forecast_id], references: [id], onDelete: Cascade)
+
+  @@map("forecast_explanations")
+}
+
+model OptimizationRun {
+  id           String    @id @default(uuid())
+  user_id      String
+  forecast_id  String
+  ppo_model_id String
+  status       String    @default("COMPLETED")
+  created_at   DateTime  @default(now())
+  completed_at DateTime?
+
+  user      User                   @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  forecast  Forecast               @relation(fields: [forecast_id], references: [id], onDelete: Cascade)
+  ppo_model PPOModelVersion        @relation(fields: [ppo_model_id], references: [id])
+  steps     OptimizationStep[]
+  summary   OptimizationSummary?
+
+  @@map("optimization_runs")
+}
+
+model OptimizationStep {
+  id                   String   @id @default(uuid())
+  optimization_id      String
+  timestamp            DateTime
+  step_index           Int
+  action               String // CHARGE, DISCHARGE, IDLE, RUN_LOAD, DELAY_LOAD
+  battery_soc          Float
+  grid_energy_kwh      Float
+  electricity_cost     Float
+  peak_demand_kw       Float
+  solar_generation_kwh Float    @default(0.0)
+  solar_used_kwh       Float    @default(0.0)
+
+  optimization OptimizationRun           @relation(fields: [optimization_id], references: [id], onDelete: Cascade)
+  explanations OptimizationExplanation[]
+
+  @@index([optimization_id, step_index])
+  @@map("optimization_steps")
+}
+
+model OptimizationSummary {
+  id                    String @id @default(uuid())
+  optimization_id       String @unique
+  baseline_grid_energy  Float
+  optimized_grid_energy Float
+  baseline_cost         Float
+  optimized_cost        Float
+  baseline_peak_demand  Float
+  optimized_peak_demand Float
+  renewable_utilization Float  @default(100.0)
+  constraint_violations Int    @default(0)
+  reward                Float?
+
+  optimization OptimizationRun @relation(fields: [optimization_id], references: [id], onDelete: Cascade)
+
+  @@map("optimization_summaries")
+}
+
+model OptimizationExplanation {
+  id                   String @id @default(uuid())
+  optimization_step_id String
+  forecast_demand      Float
+  tariff               Float
+  battery_soc          Float
+  peak_risk            String // LOW, MEDIUM, HIGH
+  selected_action      String
+  reason               String
+
+  step OptimizationStep @relation(fields: [optimization_step_id], references: [id], onDelete: Cascade)
+
+  @@map("optimization_explanations")
+}
+
+model ModelPerformance {
+  id              String   @id @default(uuid())
+  model_id        String
+  dataset_id      String?
+  evaluation_type String // VALIDATION, TEST, BENCHMARK
+  mae             Float
+  rmse            Float
+  mape            Float
+  smape           Float
+  r2              Float
+  created_at      DateTime @default(now())
+
+  @@map("model_performance")
+}
