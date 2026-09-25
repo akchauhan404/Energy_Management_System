@@ -76,6 +76,9 @@ env/
 
 # Model artifacts will be handled separately later.
 backend/ml/artifacts/*
+!backend/ml/artifacts/
+!backend/ml/artifacts/**/
+!backend/ml/artifacts/**/.gitkeep
 
 
 # ============================================================

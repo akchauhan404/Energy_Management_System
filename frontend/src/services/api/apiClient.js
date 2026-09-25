@@ -1,6 +1,6 @@
 // Centralized API client with JWT attachment and Mock Mode fallback support
 
-const USE_MOCK = import.meta.env.VITE_USE_MOCK_API !== 'false';
+const USE_MOCK = import.meta.env.VITE_USE_MOCK_API === 'true';
 const BASE_URL = import.meta.env.VITE_API_URL || '/api';
 
 export const getAuthToken = () => localStorage.getItem('token');
