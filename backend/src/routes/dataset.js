@@ -325,5 +325,103 @@ router.get(
     }
   }
 );
+/*
+ * Get historical energy records belonging to one dataset version.
+ *
+ * The dataset version determines which uploads are included.
+ * Records are returned in chronological order.
+ */
+router.get(
+    '/versions/:id/records',
+    authMiddleware,
+    async (req, res, next) => {
+      try {
+        const datasetVersion =
+          await prisma.datasetVersion.findFirst({
+            where: {
+              id: req.params.id,
+              dataset_uploads: {
+                some: {
+                  upload: {
+                    user_id: req.user.id
+                  }
+                }
+              }
+            },
+            include: {
+              dataset_uploads: {
+                select: {
+                  upload_id: true
+                }
+              }
+            }
+          });
+  
+        if (!datasetVersion) {
+          return res.status(404).json({
+            success: false,
+            error: {
+              code: 'DATASET_VERSION_NOT_FOUND',
+              message: 'Dataset version not found'
+            }
+          });
+        }
+  
+        const uploadIds =
+          datasetVersion.dataset_uploads.map(
+            (datasetUpload) => datasetUpload.upload_id
+          );
+  
+        if (uploadIds.length === 0) {
+          return res.status(200).json({
+            success: true,
+            dataset: {
+              id: datasetVersion.id,
+              version: datasetVersion.version,
+              total_records: 0,
+              start_date: null,
+              end_date: null
+            },
+            records: []
+          });
+        }
+  
+        const records =
+          await prisma.historicalEnergyRecord.findMany({
+            where: {
+              user_id: req.user.id,
+              upload_id: {
+                in: uploadIds
+              }
+            },
+            orderBy: {
+              timestamp: 'asc'
+            },
+            select: {
+              id: true,
+              upload_id: true,
+              timestamp: true,
+              energy_kwh: true
+            }
+          });
+  
+        return res.status(200).json({
+          success: true,
+          dataset: {
+            id: datasetVersion.id,
+            version: datasetVersion.version,
+            description: datasetVersion.description,
+            total_records: datasetVersion.total_records,
+            start_date: datasetVersion.start_date,
+            end_date: datasetVersion.end_date,
+            status: datasetVersion.status
+          },
+          records
+        });
+      } catch (error) {
+        next(error);
+      }
+    }
+  );
 
 export default router;
