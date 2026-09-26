@@ -95,3 +95,6 @@ Thumbs.db
 
 *.swp
 *.swo
+
+# Local ML/test datasets
+backend/test-data/
