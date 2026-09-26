@@ -8,8 +8,10 @@ import optimizationRoutes from './routes/optimization.js';
 import profileRoutes from './routes/profile.js';
 import adminRoutes from './routes/admin.js';
 import { errorMiddleware } from './middleware/errorMiddleware.js';
+import datasetRoutes from './routes/dataset.js';
 
 const app = express();
+
 
 app.use(cors());
 app.use(express.json());
@@ -81,7 +83,7 @@ app.use('/api/forecast', forecastRoutes);
 app.use('/api/optimization', optimizationRoutes);
 app.use('/api/profile', profileRoutes);
 app.use('/api/admin', adminRoutes);
-
+app.use('/api/datasets', datasetRoutes);
 // Error Middleware
 app.use(errorMiddleware);
 
