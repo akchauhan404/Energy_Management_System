@@ -1,0 +1,34 @@
+{
+  "model_name": "Best PPO Energy Optimization Model",
+  "model_type": "PPO",
+  "policy": "MlpPolicy",
+  "forecast_horizon_steps": 48,
+  "time_step_minutes": 30,
+  "forecast_duration_hours": 24,
+  "input_unit": "kWh per 30-minute step",
+  "forecast_scale_kwh_per_step": 3.0,
+  "simulation_background_peak_kw": 6.0,
+  "battery": {
+    "capacity_kwh": 10.0,
+    "initial_soc": 0.5,
+    "min_soc": 0.1,
+    "max_soc": 0.9,
+    "max_charge_power_kw": 3.0,
+    "max_discharge_power_kw": 3.0,
+    "charge_efficiency": 0.95,
+    "discharge_efficiency": 0.95
+  },
+  "optimization_outputs": [
+    "grid_energy",
+    "electricity_cost",
+    "peak_demand",
+    "battery_usage",
+    "solar_generation",
+    "solar_utilization",
+    "constraint_violations",
+    "reward"
+  ],
+  "input_requirement": "A 48-step, 24-hour energy forecast from the forecasting model.",
+  "dataset_required_at_inference": false,
+  "integration_note": "The forecasting model and PPO model are separate artifacts and can be integrated later."
+}

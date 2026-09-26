@@ -1,33 +1,112 @@
 """
 Horizon-Specific Multi-Scale Transformer Inference Module
-Feature contract:
-- 15 features: [energy_kwh, hour_sin, hour_cos, dow_sin, dow_cos, month_sin, month_cos,
-                lag_1, lag_2, lag_4, lag_48, rolling_mean_2, rolling_mean_4, rolling_mean_48, rolling_max_48]
-- Lookback: 48 steps (24h)
-- Horizon: 48 steps (24h)
+
+Current status:
+- Python/Node inference contract established.
+- Actual trained Transformer artifact is not loaded yet.
+- Real feature computation and PyTorch inference will be added
+  after the trained artifact is available.
+
+Authoritative model contract:
+- Features: 15
+- Lookback: 48 steps
+- Horizon: 48 steps
 - Sampling interval: 30 minutes
 """
 
-import sys
 import json
-import numpy as np
+import sys
 
-def compute_features(history_records):
-    """
-    Extracts the 15 authoritative features from 48+ raw historical readings
-    """
-    if len(history_records) < 48:
-        raise ValueError(f"Expected at least 48 lookback steps, received {len(history_records)}")
 
-    # Implementation follows the trained artifact scaling and sinusoidal transforms
-    return np.zeros((48, 15))
+FEATURE_COUNT = 15
+LOOKBACK_STEPS = 48
+HORIZON_STEPS = 48
+SAMPLING_INTERVAL_MINUTES = 30
 
-def run_transformer_inference(features):
+
+def health_check():
     """
-    Executes PyTorch forward pass on Horizon-Specific Multi-Scale Transformer
+    Returns the current status of the Python inference service.
+
+    This does NOT claim that the trained model is available.
     """
-    # Output is 48 forward steps (kWh per 30-min step)
-    return np.ones(48) * 1.85
+
+    return {
+        "success": True,
+        "status": "READY",
+        "service": "transformer_inference",
+        "model_loaded": False,
+        "features_expected": FEATURE_COUNT,
+        "lookback_steps": LOOKBACK_STEPS,
+        "horizon_steps": HORIZON_STEPS,
+        "sampling_interval_minutes": SAMPLING_INTERVAL_MINUTES,
+        "message": (
+            "Python inference contract is ready; "
+            "trained Transformer artifact is not loaded."
+        )
+    }
+
+
+def handle_request(request):
+    """
+    Handles one JSON request from Node.
+    """
+
+    if not isinstance(request, dict):
+        raise ValueError("Request must be a JSON object")
+
+    action = request.get("action")
+
+    if action == "health":
+        return health_check()
+
+    if action == "forecast":
+        raise RuntimeError(
+            "Transformer forecast inference is not enabled yet. "
+            "The trained model artifact must be connected first."
+        )
+
+    raise ValueError(
+        f"Unsupported inference action: {action}"
+    )
+
+
+def main():
+    """
+    Reads one JSON request from stdin and writes one JSON response
+    to stdout.
+    """
+
+    try:
+        raw_input = sys.stdin.read()
+
+        if not raw_input.strip():
+            raise ValueError(
+                "No JSON request received on stdin"
+            )
+
+        request = json.loads(raw_input)
+
+        response = handle_request(request)
+
+        print(json.dumps(response))
+
+    except Exception as error:
+        print(
+            json.dumps(
+                {
+                    "success": False,
+                    "status": "ERROR",
+                    "error": {
+                        "type": type(error).__name__,
+                        "message": str(error)
+                    }
+                }
+            )
+        )
+
+        sys.exit(1)
+
 
 if __name__ == "__main__":
-    print(json.dumps({"status": "READY", "features_expected": 15, "horizon": 48}))
+    main()

@@ -1,0 +1,64 @@
+{
+  "time_step_minutes": 30,
+  "steps_per_day": 48,
+  "forecast_horizon": 48,
+  "battery": {
+    "capacity_kwh": 10.0,
+    "initial_soc": 0.5,
+    "min_soc": 0.1,
+    "max_soc": 0.9,
+    "max_charge_power_kw": 3.0,
+    "max_discharge_power_kw": 3.0,
+    "charge_efficiency": 0.95,
+    "discharge_efficiency": 0.95
+  },
+  "optimization_weights": {
+    "cost": 1.0,
+    "peak": 1.0,
+    "comfort": 1.0,
+    "battery": 0.1,
+    "constraint": 2.0
+  },
+  "simulation_config": {
+    "flexible_loads": {
+      "washing_machine": {
+        "power_kw": 1.0,
+        "duration_steps": 2,
+        "energy_required_kwh": 1.0,
+        "start_step": 18,
+        "end_step": 40
+      },
+      "water_heater": {
+        "power_kw": 2.0,
+        "duration_steps": 3,
+        "energy_required_kwh": 3.0,
+        "start_step": 12,
+        "end_step": 44
+      },
+      "ev_charger": {
+        "power_kw": 3.0,
+        "duration_steps": 6,
+        "energy_required_kwh": 9.0,
+        "start_step": 14,
+        "end_step": 46
+      }
+    },
+    "tariff": {
+      "off_peak": 4.0,
+      "standard": 8.0,
+      "peak": 12.0
+    },
+    "solar": {
+      "peak_power_kw": 3.0,
+      "sunrise_step": 12,
+      "sunset_step": 36
+    },
+    "peak_reference_percentile": 90,
+    "flexible_load_fraction": 0.15
+  },
+  "background_peak_kw": 6.0,
+  "forecast_scale_kwh_per_step": 3.0,
+  "model_type": "PPO",
+  "policy": "MlpPolicy",
+  "seed": 42
+}

@@ -1,0 +1,22 @@
+{
+    "project": "AI-Based Energy Consumption Prediction and Optimization",
+    "task": "24-hour ahead energy consumption forecasting",
+    "dataset": "London Smart Meter Dataset",
+    "input_history_hours": 24,
+    "forecast_horizon_hours": 24,
+    "input_steps": 48,
+    "output_steps": 48,
+    "input_features": 15,
+    "test_metrics": {
+        "MAE_kWh": 61.7247,
+        "RMSE_kWh": 89.4116,
+        "MAPE_percent": 5.1582,
+        "sMAPE_percent": 5.0044,
+        "R2": 0.9505
+    },
+    "training_protocol": {
+        "epochs_max": 30,
+        "early_stopping_patience": 7,
+        "gradient_clipping": 1.0
+    }
+}
