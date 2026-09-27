@@ -6,31 +6,14 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const backendRoot = path.resolve(__dirname, '../..');
-const pythonScript = path.join(
-  backendRoot,
-  'python',
-  'forecast',
-  'inference.py'
-);
 
-/**
- * Executes the Python ML inference process.
- *
- * Communication contract:
- *
- * Node -> Python:
- * {
- *   "action": "...",
- *   ...
- * }
- *
- * Python -> Node:
- * {
- *   "success": true,
- *   ...
- * }
- */
-export function runPythonInference(payload) {
+function runPythonScript(scriptRelativePath, payload) {
+  const pythonScript = path.join(
+    backendRoot,
+    'python',
+    scriptRelativePath
+  );
+
   return new Promise((resolve, reject) => {
     const pythonCommand =
       process.platform === 'win32'
@@ -79,7 +62,6 @@ export function runPythonInference(payload) {
 
       try {
         const result = JSON.parse(stdout);
-
         resolve(result);
       } catch (error) {
         reject(
@@ -91,10 +73,21 @@ export function runPythonInference(payload) {
       }
     });
 
-    pythonProcess.stdin.write(
-      JSON.stringify(payload)
-    );
-
+    pythonProcess.stdin.write(JSON.stringify(payload));
     pythonProcess.stdin.end();
   });
+}
+
+export function runPythonInference(payload) {
+  return runPythonScript(
+    path.join('forecast', 'inference.py'),
+    payload
+  );
+}
+
+export function runPpoInference(payload) {
+  return runPythonScript(
+    path.join('ppo', 'inference.py'),
+    payload
+  );
 }

@@ -1,0 +1,1591 @@
+﻿{
+    "success":  true,
+    "data":  {
+                 "id":  "bfd177a7-1146-4d40-b2f8-6ac01a573373",
+                 "user_id":  "1d9d5aeb-63e0-4467-a534-2af20ce4069a",
+                 "forecast_id":  "ceebb810-6ae7-463e-9745-0fb8cf900a71",
+                 "ppo_model_id":  "5b5e6e9f-125c-4308-85cc-ec18f392c717",
+                 "status":  "COMPLETED",
+                 "created_at":  "2026-09-27T11:38:35.760Z",
+                 "completed_at":  "2026-09-27T11:38:35.757Z",
+                 "ppo_model":  {
+                                   "id":  "5b5e6e9f-125c-4308-85cc-ec18f392c717",
+                                   "name":  "Best PPO Energy Optimization Model",
+                                   "version":  "v1.0.0",
+                                   "algorithm":  "Stable-Baselines3 PPO",
+                                   "policy":  "MlpPolicy",
+                                   "artifact_path":  "backend/ml/artifacts/ppo",
+                                   "horizon":  48,
+                                   "sampling_interval_minutes":  30,
+                                   "status":  "ACTIVE",
+                                   "created_at":  "2026-09-27T11:14:01.265Z"
+                               },
+                 "forecast":  {
+                                  "id":  "ceebb810-6ae7-463e-9745-0fb8cf900a71",
+                                  "user_id":  "1d9d5aeb-63e0-4467-a534-2af20ce4069a",
+                                  "model_id":  "694eae06-ce5c-4472-b60c-e67a969f50f4",
+                                  "start_time":  "2011-11-27T07:30:00.000Z",
+                                  "end_time":  "2011-11-28T07:00:00.000Z",
+                                  "horizon":  48,
+                                  "created_at":  "2026-09-27T11:13:16.223Z",
+                                  "points":  [
+                                                 {
+                                                     "id":  "54220f6f-0aac-481f-9713-1e83e5af1372",
+                                                     "forecast_id":  "ceebb810-6ae7-463e-9745-0fb8cf900a71",
+                                                     "timestamp":  "2011-11-27T07:30:00.000Z",
+                                                     "predicted_energy_kwh":  120.9945172483486,
+                                                     "step_index":  0
+                                                 },
+                                                 {
+                                                     "id":  "f8e39e75-52f6-41be-a966-d98014f3612f",
+                                                     "forecast_id":  "ceebb810-6ae7-463e-9745-0fb8cf900a71",
+                                                     "timestamp":  "2011-11-27T08:00:00.000Z",
+                                                     "predicted_energy_kwh":  91.0586368235247,
+                                                     "step_index":  1
+                                                 },
+                                                 {
+                                                     "id":  "cc2e3c69-72fb-466f-a08b-661f65729757",
+                                                     "forecast_id":  "ceebb810-6ae7-463e-9745-0fb8cf900a71",
+                                                     "timestamp":  "2011-11-27T08:30:00.000Z",
+                                                     "predicted_energy_kwh":  120.0084826693383,
+                                                     "step_index":  2
+                                                 },
+                                                 {
+                                                     "id":  "33049047-f948-4216-a7fc-42ed6c4e0a22",
+                                                     "forecast_id":  "ceebb810-6ae7-463e-9745-0fb8cf900a71",
+                                                     "timestamp":  "2011-11-27T09:00:00.000Z",
+                                                     "predicted_energy_kwh":  89.37849622123383,
+                                                     "step_index":  3
+                                                 },
+                                                 {
+                                                     "id":  "78c5c9e2-39cc-4069-a797-f01a4d5464ad",
+                                                     "forecast_id":  "ceebb810-6ae7-463e-9745-0fb8cf900a71",
+                                                     "timestamp":  "2011-11-27T09:30:00.000Z",
+                                                     "predicted_energy_kwh":  97.69152824173136,
+                                                     "step_index":  4
+                                                 },
+                                                 {
+                                                     "id":  "e3c7752d-5db8-465c-89b0-e9272bc5a82b",
+                                                     "forecast_id":  "ceebb810-6ae7-463e-9745-0fb8cf900a71",
+                                                     "timestamp":  "2011-11-27T10:00:00.000Z",
+                                                     "predicted_energy_kwh":  99.21652815972413,
+                                                     "step_index":  5
+                                                 },
+                                                 {
+                                                     "id":  "404e6bda-1d3b-4d91-b597-6350b2f0d888",
+                                                     "forecast_id":  "ceebb810-6ae7-463e-9745-0fb8cf900a71",
+                                                     "timestamp":  "2011-11-27T10:30:00.000Z",
+                                                     "predicted_energy_kwh":  80.25952485013659,
+                                                     "step_index":  6
+                                                 },
+                                                 {
+                                                     "id":  "7cb09535-63b7-4028-9733-07b3e2d62076",
+                                                     "forecast_id":  "ceebb810-6ae7-463e-9745-0fb8cf900a71",
+                                                     "timestamp":  "2011-11-27T11:00:00.000Z",
+                                                     "predicted_energy_kwh":  89.54776461039978,
+                                                     "step_index":  7
+                                                 },
+                                                 {
+                                                     "id":  "559f55f0-e47c-4145-8796-c3cfef562bc0",
+                                                     "forecast_id":  "ceebb810-6ae7-463e-9745-0fb8cf900a71",
+                                                     "timestamp":  "2011-11-27T11:30:00.000Z",
+                                                     "predicted_energy_kwh":  87.39791082990473,
+                                                     "step_index":  8
+                                                 },
+                                                 {
+                                                     "id":  "326fe53c-3a06-4265-94bb-d9120c6ec960",
+                                                     "forecast_id":  "ceebb810-6ae7-463e-9745-0fb8cf900a71",
+                                                     "timestamp":  "2011-11-27T12:00:00.000Z",
+                                                     "predicted_energy_kwh":  88.18655364463814,
+                                                     "step_index":  9
+                                                 },
+                                                 {
+                                                     "id":  "96c0c303-7a87-424d-80af-bc3e57ab3e18",
+                                                     "forecast_id":  "ceebb810-6ae7-463e-9745-0fb8cf900a71",
+                                                     "timestamp":  "2011-11-27T12:30:00.000Z",
+                                                     "predicted_energy_kwh":  96.04056729155104,
+                                                     "step_index":  10
+                                                 },
+                                                 {
+                                                     "id":  "887d20a9-7520-4032-9bca-88d7848802d4",
+                                                     "forecast_id":  "ceebb810-6ae7-463e-9745-0fb8cf900a71",
+                                                     "timestamp":  "2011-11-27T13:00:00.000Z",
+                                                     "predicted_energy_kwh":  77.68590594091438,
+                                                     "step_index":  11
+                                                 },
+                                                 {
+                                                     "id":  "a35514e0-ffe5-42b9-8738-af25c2fb8077",
+                                                     "forecast_id":  "ceebb810-6ae7-463e-9745-0fb8cf900a71",
+                                                     "timestamp":  "2011-11-27T13:30:00.000Z",
+                                                     "predicted_energy_kwh":  90.30042798983857,
+                                                     "step_index":  12
+                                                 },
+                                                 {
+                                                     "id":  "76a79f94-623f-4cf0-ab4d-6a5da18bcf7f",
+                                                     "forecast_id":  "ceebb810-6ae7-463e-9745-0fb8cf900a71",
+                                                     "timestamp":  "2011-11-27T14:00:00.000Z",
+                                                     "predicted_energy_kwh":  64.67435577481228,
+                                                     "step_index":  13
+                                                 },
+                                                 {
+                                                     "id":  "42284a62-1b21-4e25-82d4-9f37b2a7d9f1",
+                                                     "forecast_id":  "ceebb810-6ae7-463e-9745-0fb8cf900a71",
+                                                     "timestamp":  "2011-11-27T14:30:00.000Z",
+                                                     "predicted_energy_kwh":  49.20042587099522,
+                                                     "step_index":  14
+                                                 },
+                                                 {
+                                                     "id":  "98d7fe2b-914a-4623-b26b-bfff850084fa",
+                                                     "forecast_id":  "ceebb810-6ae7-463e-9745-0fb8cf900a71",
+                                                     "timestamp":  "2011-11-27T15:00:00.000Z",
+                                                     "predicted_energy_kwh":  57.91180635491992,
+                                                     "step_index":  15
+                                                 },
+                                                 {
+                                                     "id":  "957be08d-4d6e-4d5f-8793-cd1f7a6c3277",
+                                                     "forecast_id":  "ceebb810-6ae7-463e-9745-0fb8cf900a71",
+                                                     "timestamp":  "2011-11-27T15:30:00.000Z",
+                                                     "predicted_energy_kwh":  45.44958624585752,
+                                                     "step_index":  16
+                                                 },
+                                                 {
+                                                     "id":  "40669a22-2800-4f90-bfa8-782a2f867d0c",
+                                                     "forecast_id":  "ceebb810-6ae7-463e-9745-0fb8cf900a71",
+                                                     "timestamp":  "2011-11-27T16:00:00.000Z",
+                                                     "predicted_energy_kwh":  59.32787770734183,
+                                                     "step_index":  17
+                                                 },
+                                                 {
+                                                     "id":  "5ca33f6d-68c6-41ed-ae8d-f13382c09631",
+                                                     "forecast_id":  "ceebb810-6ae7-463e-9745-0fb8cf900a71",
+                                                     "timestamp":  "2011-11-27T16:30:00.000Z",
+                                                     "predicted_energy_kwh":  64.52066747138849,
+                                                     "step_index":  18
+                                                 },
+                                                 {
+                                                     "id":  "97a4b13d-cce5-4408-b105-d0f2e5d464e0",
+                                                     "forecast_id":  "ceebb810-6ae7-463e-9745-0fb8cf900a71",
+                                                     "timestamp":  "2011-11-27T17:00:00.000Z",
+                                                     "predicted_energy_kwh":  55.86606187618565,
+                                                     "step_index":  19
+                                                 },
+                                                 {
+                                                     "id":  "9eb23e8c-ded3-4901-8acc-cfe6b4cf9d63",
+                                                     "forecast_id":  "ceebb810-6ae7-463e-9745-0fb8cf900a71",
+                                                     "timestamp":  "2011-11-27T17:30:00.000Z",
+                                                     "predicted_energy_kwh":  70.66595501971233,
+                                                     "step_index":  20
+                                                 },
+                                                 {
+                                                     "id":  "2ef97583-1577-4acf-9ad6-fb848d507dbc",
+                                                     "forecast_id":  "ceebb810-6ae7-463e-9745-0fb8cf900a71",
+                                                     "timestamp":  "2011-11-27T18:00:00.000Z",
+                                                     "predicted_energy_kwh":  60.18828134072714,
+                                                     "step_index":  21
+                                                 },
+                                                 {
+                                                     "id":  "7c845d1b-b3da-489d-bc61-8ca5ab419085",
+                                                     "forecast_id":  "ceebb810-6ae7-463e-9745-0fb8cf900a71",
+                                                     "timestamp":  "2011-11-27T18:30:00.000Z",
+                                                     "predicted_energy_kwh":  80.61159517752424,
+                                                     "step_index":  22
+                                                 },
+                                                 {
+                                                     "id":  "9056b561-40cd-4c93-a49c-c883ef0f8a45",
+                                                     "forecast_id":  "ceebb810-6ae7-463e-9745-0fb8cf900a71",
+                                                     "timestamp":  "2011-11-27T19:00:00.000Z",
+                                                     "predicted_energy_kwh":  77.65553797717939,
+                                                     "step_index":  23
+                                                 },
+                                                 {
+                                                     "id":  "a9ddc901-83cf-4210-bd67-b5fa222c9c3d",
+                                                     "forecast_id":  "ceebb810-6ae7-463e-9745-0fb8cf900a71",
+                                                     "timestamp":  "2011-11-27T19:30:00.000Z",
+                                                     "predicted_energy_kwh":  94.12190613931625,
+                                                     "step_index":  24
+                                                 },
+                                                 {
+                                                     "id":  "f9b051cf-152d-41b8-8cdc-ca0db849fdfc",
+                                                     "forecast_id":  "ceebb810-6ae7-463e-9745-0fb8cf900a71",
+                                                     "timestamp":  "2011-11-27T20:00:00.000Z",
+                                                     "predicted_energy_kwh":  96.57253479541191,
+                                                     "step_index":  25
+                                                 },
+                                                 {
+                                                     "id":  "b23f90cc-758f-41bc-a750-8b83e15dd83a",
+                                                     "forecast_id":  "ceebb810-6ae7-463e-9745-0fb8cf900a71",
+                                                     "timestamp":  "2011-11-27T20:30:00.000Z",
+                                                     "predicted_energy_kwh":  110.0923522501993,
+                                                     "step_index":  26
+                                                 },
+                                                 {
+                                                     "id":  "80be1b03-911e-4e0f-995c-1d1832c47c2f",
+                                                     "forecast_id":  "ceebb810-6ae7-463e-9745-0fb8cf900a71",
+                                                     "timestamp":  "2011-11-27T21:00:00.000Z",
+                                                     "predicted_energy_kwh":  82.44344356386466,
+                                                     "step_index":  27
+                                                 },
+                                                 {
+                                                     "id":  "a896d1e1-b633-44ba-994c-c416274f855b",
+                                                     "forecast_id":  "ceebb810-6ae7-463e-9745-0fb8cf900a71",
+                                                     "timestamp":  "2011-11-27T21:30:00.000Z",
+                                                     "predicted_energy_kwh":  97.07545468178728,
+                                                     "step_index":  28
+                                                 },
+                                                 {
+                                                     "id":  "a27fc6b5-aca0-4050-8013-35ce89d9faf7",
+                                                     "forecast_id":  "ceebb810-6ae7-463e-9745-0fb8cf900a71",
+                                                     "timestamp":  "2011-11-27T22:00:00.000Z",
+                                                     "predicted_energy_kwh":  77.46930313870939,
+                                                     "step_index":  29
+                                                 },
+                                                 {
+                                                     "id":  "ac89cc11-052e-4af9-af9e-831b20a639eb",
+                                                     "forecast_id":  "ceebb810-6ae7-463e-9745-0fb8cf900a71",
+                                                     "timestamp":  "2011-11-27T22:30:00.000Z",
+                                                     "predicted_energy_kwh":  88.65289993990666,
+                                                     "step_index":  30
+                                                 },
+                                                 {
+                                                     "id":  "02332e8a-243d-4432-a9e0-e1d3094007a8",
+                                                     "forecast_id":  "ceebb810-6ae7-463e-9745-0fb8cf900a71",
+                                                     "timestamp":  "2011-11-27T23:00:00.000Z",
+                                                     "predicted_energy_kwh":  70.84783271555955,
+                                                     "step_index":  31
+                                                 },
+                                                 {
+                                                     "id":  "5719c514-c7a7-45c4-a680-d628367ec62a",
+                                                     "forecast_id":  "ceebb810-6ae7-463e-9745-0fb8cf900a71",
+                                                     "timestamp":  "2011-11-27T23:30:00.000Z",
+                                                     "predicted_energy_kwh":  86.73265437217253,
+                                                     "step_index":  32
+                                                 },
+                                                 {
+                                                     "id":  "5f3017b4-789d-4a55-980b-00dc5caffb69",
+                                                     "forecast_id":  "ceebb810-6ae7-463e-9745-0fb8cf900a71",
+                                                     "timestamp":  "2011-11-28T00:00:00.000Z",
+                                                     "predicted_energy_kwh":  78.71775653477698,
+                                                     "step_index":  33
+                                                 },
+                                                 {
+                                                     "id":  "bd38441f-6f73-40f0-a240-8970664da1e2",
+                                                     "forecast_id":  "ceebb810-6ae7-463e-9745-0fb8cf900a71",
+                                                     "timestamp":  "2011-11-28T00:30:00.000Z",
+                                                     "predicted_energy_kwh":  79.10257144914851,
+                                                     "step_index":  34
+                                                 },
+                                                 {
+                                                     "id":  "154c8b23-b78e-4be4-9e8b-a88a8b3df95e",
+                                                     "forecast_id":  "ceebb810-6ae7-463e-9745-0fb8cf900a71",
+                                                     "timestamp":  "2011-11-28T01:00:00.000Z",
+                                                     "predicted_energy_kwh":  91.37816061586602,
+                                                     "step_index":  35
+                                                 },
+                                                 {
+                                                     "id":  "8b5b2ee8-b73b-4193-9461-6535fc1ed83b",
+                                                     "forecast_id":  "ceebb810-6ae7-463e-9745-0fb8cf900a71",
+                                                     "timestamp":  "2011-11-28T01:30:00.000Z",
+                                                     "predicted_energy_kwh":  89.96783276962879,
+                                                     "step_index":  36
+                                                 },
+                                                 {
+                                                     "id":  "1de27042-9c5a-4f4f-ba8c-7d8ba2562065",
+                                                     "forecast_id":  "ceebb810-6ae7-463e-9745-0fb8cf900a71",
+                                                     "timestamp":  "2011-11-28T02:00:00.000Z",
+                                                     "predicted_energy_kwh":  79.9358419671097,
+                                                     "step_index":  37
+                                                 },
+                                                 {
+                                                     "id":  "75d6b567-0f4d-4807-a198-c6caaf33df1d",
+                                                     "forecast_id":  "ceebb810-6ae7-463e-9745-0fb8cf900a71",
+                                                     "timestamp":  "2011-11-28T02:30:00.000Z",
+                                                     "predicted_energy_kwh":  99.35325001384376,
+                                                     "step_index":  38
+                                                 },
+                                                 {
+                                                     "id":  "412bbad9-ea9e-400d-9473-7accfe3bb2e4",
+                                                     "forecast_id":  "ceebb810-6ae7-463e-9745-0fb8cf900a71",
+                                                     "timestamp":  "2011-11-28T03:00:00.000Z",
+                                                     "predicted_energy_kwh":  93.38640726111885,
+                                                     "step_index":  39
+                                                 },
+                                                 {
+                                                     "id":  "932f70a1-47ca-4ea8-ae05-a9addcea48d2",
+                                                     "forecast_id":  "ceebb810-6ae7-463e-9745-0fb8cf900a71",
+                                                     "timestamp":  "2011-11-28T03:30:00.000Z",
+                                                     "predicted_energy_kwh":  118.3566634940959,
+                                                     "step_index":  40
+                                                 },
+                                                 {
+                                                     "id":  "7d1e73f6-f79b-4d63-954e-8ac6d9a17f25",
+                                                     "forecast_id":  "ceebb810-6ae7-463e-9745-0fb8cf900a71",
+                                                     "timestamp":  "2011-11-28T04:00:00.000Z",
+                                                     "predicted_energy_kwh":  93.81736827690497,
+                                                     "step_index":  41
+                                                 },
+                                                 {
+                                                     "id":  "3b329cb2-f516-466f-b2c4-0d866b1c6733",
+                                                     "forecast_id":  "ceebb810-6ae7-463e-9745-0fb8cf900a71",
+                                                     "timestamp":  "2011-11-28T04:30:00.000Z",
+                                                     "predicted_energy_kwh":  98.54348165912086,
+                                                     "step_index":  42
+                                                 },
+                                                 {
+                                                     "id":  "38e69777-90d9-4cca-ae40-30524fd5b784",
+                                                     "forecast_id":  "ceebb810-6ae7-463e-9745-0fb8cf900a71",
+                                                     "timestamp":  "2011-11-28T05:00:00.000Z",
+                                                     "predicted_energy_kwh":  102.1762163122547,
+                                                     "step_index":  43
+                                                 },
+                                                 {
+                                                     "id":  "4425f4fe-2fc8-461d-9c27-0c95697d8ee5",
+                                                     "forecast_id":  "ceebb810-6ae7-463e-9745-0fb8cf900a71",
+                                                     "timestamp":  "2011-11-28T05:30:00.000Z",
+                                                     "predicted_energy_kwh":  87.93357530326375,
+                                                     "step_index":  44
+                                                 },
+                                                 {
+                                                     "id":  "4bda3718-058c-4d4d-baa0-6dddbfcb38ae",
+                                                     "forecast_id":  "ceebb810-6ae7-463e-9745-0fb8cf900a71",
+                                                     "timestamp":  "2011-11-28T06:00:00.000Z",
+                                                     "predicted_energy_kwh":  95.6551582213674,
+                                                     "step_index":  45
+                                                 },
+                                                 {
+                                                     "id":  "a5267183-4750-4d58-89ec-6c38488adab6",
+                                                     "forecast_id":  "ceebb810-6ae7-463e-9745-0fb8cf900a71",
+                                                     "timestamp":  "2011-11-28T06:30:00.000Z",
+                                                     "predicted_energy_kwh":  97.33853367196912,
+                                                     "step_index":  46
+                                                 },
+                                                 {
+                                                     "id":  "8cc4b514-892c-4ebe-9e09-c16a2cc14a05",
+                                                     "forecast_id":  "ceebb810-6ae7-463e-9745-0fb8cf900a71",
+                                                     "timestamp":  "2011-11-28T07:00:00.000Z",
+                                                     "predicted_energy_kwh":  101.3445302097927,
+                                                     "step_index":  47
+                                                 }
+                                             ]
+                              },
+                 "steps":  [
+                               {
+                                   "id":  "ce9f99c7-28de-4d80-ba6b-5a8f30d7e822",
+                                   "optimization_id":  "bfd177a7-1146-4d40-b2f8-6ac01a573373",
+                                   "timestamp":  "2011-11-27T07:30:00.000Z",
+                                   "step_index":  0,
+                                   "action":  "DISCHARGE_BATTERY",
+                                   "battery_soc":  0.3421052631578947,
+                                   "grid_energy_kwh":  1.5,
+                                   "electricity_cost":  6,
+                                   "peak_demand_kw":  3,
+                                   "solar_generation_kwh":  0,
+                                   "solar_used_kwh":  0,
+                                   "explanations":  [
+                                                        {
+                                                            "id":  "c1918b92-d3cd-44b8-b8b6-e0b64e17fb6c",
+                                                            "optimization_step_id":  "ce9f99c7-28de-4d80-ba6b-5a8f30d7e822",
+                                                            "forecast_demand":  3,
+                                                            "tariff":  4,
+                                                            "battery_soc":  0.3421052631578947,
+                                                            "peak_risk":  "LOW",
+                                                            "selected_action":  "DISCHARGE_BATTERY",
+                                                            "reason":  "PPO selected the action from the observed forecast demand, tariff, battery state, solar availability, and flexible-load state."
+                                                        }
+                                                    ]
+                               },
+                               {
+                                   "id":  "bcba973f-7bfd-4dab-a078-482e46f8675e",
+                                   "optimization_id":  "bfd177a7-1146-4d40-b2f8-6ac01a573373",
+                                   "timestamp":  "2011-11-27T08:00:00.000Z",
+                                   "step_index":  1,
+                                   "action":  "DISCHARGE_BATTERY",
+                                   "battery_soc":  0.1842105263157895,
+                                   "grid_energy_kwh":  0.7577545642852783,
+                                   "electricity_cost":  3.031018257141113,
+                                   "peak_demand_kw":  1.515509128570557,
+                                   "solar_generation_kwh":  0,
+                                   "solar_used_kwh":  0,
+                                   "explanations":  [
+                                                        {
+                                                            "id":  "0552c12a-7ef5-42d3-b873-91162782daef",
+                                                            "optimization_step_id":  "bcba973f-7bfd-4dab-a078-482e46f8675e",
+                                                            "forecast_demand":  2.257754564285278,
+                                                            "tariff":  4,
+                                                            "battery_soc":  0.1842105263157895,
+                                                            "peak_risk":  "LOW",
+                                                            "selected_action":  "DISCHARGE_BATTERY",
+                                                            "reason":  "PPO selected the action from the observed forecast demand, tariff, battery state, solar availability, and flexible-load state."
+                                                        }
+                                                    ]
+                               },
+                               {
+                                   "id":  "ce1de449-6688-4f2b-9fcd-4a8f2905379d",
+                                   "optimization_id":  "bfd177a7-1146-4d40-b2f8-6ac01a573373",
+                                   "timestamp":  "2011-11-27T08:30:00.000Z",
+                                   "step_index":  2,
+                                   "action":  "DISCHARGE_BATTERY",
+                                   "battery_soc":  0.1,
+                                   "grid_energy_kwh":  2.175551843643188,
+                                   "electricity_cost":  8.702207374572753,
+                                   "peak_demand_kw":  4.351103687286376,
+                                   "solar_generation_kwh":  0,
+                                   "solar_used_kwh":  0,
+                                   "explanations":  [
+                                                        {
+                                                            "id":  "260c4ceb-3b04-4dc9-8449-d6745e09ee88",
+                                                            "optimization_step_id":  "ce1de449-6688-4f2b-9fcd-4a8f2905379d",
+                                                            "forecast_demand":  2.975551843643188,
+                                                            "tariff":  4,
+                                                            "battery_soc":  0.1,
+                                                            "peak_risk":  "LOW",
+                                                            "selected_action":  "DISCHARGE_BATTERY",
+                                                            "reason":  "PPO selected the action from the observed forecast demand, tariff, battery state, solar availability, and flexible-load state."
+                                                        }
+                                                    ]
+                               },
+                               {
+                                   "id":  "058923f5-0659-478c-b36a-368eb134737d",
+                                   "optimization_id":  "bfd177a7-1146-4d40-b2f8-6ac01a573373",
+                                   "timestamp":  "2011-11-27T09:00:00.000Z",
+                                   "step_index":  3,
+                                   "action":  "IDLE",
+                                   "battery_soc":  0.1,
+                                   "grid_energy_kwh":  2.216096162796021,
+                                   "electricity_cost":  8.864384651184082,
+                                   "peak_demand_kw":  4.432192325592041,
+                                   "solar_generation_kwh":  0,
+                                   "solar_used_kwh":  0,
+                                   "explanations":  [
+                                                        {
+                                                            "id":  "ef3c10dd-b85c-404c-b7bf-48118d5c431c",
+                                                            "optimization_step_id":  "058923f5-0659-478c-b36a-368eb134737d",
+                                                            "forecast_demand":  2.216096162796021,
+                                                            "tariff":  4,
+                                                            "battery_soc":  0.1,
+                                                            "peak_risk":  "LOW",
+                                                            "selected_action":  "IDLE",
+                                                            "reason":  "PPO selected the action from the observed forecast demand, tariff, battery state, solar availability, and flexible-load state."
+                                                        }
+                                                    ]
+                               },
+                               {
+                                   "id":  "a008138d-d01c-4dec-ae00-5a12e28c5d1c",
+                                   "optimization_id":  "bfd177a7-1146-4d40-b2f8-6ac01a573373",
+                                   "timestamp":  "2011-11-27T09:30:00.000Z",
+                                   "step_index":  4,
+                                   "action":  "IDLE",
+                                   "battery_soc":  0.1,
+                                   "grid_energy_kwh":  2.422213792800903,
+                                   "electricity_cost":  9.688855171203613,
+                                   "peak_demand_kw":  4.844427585601807,
+                                   "solar_generation_kwh":  0,
+                                   "solar_used_kwh":  0,
+                                   "explanations":  [
+                                                        {
+                                                            "id":  "746e27e9-1354-405c-be3f-4b35de473b84",
+                                                            "optimization_step_id":  "a008138d-d01c-4dec-ae00-5a12e28c5d1c",
+                                                            "forecast_demand":  2.422213792800903,
+                                                            "tariff":  4,
+                                                            "battery_soc":  0.1,
+                                                            "peak_risk":  "MEDIUM",
+                                                            "selected_action":  "IDLE",
+                                                            "reason":  "PPO selected the action from the observed forecast demand, tariff, battery state, solar availability, and flexible-load state."
+                                                        }
+                                                    ]
+                               },
+                               {
+                                   "id":  "18927753-2cdf-4675-8d41-714c72a88ad9",
+                                   "optimization_id":  "bfd177a7-1146-4d40-b2f8-6ac01a573373",
+                                   "timestamp":  "2011-11-27T10:00:00.000Z",
+                                   "step_index":  5,
+                                   "action":  "IDLE",
+                                   "battery_soc":  0.1,
+                                   "grid_energy_kwh":  2.460025548934937,
+                                   "electricity_cost":  9.840102195739746,
+                                   "peak_demand_kw":  4.920051097869873,
+                                   "solar_generation_kwh":  0,
+                                   "solar_used_kwh":  0,
+                                   "explanations":  [
+                                                        {
+                                                            "id":  "cdf0b0b7-b74c-42f4-a113-2ffe893d0d6f",
+                                                            "optimization_step_id":  "18927753-2cdf-4675-8d41-714c72a88ad9",
+                                                            "forecast_demand":  2.460025548934937,
+                                                            "tariff":  4,
+                                                            "battery_soc":  0.1,
+                                                            "peak_risk":  "MEDIUM",
+                                                            "selected_action":  "IDLE",
+                                                            "reason":  "PPO selected the action from the observed forecast demand, tariff, battery state, solar availability, and flexible-load state."
+                                                        }
+                                                    ]
+                               },
+                               {
+                                   "id":  "272bf77a-f9f5-47b4-b7e8-f79b1d42218a",
+                                   "optimization_id":  "bfd177a7-1146-4d40-b2f8-6ac01a573373",
+                                   "timestamp":  "2011-11-27T10:30:00.000Z",
+                                   "step_index":  6,
+                                   "action":  "IDLE",
+                                   "battery_soc":  0.1,
+                                   "grid_energy_kwh":  1.989995718002319,
+                                   "electricity_cost":  7.959982872009277,
+                                   "peak_demand_kw":  3.979991436004639,
+                                   "solar_generation_kwh":  0,
+                                   "solar_used_kwh":  0,
+                                   "explanations":  [
+                                                        {
+                                                            "id":  "607fabcb-1372-46b5-bca1-4659b6d862d9",
+                                                            "optimization_step_id":  "272bf77a-f9f5-47b4-b7e8-f79b1d42218a",
+                                                            "forecast_demand":  1.989995718002319,
+                                                            "tariff":  4,
+                                                            "battery_soc":  0.1,
+                                                            "peak_risk":  "LOW",
+                                                            "selected_action":  "IDLE",
+                                                            "reason":  "PPO selected the action from the observed forecast demand, tariff, battery state, solar availability, and flexible-load state."
+                                                        }
+                                                    ]
+                               },
+                               {
+                                   "id":  "c613aea1-5b2a-4147-b380-b6cc77ed6028",
+                                   "optimization_id":  "bfd177a7-1146-4d40-b2f8-6ac01a573373",
+                                   "timestamp":  "2011-11-27T11:00:00.000Z",
+                                   "step_index":  7,
+                                   "action":  "IDLE",
+                                   "battery_soc":  0.1,
+                                   "grid_energy_kwh":  2.220293283462524,
+                                   "electricity_cost":  8.881173133850098,
+                                   "peak_demand_kw":  4.440586566925049,
+                                   "solar_generation_kwh":  0,
+                                   "solar_used_kwh":  0,
+                                   "explanations":  [
+                                                        {
+                                                            "id":  "cbc584e2-11c0-445c-9b68-681cac07ca1c",
+                                                            "optimization_step_id":  "c613aea1-5b2a-4147-b380-b6cc77ed6028",
+                                                            "forecast_demand":  2.220293283462524,
+                                                            "tariff":  4,
+                                                            "battery_soc":  0.1,
+                                                            "peak_risk":  "LOW",
+                                                            "selected_action":  "IDLE",
+                                                            "reason":  "PPO selected the action from the observed forecast demand, tariff, battery state, solar availability, and flexible-load state."
+                                                        }
+                                                    ]
+                               },
+                               {
+                                   "id":  "fe76ec57-f75c-444f-b3e2-d272fabf5fd3",
+                                   "optimization_id":  "bfd177a7-1146-4d40-b2f8-6ac01a573373",
+                                   "timestamp":  "2011-11-27T11:30:00.000Z",
+                                   "step_index":  8,
+                                   "action":  "IDLE",
+                                   "battery_soc":  0.1,
+                                   "grid_energy_kwh":  2.166988611221313,
+                                   "electricity_cost":  8.667954444885254,
+                                   "peak_demand_kw":  4.333977222442627,
+                                   "solar_generation_kwh":  0,
+                                   "solar_used_kwh":  0,
+                                   "explanations":  [
+                                                        {
+                                                            "id":  "efa5b259-cc16-48c6-864c-981d08e77b51",
+                                                            "optimization_step_id":  "fe76ec57-f75c-444f-b3e2-d272fabf5fd3",
+                                                            "forecast_demand":  2.166988611221313,
+                                                            "tariff":  4,
+                                                            "battery_soc":  0.1,
+                                                            "peak_risk":  "LOW",
+                                                            "selected_action":  "IDLE",
+                                                            "reason":  "PPO selected the action from the observed forecast demand, tariff, battery state, solar availability, and flexible-load state."
+                                                        }
+                                                    ]
+                               },
+                               {
+                                   "id":  "07c51366-f90d-4c55-8b02-bf8cb726f317",
+                                   "optimization_id":  "bfd177a7-1146-4d40-b2f8-6ac01a573373",
+                                   "timestamp":  "2011-11-27T12:00:00.000Z",
+                                   "step_index":  9,
+                                   "action":  "IDLE",
+                                   "battery_soc":  0.1,
+                                   "grid_energy_kwh":  2.186542749404907,
+                                   "electricity_cost":  8.746170997619629,
+                                   "peak_demand_kw":  4.373085498809814,
+                                   "solar_generation_kwh":  0,
+                                   "solar_used_kwh":  0,
+                                   "explanations":  [
+                                                        {
+                                                            "id":  "97d0c2ab-696f-48ff-aad2-660102a7b5da",
+                                                            "optimization_step_id":  "07c51366-f90d-4c55-8b02-bf8cb726f317",
+                                                            "forecast_demand":  2.186542749404907,
+                                                            "tariff":  4,
+                                                            "battery_soc":  0.1,
+                                                            "peak_risk":  "LOW",
+                                                            "selected_action":  "IDLE",
+                                                            "reason":  "PPO selected the action from the observed forecast demand, tariff, battery state, solar availability, and flexible-load state."
+                                                        }
+                                                    ]
+                               },
+                               {
+                                   "id":  "6910321e-c256-4661-b9f5-c1ea3f9f3aaa",
+                                   "optimization_id":  "bfd177a7-1146-4d40-b2f8-6ac01a573373",
+                                   "timestamp":  "2011-11-27T12:30:00.000Z",
+                                   "step_index":  10,
+                                   "action":  "IDLE",
+                                   "battery_soc":  0.1,
+                                   "grid_energy_kwh":  2.381278991699219,
+                                   "electricity_cost":  9.525115966796875,
+                                   "peak_demand_kw":  4.762557983398438,
+                                   "solar_generation_kwh":  0,
+                                   "solar_used_kwh":  0,
+                                   "explanations":  [
+                                                        {
+                                                            "id":  "b87a9ee1-422c-46b3-b966-ffe2a3f7a85a",
+                                                            "optimization_step_id":  "6910321e-c256-4661-b9f5-c1ea3f9f3aaa",
+                                                            "forecast_demand":  2.381278991699219,
+                                                            "tariff":  4,
+                                                            "battery_soc":  0.1,
+                                                            "peak_risk":  "MEDIUM",
+                                                            "selected_action":  "IDLE",
+                                                            "reason":  "PPO selected the action from the observed forecast demand, tariff, battery state, solar availability, and flexible-load state."
+                                                        }
+                                                    ]
+                               },
+                               {
+                                   "id":  "00de9884-3455-4ac7-8985-e1b6f8187fb0",
+                                   "optimization_id":  "bfd177a7-1146-4d40-b2f8-6ac01a573373",
+                                   "timestamp":  "2011-11-27T13:00:00.000Z",
+                                   "step_index":  11,
+                                   "action":  "IDLE",
+                                   "battery_soc":  0.1,
+                                   "grid_energy_kwh":  1.926184177398682,
+                                   "electricity_cost":  7.704736709594727,
+                                   "peak_demand_kw":  3.852368354797363,
+                                   "solar_generation_kwh":  0,
+                                   "solar_used_kwh":  0,
+                                   "explanations":  [
+                                                        {
+                                                            "id":  "3e125065-468d-4d19-9885-d3f9f5196e19",
+                                                            "optimization_step_id":  "00de9884-3455-4ac7-8985-e1b6f8187fb0",
+                                                            "forecast_demand":  1.926184177398682,
+                                                            "tariff":  4,
+                                                            "battery_soc":  0.1,
+                                                            "peak_risk":  "LOW",
+                                                            "selected_action":  "IDLE",
+                                                            "reason":  "PPO selected the action from the observed forecast demand, tariff, battery state, solar availability, and flexible-load state."
+                                                        }
+                                                    ]
+                               },
+                               {
+                                   "id":  "c545e0f4-ea30-4f11-9674-75479cb6d33e",
+                                   "optimization_id":  "bfd177a7-1146-4d40-b2f8-6ac01a573373",
+                                   "timestamp":  "2011-11-27T13:30:00.000Z",
+                                   "step_index":  12,
+                                   "action":  "RUN_WATER_HEATER",
+                                   "battery_soc":  0.1,
+                                   "grid_energy_kwh":  3.23895525932312,
+                                   "electricity_cost":  25.91164207458496,
+                                   "peak_demand_kw":  6.47791051864624,
+                                   "solar_generation_kwh":  0,
+                                   "solar_used_kwh":  0,
+                                   "explanations":  [
+                                                        {
+                                                            "id":  "ddf671c8-a72e-4974-91f2-ef8e2c0ef130",
+                                                            "optimization_step_id":  "c545e0f4-ea30-4f11-9674-75479cb6d33e",
+                                                            "forecast_demand":  2.23895525932312,
+                                                            "tariff":  8,
+                                                            "battery_soc":  0.1,
+                                                            "peak_risk":  "HIGH",
+                                                            "selected_action":  "RUN_WATER_HEATER",
+                                                            "reason":  "PPO selected the action from the observed forecast demand, tariff, battery state, solar availability, and flexible-load state."
+                                                        }
+                                                    ]
+                               },
+                               {
+                                   "id":  "1eb38f55-b3d3-4096-9fc3-bd77aa140cb7",
+                                   "optimization_id":  "bfd177a7-1146-4d40-b2f8-6ac01a573373",
+                                   "timestamp":  "2011-11-27T14:00:00.000Z",
+                                   "step_index":  13,
+                                   "action":  "RUN_WATER_HEATER",
+                                   "battery_soc":  0.1,
+                                   "grid_energy_kwh":  2.407779742431641,
+                                   "electricity_cost":  19.26223793945313,
+                                   "peak_demand_kw":  4.815559484863282,
+                                   "solar_generation_kwh":  0.1957892883300774,
+                                   "solar_used_kwh":  0.1957892883300774,
+                                   "explanations":  [
+                                                        {
+                                                            "id":  "2233ca46-7935-40a0-8e0f-9a6991ad86f4",
+                                                            "optimization_step_id":  "1eb38f55-b3d3-4096-9fc3-bd77aa140cb7",
+                                                            "forecast_demand":  1.603569030761719,
+                                                            "tariff":  8,
+                                                            "battery_soc":  0.1,
+                                                            "peak_risk":  "MEDIUM",
+                                                            "selected_action":  "RUN_WATER_HEATER",
+                                                            "reason":  "PPO selected the action from the observed forecast demand, tariff, battery state, solar availability, and flexible-load state."
+                                                        }
+                                                    ]
+                               },
+                               {
+                                   "id":  "04f19e52-888d-4470-911a-a2940b0248e1",
+                                   "optimization_id":  "bfd177a7-1146-4d40-b2f8-6ac01a573373",
+                                   "timestamp":  "2011-11-27T14:30:00.000Z",
+                                   "step_index":  14,
+                                   "action":  "RUN_WATER_HEATER",
+                                   "battery_soc":  0.1,
+                                   "grid_energy_kwh":  1.831671921199673,
+                                   "electricity_cost":  14.65337536959739,
+                                   "peak_demand_kw":  3.663343842399347,
+                                   "solar_generation_kwh":  0.3882285676537811,
+                                   "solar_used_kwh":  0.3882285676537811,
+                                   "explanations":  [
+                                                        {
+                                                            "id":  "818c5aee-3d29-44e0-a302-a9163edbd39d",
+                                                            "optimization_step_id":  "04f19e52-888d-4470-911a-a2940b0248e1",
+                                                            "forecast_demand":  1.219900488853455,
+                                                            "tariff":  8,
+                                                            "battery_soc":  0.1,
+                                                            "peak_risk":  "LOW",
+                                                            "selected_action":  "RUN_WATER_HEATER",
+                                                            "reason":  "PPO selected the action from the observed forecast demand, tariff, battery state, solar availability, and flexible-load state."
+                                                        }
+                                                    ]
+                               },
+                               {
+                                   "id":  "78ae518d-46f1-4d62-b679-dc1712388d4e",
+                                   "optimization_id":  "bfd177a7-1146-4d40-b2f8-6ac01a573373",
+                                   "timestamp":  "2011-11-27T15:00:00.000Z",
+                                   "step_index":  15,
+                                   "action":  "IDLE",
+                                   "battery_soc":  0.1,
+                                   "grid_energy_kwh":  0.8618698175778536,
+                                   "electricity_cost":  6.894958540622829,
+                                   "peak_demand_kw":  1.723739635155707,
+                                   "solar_generation_kwh":  0.5740251485476346,
+                                   "solar_used_kwh":  0.5740251485476346,
+                                   "explanations":  [
+                                                        {
+                                                            "id":  "7abb4d4d-53fb-4954-b1de-0dc8ea74e5e4",
+                                                            "optimization_step_id":  "78ae518d-46f1-4d62-b679-dc1712388d4e",
+                                                            "forecast_demand":  1.435894966125488,
+                                                            "tariff":  8,
+                                                            "battery_soc":  0.1,
+                                                            "peak_risk":  "LOW",
+                                                            "selected_action":  "IDLE",
+                                                            "reason":  "PPO selected the action from the observed forecast demand, tariff, battery state, solar availability, and flexible-load state."
+                                                        }
+                                                    ]
+                               },
+                               {
+                                   "id":  "7b2d843e-1998-4a53-b130-f1abc5124090",
+                                   "optimization_id":  "bfd177a7-1146-4d40-b2f8-6ac01a573373",
+                                   "timestamp":  "2011-11-27T15:30:00.000Z",
+                                   "step_index":  16,
+                                   "action":  "IDLE",
+                                   "battery_soc":  0.1,
+                                   "grid_energy_kwh":  0.3769003152847291,
+                                   "electricity_cost":  3.015202522277833,
+                                   "peak_demand_kw":  0.7538006305694582,
+                                   "solar_generation_kwh":  0.7499999999999999,
+                                   "solar_used_kwh":  0.7499999999999999,
+                                   "explanations":  [
+                                                        {
+                                                            "id":  "b88d7d55-9791-434c-9081-21232cb6c224",
+                                                            "optimization_step_id":  "7b2d843e-1998-4a53-b130-f1abc5124090",
+                                                            "forecast_demand":  1.126900315284729,
+                                                            "tariff":  8,
+                                                            "battery_soc":  0.1,
+                                                            "peak_risk":  "LOW",
+                                                            "selected_action":  "IDLE",
+                                                            "reason":  "PPO selected the action from the observed forecast demand, tariff, battery state, solar availability, and flexible-load state."
+                                                        }
+                                                    ]
+                               },
+                               {
+                                   "id":  "d1307177-3163-4894-ba7e-ebc8a72e732e",
+                                   "optimization_id":  "bfd177a7-1146-4d40-b2f8-6ac01a573373",
+                                   "timestamp":  "2011-11-27T16:00:00.000Z",
+                                   "step_index":  17,
+                                   "action":  "IDLE",
+                                   "battery_soc":  0.1,
+                                   "grid_energy_kwh":  0.5578636538730884,
+                                   "electricity_cost":  4.462909230984708,
+                                   "peak_demand_kw":  1.115727307746177,
+                                   "solar_generation_kwh":  0.913142143513081,
+                                   "solar_used_kwh":  0.913142143513081,
+                                   "explanations":  [
+                                                        {
+                                                            "id":  "848de0de-6a65-4400-8959-dd3f4f713e23",
+                                                            "optimization_step_id":  "d1307177-3163-4894-ba7e-ebc8a72e732e",
+                                                            "forecast_demand":  1.471005797386169,
+                                                            "tariff":  8,
+                                                            "battery_soc":  0.1,
+                                                            "peak_risk":  "LOW",
+                                                            "selected_action":  "IDLE",
+                                                            "reason":  "PPO selected the action from the observed forecast demand, tariff, battery state, solar availability, and flexible-load state."
+                                                        }
+                                                    ]
+                               },
+                               {
+                                   "id":  "dd0a314c-a25f-4816-9463-4705a91ca28f",
+                                   "optimization_id":  "bfd177a7-1146-4d40-b2f8-6ac01a573373",
+                                   "timestamp":  "2011-11-27T16:30:00.000Z",
+                                   "step_index":  18,
+                                   "action":  "RUN_WASHING_MACHINE",
+                                   "battery_soc":  0.1,
+                                   "grid_energy_kwh":  1.039098334041407,
+                                   "electricity_cost":  8.312786672331253,
+                                   "peak_demand_kw":  2.078196668082813,
+                                   "solar_generation_kwh":  1.060660171779821,
+                                   "solar_used_kwh":  1.060660171779821,
+                                   "explanations":  [
+                                                        {
+                                                            "id":  "9c57eba3-6af4-47c6-9571-fd3b857dfd63",
+                                                            "optimization_step_id":  "dd0a314c-a25f-4816-9463-4705a91ca28f",
+                                                            "forecast_demand":  1.599758505821228,
+                                                            "tariff":  8,
+                                                            "battery_soc":  0.1,
+                                                            "peak_risk":  "LOW",
+                                                            "selected_action":  "RUN_WASHING_MACHINE",
+                                                            "reason":  "PPO selected the action from the observed forecast demand, tariff, battery state, solar availability, and flexible-load state."
+                                                        }
+                                                    ]
+                               },
+                               {
+                                   "id":  "ecb8d977-092c-4f32-b5df-b05cebeca18d",
+                                   "optimization_id":  "bfd177a7-1146-4d40-b2f8-6ac01a573373",
+                                   "timestamp":  "2011-11-27T17:00:00.000Z",
+                                   "step_index":  19,
+                                   "action":  "RUN_WASHING_MACHINE + RUN_EV_CHARGER",
+                                   "battery_soc":  0.1,
+                                   "grid_energy_kwh":  2.195141760612647,
+                                   "electricity_cost":  17.56113408490117,
+                                   "peak_demand_kw":  4.390283521225293,
+                                   "solar_generation_kwh":  1.190030010436853,
+                                   "solar_used_kwh":  1.190030010436853,
+                                   "explanations":  [
+                                                        {
+                                                            "id":  "c087b74c-59e3-4219-bea6-f4a02c6da184",
+                                                            "optimization_step_id":  "ecb8d977-092c-4f32-b5df-b05cebeca18d",
+                                                            "forecast_demand":  1.3851717710495,
+                                                            "tariff":  8,
+                                                            "battery_soc":  0.1,
+                                                            "peak_risk":  "LOW",
+                                                            "selected_action":  "RUN_WASHING_MACHINE + RUN_EV_CHARGER",
+                                                            "reason":  "PPO selected the action from the observed forecast demand, tariff, battery state, solar availability, and flexible-load state."
+                                                        }
+                                                    ]
+                               },
+                               {
+                                   "id":  "ccdb4898-79b3-44b2-81b4-e50c92168ba3",
+                                   "optimization_id":  "bfd177a7-1146-4d40-b2f8-6ac01a573373",
+                                   "timestamp":  "2011-11-27T17:30:00.000Z",
+                                   "step_index":  20,
+                                   "action":  "RUN_EV_CHARGER",
+                                   "battery_soc":  0.1,
+                                   "grid_energy_kwh":  1.953089780141823,
+                                   "electricity_cost":  15.62471824113459,
+                                   "peak_demand_kw":  3.906179560283647,
+                                   "solar_generation_kwh":  1.299038105676658,
+                                   "solar_used_kwh":  1.299038105676658,
+                                   "explanations":  [
+                                                        {
+                                                            "id":  "824f48b3-5355-48d8-9e21-c917a849435c",
+                                                            "optimization_step_id":  "ccdb4898-79b3-44b2-81b4-e50c92168ba3",
+                                                            "forecast_demand":  1.752127885818481,
+                                                            "tariff":  8,
+                                                            "battery_soc":  0.1,
+                                                            "peak_risk":  "LOW",
+                                                            "selected_action":  "RUN_EV_CHARGER",
+                                                            "reason":  "PPO selected the action from the observed forecast demand, tariff, battery state, solar availability, and flexible-load state."
+                                                        }
+                                                    ]
+                               },
+                               {
+                                   "id":  "70889dc5-f622-461c-ae38-1a3836e04abe",
+                                   "optimization_id":  "bfd177a7-1146-4d40-b2f8-6ac01a573373",
+                                   "timestamp":  "2011-11-27T18:00:00.000Z",
+                                   "step_index":  21,
+                                   "action":  "RUN_EV_CHARGER",
+                                   "battery_soc":  0.1,
+                                   "grid_energy_kwh":  1.606519835449379,
+                                   "electricity_cost":  12.85215868359503,
+                                   "peak_demand_kw":  3.213039670898757,
+                                   "solar_generation_kwh":  1.38581929876693,
+                                   "solar_used_kwh":  1.38581929876693,
+                                   "explanations":  [
+                                                        {
+                                                            "id":  "f35a0550-8f08-4280-b3ed-33cb28604dc0",
+                                                            "optimization_step_id":  "70889dc5-f622-461c-ae38-1a3836e04abe",
+                                                            "forecast_demand":  1.492339134216309,
+                                                            "tariff":  8,
+                                                            "battery_soc":  0.1,
+                                                            "peak_risk":  "LOW",
+                                                            "selected_action":  "RUN_EV_CHARGER",
+                                                            "reason":  "PPO selected the action from the observed forecast demand, tariff, battery state, solar availability, and flexible-load state."
+                                                        }
+                                                    ]
+                               },
+                               {
+                                   "id":  "cac97f22-e8c1-448c-baf9-64d1b51a6593",
+                                   "optimization_id":  "bfd177a7-1146-4d40-b2f8-6ac01a573373",
+                                   "timestamp":  "2011-11-27T18:30:00.000Z",
+                                   "step_index":  22,
+                                   "action":  "RUN_EV_CHARGER",
+                                   "battery_soc":  0.1,
+                                   "grid_energy_kwh":  2.049836436423941,
+                                   "electricity_cost":  16.39869149139153,
+                                   "peak_demand_kw":  4.099672872847883,
+                                   "solar_generation_kwh":  1.448888739433603,
+                                   "solar_used_kwh":  1.448888739433603,
+                                   "explanations":  [
+                                                        {
+                                                            "id":  "d64ba021-3717-48d2-a285-0eb7600e8a9a",
+                                                            "optimization_step_id":  "cac97f22-e8c1-448c-baf9-64d1b51a6593",
+                                                            "forecast_demand":  1.998725175857544,
+                                                            "tariff":  8,
+                                                            "battery_soc":  0.1,
+                                                            "peak_risk":  "LOW",
+                                                            "selected_action":  "RUN_EV_CHARGER",
+                                                            "reason":  "PPO selected the action from the observed forecast demand, tariff, battery state, solar availability, and flexible-load state."
+                                                        }
+                                                    ]
+                               },
+                               {
+                                   "id":  "1cb38a34-97a7-4945-8319-dcaa5e472483",
+                                   "optimization_id":  "bfd177a7-1146-4d40-b2f8-6ac01a573373",
+                                   "timestamp":  "2011-11-27T19:00:00.000Z",
+                                   "step_index":  23,
+                                   "action":  "RUN_EV_CHARGER",
+                                   "battery_soc":  0.1,
+                                   "grid_energy_kwh":  1.938263959465163,
+                                   "electricity_cost":  15.50611167572131,
+                                   "peak_demand_kw":  3.876527918930327,
+                                   "solar_generation_kwh":  1.487167292060716,
+                                   "solar_used_kwh":  1.487167292060716,
+                                   "explanations":  [
+                                                        {
+                                                            "id":  "7dad7155-c7f7-4ccd-b94d-b1b2ba7e2b5e",
+                                                            "optimization_step_id":  "1cb38a34-97a7-4945-8319-dcaa5e472483",
+                                                            "forecast_demand":  1.925431251525879,
+                                                            "tariff":  8,
+                                                            "battery_soc":  0.1,
+                                                            "peak_risk":  "LOW",
+                                                            "selected_action":  "RUN_EV_CHARGER",
+                                                            "reason":  "PPO selected the action from the observed forecast demand, tariff, battery state, solar availability, and flexible-load state."
+                                                        }
+                                                    ]
+                               },
+                               {
+                                   "id":  "9391726f-3f32-45dd-8139-534d5dfa63e7",
+                                   "optimization_id":  "bfd177a7-1146-4d40-b2f8-6ac01a573373",
+                                   "timestamp":  "2011-11-27T19:30:00.000Z",
+                                   "step_index":  24,
+                                   "action":  "RUN_EV_CHARGER",
+                                   "battery_soc":  0.1,
+                                   "grid_energy_kwh":  2.333706855773926,
+                                   "electricity_cost":  18.66965484619141,
+                                   "peak_demand_kw":  4.667413711547852,
+                                   "solar_generation_kwh":  1.5,
+                                   "solar_used_kwh":  1.5,
+                                   "explanations":  [
+                                                        {
+                                                            "id":  "636be0a2-bb1b-4e25-a2f6-75433c2dd2bd",
+                                                            "optimization_step_id":  "9391726f-3f32-45dd-8139-534d5dfa63e7",
+                                                            "forecast_demand":  2.333706855773926,
+                                                            "tariff":  8,
+                                                            "battery_soc":  0.1,
+                                                            "peak_risk":  "MEDIUM",
+                                                            "selected_action":  "RUN_EV_CHARGER",
+                                                            "reason":  "PPO selected the action from the observed forecast demand, tariff, battery state, solar availability, and flexible-load state."
+                                                        }
+                                                    ]
+                               },
+                               {
+                                   "id":  "36637c40-034f-4b3a-9006-4b07cd968043",
+                                   "optimization_id":  "bfd177a7-1146-4d40-b2f8-6ac01a573373",
+                                   "timestamp":  "2011-11-27T20:00:00.000Z",
+                                   "step_index":  25,
+                                   "action":  "IDLE",
+                                   "battery_soc":  0.1,
+                                   "grid_energy_kwh":  0.9073014922715597,
+                                   "electricity_cost":  7.258411938172477,
+                                   "peak_demand_kw":  1.814602984543119,
+                                   "solar_generation_kwh":  1.487167292060716,
+                                   "solar_used_kwh":  1.487167292060716,
+                                   "explanations":  [
+                                                        {
+                                                            "id":  "b7a146e2-0195-4f37-aca4-877d33d22183",
+                                                            "optimization_step_id":  "36637c40-034f-4b3a-9006-4b07cd968043",
+                                                            "forecast_demand":  2.394468784332275,
+                                                            "tariff":  8,
+                                                            "battery_soc":  0.1,
+                                                            "peak_risk":  "LOW",
+                                                            "selected_action":  "IDLE",
+                                                            "reason":  "PPO selected the action from the observed forecast demand, tariff, battery state, solar availability, and flexible-load state."
+                                                        }
+                                                    ]
+                               },
+                               {
+                                   "id":  "34bae21d-f873-4464-8967-c4f1031144aa",
+                                   "optimization_id":  "bfd177a7-1146-4d40-b2f8-6ac01a573373",
+                                   "timestamp":  "2011-11-27T20:30:00.000Z",
+                                   "step_index":  26,
+                                   "action":  "IDLE",
+                                   "battery_soc":  0.1,
+                                   "grid_energy_kwh":  1.280797520789786,
+                                   "electricity_cost":  10.24638016631829,
+                                   "peak_demand_kw":  2.561595041579572,
+                                   "solar_generation_kwh":  1.448888739433603,
+                                   "solar_used_kwh":  1.448888739433603,
+                                   "explanations":  [
+                                                        {
+                                                            "id":  "0324e6dc-8e54-4484-932e-8daa54b0b5fc",
+                                                            "optimization_step_id":  "34bae21d-f873-4464-8967-c4f1031144aa",
+                                                            "forecast_demand":  2.729686260223389,
+                                                            "tariff":  8,
+                                                            "battery_soc":  0.1,
+                                                            "peak_risk":  "LOW",
+                                                            "selected_action":  "IDLE",
+                                                            "reason":  "PPO selected the action from the observed forecast demand, tariff, battery state, solar availability, and flexible-load state."
+                                                        }
+                                                    ]
+                               },
+                               {
+                                   "id":  "9f434741-3c51-4810-a125-c9d608772c2e",
+                                   "optimization_id":  "bfd177a7-1146-4d40-b2f8-6ac01a573373",
+                                   "timestamp":  "2011-11-27T21:00:00.000Z",
+                                   "step_index":  27,
+                                   "action":  "IDLE",
+                                   "battery_soc":  0.1,
+                                   "grid_energy_kwh":  0.658325570083778,
+                                   "electricity_cost":  5.266604560670224,
+                                   "peak_demand_kw":  1.316651140167556,
+                                   "solar_generation_kwh":  1.38581929876693,
+                                   "solar_used_kwh":  1.38581929876693,
+                                   "explanations":  [
+                                                        {
+                                                            "id":  "b5ecc5c2-ebfa-4e65-b97b-8cbc25e11b29",
+                                                            "optimization_step_id":  "9f434741-3c51-4810-a125-c9d608772c2e",
+                                                            "forecast_demand":  2.044144868850708,
+                                                            "tariff":  8,
+                                                            "battery_soc":  0.1,
+                                                            "peak_risk":  "LOW",
+                                                            "selected_action":  "IDLE",
+                                                            "reason":  "PPO selected the action from the observed forecast demand, tariff, battery state, solar availability, and flexible-load state."
+                                                        }
+                                                    ]
+                               },
+                               {
+                                   "id":  "28df02d3-40a9-4ad1-985f-d776aa314d22",
+                                   "optimization_id":  "bfd177a7-1146-4d40-b2f8-6ac01a573373",
+                                   "timestamp":  "2011-11-27T21:30:00.000Z",
+                                   "step_index":  28,
+                                   "action":  "IDLE",
+                                   "battery_soc":  0.1,
+                                   "grid_energy_kwh":  1.107900447179787,
+                                   "electricity_cost":  8.863203577438298,
+                                   "peak_demand_kw":  2.215800894359575,
+                                   "solar_generation_kwh":  1.299038105676658,
+                                   "solar_used_kwh":  1.299038105676658,
+                                   "explanations":  [
+                                                        {
+                                                            "id":  "18cb9865-8a6c-422b-8205-eb9e71799fe6",
+                                                            "optimization_step_id":  "28df02d3-40a9-4ad1-985f-d776aa314d22",
+                                                            "forecast_demand":  2.406938552856445,
+                                                            "tariff":  8,
+                                                            "battery_soc":  0.1,
+                                                            "peak_risk":  "LOW",
+                                                            "selected_action":  "IDLE",
+                                                            "reason":  "PPO selected the action from the observed forecast demand, tariff, battery state, solar availability, and flexible-load state."
+                                                        }
+                                                    ]
+                               },
+                               {
+                                   "id":  "9749604c-b988-43d2-a689-9eedcf0c1629",
+                                   "optimization_id":  "bfd177a7-1146-4d40-b2f8-6ac01a573373",
+                                   "timestamp":  "2011-11-27T22:00:00.000Z",
+                                   "step_index":  29,
+                                   "action":  "IDLE",
+                                   "battery_soc":  0.1,
+                                   "grid_energy_kwh":  0.7307837884675661,
+                                   "electricity_cost":  5.846270307740529,
+                                   "peak_demand_kw":  1.461567576935132,
+                                   "solar_generation_kwh":  1.190030010436853,
+                                   "solar_used_kwh":  1.190030010436853,
+                                   "explanations":  [
+                                                        {
+                                                            "id":  "282da097-8f43-4a5e-8a89-9f53053081fb",
+                                                            "optimization_step_id":  "9749604c-b988-43d2-a689-9eedcf0c1629",
+                                                            "forecast_demand":  1.920813798904419,
+                                                            "tariff":  8,
+                                                            "battery_soc":  0.1,
+                                                            "peak_risk":  "LOW",
+                                                            "selected_action":  "IDLE",
+                                                            "reason":  "PPO selected the action from the observed forecast demand, tariff, battery state, solar availability, and flexible-load state."
+                                                        }
+                                                    ]
+                               },
+                               {
+                                   "id":  "81921970-f196-4400-ac0f-f3343f67febc",
+                                   "optimization_id":  "bfd177a7-1146-4d40-b2f8-6ac01a573373",
+                                   "timestamp":  "2011-11-27T22:30:00.000Z",
+                                   "step_index":  30,
+                                   "action":  "IDLE",
+                                   "battery_soc":  0.1,
+                                   "grid_energy_kwh":  1.137445401874353,
+                                   "electricity_cost":  9.099563214994827,
+                                   "peak_demand_kw":  2.274890803748707,
+                                   "solar_generation_kwh":  1.060660171779821,
+                                   "solar_used_kwh":  1.060660171779821,
+                                   "explanations":  [
+                                                        {
+                                                            "id":  "8e069a4d-249e-4689-8df8-642d837bfd8d",
+                                                            "optimization_step_id":  "81921970-f196-4400-ac0f-f3343f67febc",
+                                                            "forecast_demand":  2.198105573654175,
+                                                            "tariff":  8,
+                                                            "battery_soc":  0.1,
+                                                            "peak_risk":  "LOW",
+                                                            "selected_action":  "IDLE",
+                                                            "reason":  "PPO selected the action from the observed forecast demand, tariff, battery state, solar availability, and flexible-load state."
+                                                        }
+                                                    ]
+                               },
+                               {
+                                   "id":  "4d50a419-2e54-4509-8669-af8281c788c7",
+                                   "optimization_id":  "bfd177a7-1146-4d40-b2f8-6ac01a573373",
+                                   "timestamp":  "2011-11-27T23:00:00.000Z",
+                                   "step_index":  31,
+                                   "action":  "IDLE",
+                                   "battery_soc":  0.1,
+                                   "grid_energy_kwh":  0.8434954297291062,
+                                   "electricity_cost":  6.747963437832849,
+                                   "peak_demand_kw":  1.686990859458212,
+                                   "solar_generation_kwh":  0.9131421435130813,
+                                   "solar_used_kwh":  0.9131421435130813,
+                                   "explanations":  [
+                                                        {
+                                                            "id":  "763a94cb-e757-4b2c-8b5b-df6d41aee2ed",
+                                                            "optimization_step_id":  "4d50a419-2e54-4509-8669-af8281c788c7",
+                                                            "forecast_demand":  1.756637573242188,
+                                                            "tariff":  8,
+                                                            "battery_soc":  0.1,
+                                                            "peak_risk":  "LOW",
+                                                            "selected_action":  "IDLE",
+                                                            "reason":  "PPO selected the action from the observed forecast demand, tariff, battery state, solar availability, and flexible-load state."
+                                                        }
+                                                    ]
+                               },
+                               {
+                                   "id":  "52ded8a1-babd-4205-9ab7-5f94a06e746e",
+                                   "optimization_id":  "bfd177a7-1146-4d40-b2f8-6ac01a573373",
+                                   "timestamp":  "2011-11-27T23:30:00.000Z",
+                                   "step_index":  32,
+                                   "action":  "IDLE",
+                                   "battery_soc":  0.1,
+                                   "grid_energy_kwh":  1.400493860244751,
+                                   "electricity_cost":  11.20395088195801,
+                                   "peak_demand_kw":  2.800987720489502,
+                                   "solar_generation_kwh":  0.7499999999999999,
+                                   "solar_used_kwh":  0.7499999999999999,
+                                   "explanations":  [
+                                                        {
+                                                            "id":  "2ed31610-8eab-4240-9e00-82ec3668ac3b",
+                                                            "optimization_step_id":  "52ded8a1-babd-4205-9ab7-5f94a06e746e",
+                                                            "forecast_demand":  2.150493860244751,
+                                                            "tariff":  8,
+                                                            "battery_soc":  0.1,
+                                                            "peak_risk":  "LOW",
+                                                            "selected_action":  "IDLE",
+                                                            "reason":  "PPO selected the action from the observed forecast demand, tariff, battery state, solar availability, and flexible-load state."
+                                                        }
+                                                    ]
+                               },
+                               {
+                                   "id":  "720b65d1-0007-4df3-ac8c-fbd779e3fdb6",
+                                   "optimization_id":  "bfd177a7-1146-4d40-b2f8-6ac01a573373",
+                                   "timestamp":  "2011-11-28T00:00:00.000Z",
+                                   "step_index":  33,
+                                   "action":  "IDLE",
+                                   "battery_soc":  0.1,
+                                   "grid_energy_kwh":  1.377743249737277,
+                                   "electricity_cost":  11.02194599789822,
+                                   "peak_demand_kw":  2.755486499474554,
+                                   "solar_generation_kwh":  0.5740251485476349,
+                                   "solar_used_kwh":  0.5740251485476349,
+                                   "explanations":  [
+                                                        {
+                                                            "id":  "06c754ce-cc71-48c1-9ad2-86282b9da28a",
+                                                            "optimization_step_id":  "720b65d1-0007-4df3-ac8c-fbd779e3fdb6",
+                                                            "forecast_demand":  1.951768398284912,
+                                                            "tariff":  8,
+                                                            "battery_soc":  0.1,
+                                                            "peak_risk":  "LOW",
+                                                            "selected_action":  "IDLE",
+                                                            "reason":  "PPO selected the action from the observed forecast demand, tariff, battery state, solar availability, and flexible-load state."
+                                                        }
+                                                    ]
+                               },
+                               {
+                                   "id":  "4418a8f8-0ed4-4dc1-99bc-f8aad2e8c04b",
+                                   "optimization_id":  "bfd177a7-1146-4d40-b2f8-6ac01a573373",
+                                   "timestamp":  "2011-11-28T00:30:00.000Z",
+                                   "step_index":  34,
+                                   "action":  "IDLE",
+                                   "battery_soc":  0.1,
+                                   "grid_energy_kwh":  1.573081103748196,
+                                   "electricity_cost":  18.87697324497835,
+                                   "peak_demand_kw":  3.146162207496392,
+                                   "solar_generation_kwh":  0.3882285676537816,
+                                   "solar_used_kwh":  0.3882285676537816,
+                                   "explanations":  [
+                                                        {
+                                                            "id":  "ef4b7e2a-8af0-4844-90bf-5cbe7f684bd3",
+                                                            "optimization_step_id":  "4418a8f8-0ed4-4dc1-99bc-f8aad2e8c04b",
+                                                            "forecast_demand":  1.961309671401978,
+                                                            "tariff":  12,
+                                                            "battery_soc":  0.1,
+                                                            "peak_risk":  "LOW",
+                                                            "selected_action":  "IDLE",
+                                                            "reason":  "PPO selected the action from the observed forecast demand, tariff, battery state, solar availability, and flexible-load state."
+                                                        }
+                                                    ]
+                               },
+                               {
+                                   "id":  "61fe80a6-73a3-4e9e-baaa-55ffbd56ac6a",
+                                   "optimization_id":  "bfd177a7-1146-4d40-b2f8-6ac01a573373",
+                                   "timestamp":  "2011-11-28T01:00:00.000Z",
+                                   "step_index":  35,
+                                   "action":  "IDLE",
+                                   "battery_soc":  0.1,
+                                   "grid_energy_kwh":  2.069887686920167,
+                                   "electricity_cost":  24.838652243042,
+                                   "peak_demand_kw":  4.139775373840333,
+                                   "solar_generation_kwh":  0.1957892883300774,
+                                   "solar_used_kwh":  0.1957892883300774,
+                                   "explanations":  [
+                                                        {
+                                                            "id":  "262c10aa-0a18-4d81-ba6a-449a6a2df878",
+                                                            "optimization_step_id":  "61fe80a6-73a3-4e9e-baaa-55ffbd56ac6a",
+                                                            "forecast_demand":  2.265676975250244,
+                                                            "tariff":  12,
+                                                            "battery_soc":  0.1,
+                                                            "peak_risk":  "LOW",
+                                                            "selected_action":  "IDLE",
+                                                            "reason":  "PPO selected the action from the observed forecast demand, tariff, battery state, solar availability, and flexible-load state."
+                                                        }
+                                                    ]
+                               },
+                               {
+                                   "id":  "568d8b66-ab6c-47da-82ce-909a36aca077",
+                                   "optimization_id":  "bfd177a7-1146-4d40-b2f8-6ac01a573373",
+                                   "timestamp":  "2011-11-28T01:30:00.000Z",
+                                   "step_index":  36,
+                                   "action":  "IDLE",
+                                   "battery_soc":  0.1,
+                                   "grid_energy_kwh":  2.230708599090576,
+                                   "electricity_cost":  26.76850318908691,
+                                   "peak_demand_kw":  4.461417198181152,
+                                   "solar_generation_kwh":  1.83697019872103E-16,
+                                   "solar_used_kwh":  1.83697019872103E-16,
+                                   "explanations":  [
+                                                        {
+                                                            "id":  "f51d9852-8d81-4e1e-b1a4-cb6da8bb1f84",
+                                                            "optimization_step_id":  "568d8b66-ab6c-47da-82ce-909a36aca077",
+                                                            "forecast_demand":  2.230708599090576,
+                                                            "tariff":  12,
+                                                            "battery_soc":  0.1,
+                                                            "peak_risk":  "LOW",
+                                                            "selected_action":  "IDLE",
+                                                            "reason":  "PPO selected the action from the observed forecast demand, tariff, battery state, solar availability, and flexible-load state."
+                                                        }
+                                                    ]
+                               },
+                               {
+                                   "id":  "e6b4faa9-9446-4ad1-b2d7-92389417d1f7",
+                                   "optimization_id":  "bfd177a7-1146-4d40-b2f8-6ac01a573373",
+                                   "timestamp":  "2011-11-28T02:00:00.000Z",
+                                   "step_index":  37,
+                                   "action":  "IDLE",
+                                   "battery_soc":  0.1,
+                                   "grid_energy_kwh":  1.981970310211182,
+                                   "electricity_cost":  23.78364372253418,
+                                   "peak_demand_kw":  3.963940620422363,
+                                   "solar_generation_kwh":  0,
+                                   "solar_used_kwh":  0,
+                                   "explanations":  [
+                                                        {
+                                                            "id":  "b990c49a-67fa-4e47-813f-10250fe85612",
+                                                            "optimization_step_id":  "e6b4faa9-9446-4ad1-b2d7-92389417d1f7",
+                                                            "forecast_demand":  1.981970310211182,
+                                                            "tariff":  12,
+                                                            "battery_soc":  0.1,
+                                                            "peak_risk":  "LOW",
+                                                            "selected_action":  "IDLE",
+                                                            "reason":  "PPO selected the action from the observed forecast demand, tariff, battery state, solar availability, and flexible-load state."
+                                                        }
+                                                    ]
+                               },
+                               {
+                                   "id":  "85cdbd57-4ef2-4630-bc64-dac328c74cb7",
+                                   "optimization_id":  "bfd177a7-1146-4d40-b2f8-6ac01a573373",
+                                   "timestamp":  "2011-11-28T02:30:00.000Z",
+                                   "step_index":  38,
+                                   "action":  "IDLE",
+                                   "battery_soc":  0.1,
+                                   "grid_energy_kwh":  2.463415384292603,
+                                   "electricity_cost":  29.56098461151123,
+                                   "peak_demand_kw":  4.926830768585205,
+                                   "solar_generation_kwh":  0,
+                                   "solar_used_kwh":  0,
+                                   "explanations":  [
+                                                        {
+                                                            "id":  "8c69d0e7-3916-44df-98bb-cac24a157618",
+                                                            "optimization_step_id":  "85cdbd57-4ef2-4630-bc64-dac328c74cb7",
+                                                            "forecast_demand":  2.463415384292603,
+                                                            "tariff":  12,
+                                                            "battery_soc":  0.1,
+                                                            "peak_risk":  "MEDIUM",
+                                                            "selected_action":  "IDLE",
+                                                            "reason":  "PPO selected the action from the observed forecast demand, tariff, battery state, solar availability, and flexible-load state."
+                                                        }
+                                                    ]
+                               },
+                               {
+                                   "id":  "5946461c-5518-4f2b-902e-c44567a3038a",
+                                   "optimization_id":  "bfd177a7-1146-4d40-b2f8-6ac01a573373",
+                                   "timestamp":  "2011-11-28T03:00:00.000Z",
+                                   "step_index":  39,
+                                   "action":  "IDLE",
+                                   "battery_soc":  0.1,
+                                   "grid_energy_kwh":  2.315470457077026,
+                                   "electricity_cost":  27.78564548492432,
+                                   "peak_demand_kw":  4.630940914154053,
+                                   "solar_generation_kwh":  0,
+                                   "solar_used_kwh":  0,
+                                   "explanations":  [
+                                                        {
+                                                            "id":  "8d8b3df4-b6a4-4969-a134-938f8205b6c9",
+                                                            "optimization_step_id":  "5946461c-5518-4f2b-902e-c44567a3038a",
+                                                            "forecast_demand":  2.315470457077026,
+                                                            "tariff":  12,
+                                                            "battery_soc":  0.1,
+                                                            "peak_risk":  "MEDIUM",
+                                                            "selected_action":  "IDLE",
+                                                            "reason":  "PPO selected the action from the observed forecast demand, tariff, battery state, solar availability, and flexible-load state."
+                                                        }
+                                                    ]
+                               },
+                               {
+                                   "id":  "122124c6-4d04-4329-967d-d858a67dff27",
+                                   "optimization_id":  "bfd177a7-1146-4d40-b2f8-6ac01a573373",
+                                   "timestamp":  "2011-11-28T03:30:00.000Z",
+                                   "step_index":  40,
+                                   "action":  "IDLE",
+                                   "battery_soc":  0.1,
+                                   "grid_energy_kwh":  2.934595823287964,
+                                   "electricity_cost":  35.21514987945557,
+                                   "peak_demand_kw":  5.869191646575928,
+                                   "solar_generation_kwh":  0,
+                                   "solar_used_kwh":  0,
+                                   "explanations":  [
+                                                        {
+                                                            "id":  "141a2013-b987-4daf-916d-1e9494bc23e9",
+                                                            "optimization_step_id":  "122124c6-4d04-4329-967d-d858a67dff27",
+                                                            "forecast_demand":  2.934595823287964,
+                                                            "tariff":  12,
+                                                            "battery_soc":  0.1,
+                                                            "peak_risk":  "HIGH",
+                                                            "selected_action":  "IDLE",
+                                                            "reason":  "PPO selected the action from the observed forecast demand, tariff, battery state, solar availability, and flexible-load state."
+                                                        }
+                                                    ]
+                               },
+                               {
+                                   "id":  "88322b27-1373-4bf8-bbb9-9c9bd0fae961",
+                                   "optimization_id":  "bfd177a7-1146-4d40-b2f8-6ac01a573373",
+                                   "timestamp":  "2011-11-28T04:00:00.000Z",
+                                   "step_index":  41,
+                                   "action":  "IDLE",
+                                   "battery_soc":  0.1,
+                                   "grid_energy_kwh":  2.3261559009552,
+                                   "electricity_cost":  27.9138708114624,
+                                   "peak_demand_kw":  4.6523118019104,
+                                   "solar_generation_kwh":  0,
+                                   "solar_used_kwh":  0,
+                                   "explanations":  [
+                                                        {
+                                                            "id":  "d0350b7a-c827-4ddb-ac30-60f52da73344",
+                                                            "optimization_step_id":  "88322b27-1373-4bf8-bbb9-9c9bd0fae961",
+                                                            "forecast_demand":  2.3261559009552,
+                                                            "tariff":  12,
+                                                            "battery_soc":  0.1,
+                                                            "peak_risk":  "MEDIUM",
+                                                            "selected_action":  "IDLE",
+                                                            "reason":  "PPO selected the action from the observed forecast demand, tariff, battery state, solar availability, and flexible-load state."
+                                                        }
+                                                    ]
+                               },
+                               {
+                                   "id":  "736fe1fe-ef85-410e-93cd-69c1857af1d6",
+                                   "optimization_id":  "bfd177a7-1146-4d40-b2f8-6ac01a573373",
+                                   "timestamp":  "2011-11-28T04:30:00.000Z",
+                                   "step_index":  42,
+                                   "action":  "IDLE",
+                                   "battery_soc":  0.1,
+                                   "grid_energy_kwh":  2.443337440490723,
+                                   "electricity_cost":  29.32004928588867,
+                                   "peak_demand_kw":  4.886674880981445,
+                                   "solar_generation_kwh":  0,
+                                   "solar_used_kwh":  0,
+                                   "explanations":  [
+                                                        {
+                                                            "id":  "3c2c2927-bfeb-42da-855e-ec200e364520",
+                                                            "optimization_step_id":  "736fe1fe-ef85-410e-93cd-69c1857af1d6",
+                                                            "forecast_demand":  2.443337440490723,
+                                                            "tariff":  12,
+                                                            "battery_soc":  0.1,
+                                                            "peak_risk":  "MEDIUM",
+                                                            "selected_action":  "IDLE",
+                                                            "reason":  "PPO selected the action from the observed forecast demand, tariff, battery state, solar availability, and flexible-load state."
+                                                        }
+                                                    ]
+                               },
+                               {
+                                   "id":  "0ba2b47b-28de-4754-8c43-566422bd236e",
+                                   "optimization_id":  "bfd177a7-1146-4d40-b2f8-6ac01a573373",
+                                   "timestamp":  "2011-11-28T05:00:00.000Z",
+                                   "step_index":  43,
+                                   "action":  "IDLE",
+                                   "battery_soc":  0.1,
+                                   "grid_energy_kwh":  2.533409595489502,
+                                   "electricity_cost":  30.40091514587402,
+                                   "peak_demand_kw":  5.066819190979004,
+                                   "solar_generation_kwh":  0,
+                                   "solar_used_kwh":  0,
+                                   "explanations":  [
+                                                        {
+                                                            "id":  "ed387158-719a-4fc9-a7ba-9436f039fe6c",
+                                                            "optimization_step_id":  "0ba2b47b-28de-4754-8c43-566422bd236e",
+                                                            "forecast_demand":  2.533409595489502,
+                                                            "tariff":  12,
+                                                            "battery_soc":  0.1,
+                                                            "peak_risk":  "MEDIUM",
+                                                            "selected_action":  "IDLE",
+                                                            "reason":  "PPO selected the action from the observed forecast demand, tariff, battery state, solar availability, and flexible-load state."
+                                                        }
+                                                    ]
+                               },
+                               {
+                                   "id":  "5bad69a9-4996-4e0e-8765-9d2eb24a24ca",
+                                   "optimization_id":  "bfd177a7-1146-4d40-b2f8-6ac01a573373",
+                                   "timestamp":  "2011-11-28T05:30:00.000Z",
+                                   "step_index":  44,
+                                   "action":  "IDLE",
+                                   "battery_soc":  0.1,
+                                   "grid_energy_kwh":  2.180270195007324,
+                                   "electricity_cost":  8.721080780029297,
+                                   "peak_demand_kw":  4.360540390014648,
+                                   "solar_generation_kwh":  0,
+                                   "solar_used_kwh":  0,
+                                   "explanations":  [
+                                                        {
+                                                            "id":  "8f860d31-8bf5-4ee7-9d3c-b93de6c5eff3",
+                                                            "optimization_step_id":  "5bad69a9-4996-4e0e-8765-9d2eb24a24ca",
+                                                            "forecast_demand":  2.180270195007324,
+                                                            "tariff":  4,
+                                                            "battery_soc":  0.1,
+                                                            "peak_risk":  "LOW",
+                                                            "selected_action":  "IDLE",
+                                                            "reason":  "PPO selected the action from the observed forecast demand, tariff, battery state, solar availability, and flexible-load state."
+                                                        }
+                                                    ]
+                               },
+                               {
+                                   "id":  "af28a822-c2a3-436f-b73f-eb734990d42f",
+                                   "optimization_id":  "bfd177a7-1146-4d40-b2f8-6ac01a573373",
+                                   "timestamp":  "2011-11-28T06:00:00.000Z",
+                                   "step_index":  45,
+                                   "action":  "IDLE",
+                                   "battery_soc":  0.1,
+                                   "grid_energy_kwh":  2.371723175048828,
+                                   "electricity_cost":  9.486892700195312,
+                                   "peak_demand_kw":  4.743446350097656,
+                                   "solar_generation_kwh":  0,
+                                   "solar_used_kwh":  0,
+                                   "explanations":  [
+                                                        {
+                                                            "id":  "28e7964c-158c-4fc9-aacb-604f91e77770",
+                                                            "optimization_step_id":  "af28a822-c2a3-436f-b73f-eb734990d42f",
+                                                            "forecast_demand":  2.371723175048828,
+                                                            "tariff":  4,
+                                                            "battery_soc":  0.1,
+                                                            "peak_risk":  "MEDIUM",
+                                                            "selected_action":  "IDLE",
+                                                            "reason":  "PPO selected the action from the observed forecast demand, tariff, battery state, solar availability, and flexible-load state."
+                                                        }
+                                                    ]
+                               },
+                               {
+                                   "id":  "5cb52d92-bb81-4a7b-80fe-11a9ab3144ad",
+                                   "optimization_id":  "bfd177a7-1146-4d40-b2f8-6ac01a573373",
+                                   "timestamp":  "2011-11-28T06:30:00.000Z",
+                                   "step_index":  46,
+                                   "action":  "IDLE",
+                                   "battery_soc":  0.1,
+                                   "grid_energy_kwh":  2.413461446762085,
+                                   "electricity_cost":  9.65384578704834,
+                                   "peak_demand_kw":  4.82692289352417,
+                                   "solar_generation_kwh":  0,
+                                   "solar_used_kwh":  0,
+                                   "explanations":  [
+                                                        {
+                                                            "id":  "d9213dc0-5eb8-4cf6-90af-9d38f2459a8b",
+                                                            "optimization_step_id":  "5cb52d92-bb81-4a7b-80fe-11a9ab3144ad",
+                                                            "forecast_demand":  2.413461446762085,
+                                                            "tariff":  4,
+                                                            "battery_soc":  0.1,
+                                                            "peak_risk":  "MEDIUM",
+                                                            "selected_action":  "IDLE",
+                                                            "reason":  "PPO selected the action from the observed forecast demand, tariff, battery state, solar availability, and flexible-load state."
+                                                        }
+                                                    ]
+                               },
+                               {
+                                   "id":  "5a5c6c96-195c-4a70-b898-fe9e16ad59ff",
+                                   "optimization_id":  "bfd177a7-1146-4d40-b2f8-6ac01a573373",
+                                   "timestamp":  "2011-11-28T07:00:00.000Z",
+                                   "step_index":  47,
+                                   "action":  "IDLE",
+                                   "battery_soc":  0.1,
+                                   "grid_energy_kwh":  2.51278829574585,
+                                   "electricity_cost":  10.0511531829834,
+                                   "peak_demand_kw":  5.025576591491699,
+                                   "solar_generation_kwh":  0,
+                                   "solar_used_kwh":  0,
+                                   "explanations":  [
+                                                        {
+                                                            "id":  "e20fbbac-a7aa-4866-ad0b-090795a6271d",
+                                                            "optimization_step_id":  "5a5c6c96-195c-4a70-b898-fe9e16ad59ff",
+                                                            "forecast_demand":  2.51278829574585,
+                                                            "tariff":  4,
+                                                            "battery_soc":  0.1,
+                                                            "peak_risk":  "MEDIUM",
+                                                            "selected_action":  "IDLE",
+                                                            "reason":  "PPO selected the action from the observed forecast demand, tariff, battery state, solar availability, and flexible-load state."
+                                                        }
+                                                    ]
+                               }
+                           ],
+                 "summary":  {
+                                 "id":  "29dab0f4-7ace-41d9-8fed-382cd0bd3872",
+                                 "optimization_id":  "bfd177a7-1146-4d40-b2f8-6ac01a573373",
+                                 "baseline_grid_energy":  92.38818210156762,
+                                 "optimized_grid_energy":  88.58818528975287,
+                                 "baseline_cost":  679.8689142102811,
+                                 "optimized_cost":  664.6689372994219,
+                                 "baseline_peak_demand":  6.663343956010073,
+                                 "optimized_peak_demand":  6.47791051864624,
+                                 "renewable_utilization":  100,
+                                 "constraint_violations":  0,
+                                 "reward":  0
+                             },
+                 "evaluation":  {
+                                    "grid_reduction_pct":  4.113076721909299,
+                                    "cost_reduction_pct":  2.235721709458518,
+                                    "peak_reduction_pct":  2.782888570483882
+                                }
+             }
+}
