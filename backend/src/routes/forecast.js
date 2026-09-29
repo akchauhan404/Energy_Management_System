@@ -214,7 +214,7 @@ const generateForecast = async (userId) => {
 
         explanations: {
           create:
-            xaiResult.explanation.map(
+            xaiResult.explanations.map(
               (explanation) => ({
                 feature:
                   explanation.feature,
