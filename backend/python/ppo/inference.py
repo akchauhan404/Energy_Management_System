@@ -24,6 +24,7 @@ from pathlib import Path
 import gymnasium as gym
 import numpy as np
 import torch
+from captum.attr import IntegratedGradients
 from stable_baselines3.common.policies import ActorCriticPolicy
 
 
@@ -56,6 +57,32 @@ TIME_STEP_MINUTES = 30
 
 STEP_HOURS = TIME_STEP_MINUTES / 60.0
 
+# ---------------------------------------------------------------------
+# PPO XAI labels
+# ---------------------------------------------------------------------
+
+PPO_FEATURE_LABELS = [
+    "Forecast Demand",
+    "Solar Generation",
+    "Electricity Tariff",
+    "Battery State of Charge",
+    "Time of Day Sinusoidal Component",
+    "Time of Day Cosine Component",
+    "Washing Machine Remaining Requirement",
+    "Water Heater Remaining Requirement",
+    "EV Charger Remaining Requirement",
+    "Current Flexible Demand",
+]
+
+PPO_ACTION_LABELS = [
+    "Washing Machine",
+    "Water Heater",
+    "EV Charger",
+    "Battery Charge",
+    "Battery Discharge",
+]
+
+PPO_XAI_STEPS = 32
 
 # ---------------------------------------------------------------------
 # Artifact state
@@ -748,7 +775,165 @@ def predict_action(observation):
         1.0,
     )
 
+# ---------------------------------------------------------------------
+# PPO XAI - Integrated Gradients
+# ---------------------------------------------------------------------
 
+def run_xai_for_observation(observation):
+    """
+    Calculates Integrated Gradients attribution for all
+    five PPO action outputs with respect to the ten
+    PPO observation features.
+
+    Baseline:
+        Zero observation in normalized policy space.
+
+    Returns:
+        (
+            attribution_matrix,
+            convergence_deltas
+        )
+
+        attribution_matrix shape:
+            (5, 10)
+
+        convergence_deltas shape:
+            (5,)
+    """
+
+    policy, _, _ = load_artifacts()
+
+    observation_array = np.asarray(
+        observation,
+        dtype=np.float32,
+    ).reshape(-1)
+
+    if observation_array.shape != (
+        OBSERVATION_DIM,
+    ):
+        raise ValueError(
+            f"Expected PPO XAI observation shape "
+            f"({OBSERVATION_DIM},), "
+            f"got {observation_array.shape}"
+        )
+
+    if not np.isfinite(
+        observation_array
+    ).all():
+        raise ValueError(
+            "PPO XAI observation contains "
+            "non-finite values."
+        )
+
+    input_tensor = torch.tensor(
+        observation_array,
+        dtype=torch.float32,
+    ).unsqueeze(0)
+
+    baseline_tensor = torch.zeros_like(
+        input_tensor
+    )
+
+    def policy_action_mean(inputs):
+        distribution = (
+            policy.get_distribution(
+                inputs
+            )
+        )
+
+        return distribution.distribution.mean
+
+    attribution_matrix = []
+    convergence_deltas = []
+
+    for action_index in range(
+        ACTION_DIM
+    ):
+
+        def selected_action(inputs):
+            return policy_action_mean(
+                inputs
+            )[:, action_index]
+
+        action_ig = IntegratedGradients(
+            selected_action
+        )
+
+        attribution, delta = (
+            action_ig.attribute(
+                input_tensor,
+                baselines=baseline_tensor,
+                n_steps=PPO_XAI_STEPS,
+                return_convergence_delta=True,
+            )
+        )
+
+        values = (
+            attribution[0]
+            .detach()
+            .cpu()
+            .numpy()
+            .astype(np.float64)
+        )
+
+        delta_value = float(
+            delta.detach()
+            .cpu()
+            .numpy()
+            .reshape(-1)[0]
+        )
+
+        if values.shape != (
+            OBSERVATION_DIM,
+        ):
+            raise ValueError(
+                "Unexpected PPO XAI attribution "
+                f"shape: {values.shape}"
+            )
+
+        if not np.isfinite(values).all():
+            raise ValueError(
+                "PPO XAI produced non-finite "
+                "attribution values."
+            )
+
+        if not np.isfinite(delta_value):
+            raise ValueError(
+                "PPO XAI produced non-finite "
+                "convergence delta."
+            )
+
+        attribution_matrix.append(
+            values
+        )
+
+        convergence_deltas.append(
+            delta_value
+        )
+
+    attribution_matrix = np.asarray(
+        attribution_matrix,
+        dtype=np.float64,
+    )
+
+    convergence_deltas = np.asarray(
+        convergence_deltas,
+        dtype=np.float64,
+    )
+
+    if attribution_matrix.shape != (
+        ACTION_DIM,
+        OBSERVATION_DIM,
+    ):
+        raise ValueError(
+            "Unexpected PPO XAI attribution "
+            f"matrix shape: {attribution_matrix.shape}"
+        )
+
+    return (
+        attribution_matrix,
+        convergence_deltas,
+    )
 # ---------------------------------------------------------------------
 # Full PPO dispatch
 # ---------------------------------------------------------------------
@@ -820,6 +1005,12 @@ def run_ppo_dispatch(forecast_points):
         )
 
         action = predict_action(
+            observation
+        )
+        (
+            xai_attributions,
+            xai_convergence_deltas,
+        ) = run_xai_for_observation(
             observation
         )
 
@@ -965,6 +1156,40 @@ def run_ppo_dispatch(forecast_points):
                 "constraint_violations": (
                     violations
                 ),
+                "xai": {
+                    "method": "Integrated Gradients",
+                    "baseline": "zero_normalized_observation",
+                    "steps": PPO_XAI_STEPS,
+                    "convergence_deltas": {
+                        action_name: float(
+                            xai_convergence_deltas[
+                                action_index
+                            ]
+                        )
+                        for action_index, action_name
+                        in enumerate(
+                            PPO_ACTION_LABELS
+                        )
+                    },
+                    "attributions": {
+                        action_name: {
+                            feature_name: float(
+                                xai_attributions[
+                                    action_index,
+                                    feature_index
+                                ]
+                            )
+                            for feature_index, feature_name
+                            in enumerate(
+                                PPO_FEATURE_LABELS
+                            )
+                        }
+                        for action_index, action_name
+                        in enumerate(
+                            PPO_ACTION_LABELS
+                        )
+                    }
+                },
             }
         )
 
