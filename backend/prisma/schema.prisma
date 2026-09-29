@@ -266,6 +266,13 @@ model OptimizationExplanation {
   selected_action      String
   reason               String
 
+  // PPO XAI
+  xai_method           String?
+  xai_baseline         String?
+  xai_steps            Int?
+  xai_convergence      Json?
+  xai_attributions     Json?
+
   step OptimizationStep @relation(fields: [optimization_step_id], references: [id], onDelete: Cascade)
 
   @@map("optimization_explanations")

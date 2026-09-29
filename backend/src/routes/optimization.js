@@ -526,18 +526,42 @@ router.post('/run', authMiddleware, async (req, res) => {
                   solar_used_kwh:
                     Number(step.solar_used_kwh),
         
-                  explanation: {
-                    id: randomUUID(),
-                    optimization_step_id: stepId,
-                    forecast_demand:
-                      Number(step.forecast_demand_kwh),
-                    tariff,
-                    battery_soc: batterySoc,
-                    peak_risk: peakRisk,
-                    selected_action: action,
-                    reason:
-                      'PPO selected the action from the observed forecast demand, tariff, battery state, solar availability, and flexible-load state.'
-                  }
+                    explanation: {
+                      id: randomUUID(),
+                      optimization_step_id: stepId,
+                    
+                      forecast_demand:
+                        Number(step.forecast_demand_kwh),
+                    
+                      tariff,
+                    
+                      battery_soc: batterySoc,
+                    
+                      peak_risk: peakRisk,
+                    
+                      selected_action: action,
+                    
+                      reason:
+                        'PPO selected the action from the observed forecast demand, tariff, battery state, solar availability, and flexible-load state.',
+                    
+                      // PPO XAI metadata
+                      xai_method:
+                        step.xai?.method ?? null,
+                    
+                      xai_baseline:
+                        step.xai?.baseline ?? null,
+                    
+                      xai_steps:
+                        Number.isInteger(step.xai?.steps)
+                          ? step.xai.steps
+                          : null,
+                    
+                      xai_convergence:
+                        step.xai?.convergence_deltas ?? null,
+                    
+                      xai_attributions:
+                        step.xai?.attributions ?? null
+                    }
                 };
               }
             );
@@ -717,16 +741,26 @@ router.get('/:id/explanation', authMiddleware, async (req, res) => {
         (step) => step.explanations
       );
 
-    return res.json({
-      success: true,
-      data: {
-        optimizationId:
-          optimization.id,
-        explanations,
-        disclaimer:
-          'The explanation records describe observable state variables used during PPO optimization. A dedicated explainability layer will be added in the XAI phase.'
-      }
-    });
+      return res.json({
+        success: true,
+        data: {
+          optimizationId:
+            optimization.id,
+      
+          explanations,
+      
+          xai: {
+            method: 'Integrated Gradients',
+            baseline: 'zero_normalized_observation',
+            steps: 32,
+            observation_dimensions: 10,
+            action_dimensions: 5
+          },
+      
+          disclaimer:
+            'Integrated Gradients measures the signed sensitivity of the PPO policy outputs to its normalized observation features relative to the selected baseline. These attributions describe model sensitivity and should not be interpreted as proof of physical causality.'
+        }
+      });
   } catch (error) {
     console.error(
       'Failed to retrieve optimization explanations:',
