@@ -1,0 +1,1605 @@
+﻿{
+    "success":  true,
+    "records":  [
+                    {
+                        "id":  "336b0b38-5c97-495b-b421-a26910fbcbbf",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-23T03:30:00.000Z",
+                        "energy_kwh":  0.569,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "a91e99a8-2d03-4279-9975-319799db093a",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-23T04:00:00.000Z",
+                        "energy_kwh":  0.5609999999999999,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "bfda2762-a647-4504-9d09-b896711e50ad",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-23T04:30:00.000Z",
+                        "energy_kwh":  0.9199999999999999,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "5d378c0b-1c25-4a79-a58c-9899addf4388",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-23T05:00:00.000Z",
+                        "energy_kwh":  0.588,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "f279f5b9-72a1-4e17-96fe-9190132f9867",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-23T05:30:00.000Z",
+                        "energy_kwh":  0.772,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "3d7de2f5-fdd9-433b-b9b3-720072372673",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-23T06:00:00.000Z",
+                        "energy_kwh":  1.351,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "e780d25f-f9a4-4f4c-9615-343bd0f404e0",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-23T06:30:00.000Z",
+                        "energy_kwh":  3.5480001,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "1a8cda54-2b63-4482-97fe-3e6ccdfc38be",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-23T07:00:00.000Z",
+                        "energy_kwh":  3.0409999,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "67d5cb8b-6dd1-4c6f-9a5c-a3105a674065",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-23T07:30:00.000Z",
+                        "energy_kwh":  3.1000001,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "f930058b-5430-43d8-9caa-cf878b7a340c",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-23T08:00:00.000Z",
+                        "energy_kwh":  3.163,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "238e25a3-8c8b-45c4-b35f-ec34a57f1a2e",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-23T08:30:00.000Z",
+                        "energy_kwh":  3.431,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "d44ef11f-28a9-46fe-a0fe-d56b1d96a70b",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-23T09:00:00.000Z",
+                        "energy_kwh":  2.753,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "3f0aba92-b179-4ce1-9bad-85616f947674",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-23T09:30:00.000Z",
+                        "energy_kwh":  2.77,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "9dc77cc9-b871-49fb-9caf-30c2608a76f4",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-23T10:00:00.000Z",
+                        "energy_kwh":  2.132,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "ceb0a860-beb4-4873-bf90-e0222650c591",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-23T10:30:00.000Z",
+                        "energy_kwh":  1.909,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "14814b26-bffd-4250-b7ab-96e2c8891860",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-23T11:00:00.000Z",
+                        "energy_kwh":  2.958,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "65fb4880-3233-4062-933c-342ef4ad597f",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-23T11:30:00.000Z",
+                        "energy_kwh":  3.077,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "fd4231f6-1801-4541-8be6-95cb954112b9",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-23T12:00:00.000Z",
+                        "energy_kwh":  3.092,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "7b40ac86-cb41-40bf-aaa6-4f2cef85bd35",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-23T12:30:00.000Z",
+                        "energy_kwh":  3.384,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "e80b7e2b-6961-432a-a18f-dfcda3b2fc2f",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-23T13:00:00.000Z",
+                        "energy_kwh":  3.417,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "5b8795cc-cb9f-4338-85d1-ded3f65c648c",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-23T13:30:00.000Z",
+                        "energy_kwh":  4.599,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "5a908251-c66b-45ec-ba77-463f2b4e08a9",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-23T14:00:00.000Z",
+                        "energy_kwh":  5.462,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "f826757e-0087-4c58-8f8a-7494f2c08b69",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-23T14:30:00.000Z",
+                        "energy_kwh":  5.745,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "7be988bf-f0a9-4bb2-adef-82280b9e0b83",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-23T15:00:00.000Z",
+                        "energy_kwh":  5.4590001,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "4eedf42e-231e-43b9-949a-c4fa13a89ba7",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-23T15:30:00.000Z",
+                        "energy_kwh":  4.5069999,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "ece65015-4a3c-48c8-9bb1-c414d0f56c18",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-23T16:00:00.000Z",
+                        "energy_kwh":  4.141,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "d0fe9010-8c91-4247-98f7-d7a11e8dbd86",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-23T16:30:00.000Z",
+                        "energy_kwh":  4.652,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "9bc6417e-65bc-4679-91ed-e71776b9ffd1",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-23T17:00:00.000Z",
+                        "energy_kwh":  3.182,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "c866cc5d-4012-4c3a-b627-0b6c9bf0e07f",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-23T17:30:00.000Z",
+                        "energy_kwh":  3.231,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "acec40a1-15a0-4e5d-90ec-238bf10b6f73",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-23T18:00:00.000Z",
+                        "energy_kwh":  2.871,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "ce8fe825-40a0-4b88-916c-561e63c1b3cc",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-23T18:30:00.000Z",
+                        "energy_kwh":  2.597,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "6bda028f-e01d-4235-95c0-80fc30a03f54",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-23T19:00:00.000Z",
+                        "energy_kwh":  4.2319999,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "bc541ab3-9e73-48fa-ac2a-c971ec751760",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-23T19:30:00.000Z",
+                        "energy_kwh":  3.51,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "670caab8-f7d6-4c5a-8d3d-490c30c2f3d0",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-23T20:00:00.000Z",
+                        "energy_kwh":  3.504,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "a367d722-6e8f-46de-a260-f1b5f35a6556",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-23T20:30:00.000Z",
+                        "energy_kwh":  2.498,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "fc58a6ce-6445-4ced-bc25-ec1425efceb5",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-23T21:00:00.000Z",
+                        "energy_kwh":  1.815,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "cab8508b-476b-41a8-a9ce-9f1bf6cf692d",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-23T21:30:00.000Z",
+                        "energy_kwh":  1.843,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "1e9692f0-df8b-4763-831d-8eb6df776355",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-23T22:00:00.000Z",
+                        "energy_kwh":  1.8,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "72546bd1-86ad-4468-8fa3-1181fe4ec78c",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-23T22:30:00.000Z",
+                        "energy_kwh":  1.751,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "9586e683-de3e-4b1c-b9a5-73f9c4f91d51",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-23T23:00:00.000Z",
+                        "energy_kwh":  1.588,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "bc1158dc-e01a-406a-9487-7b691184befd",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-23T23:30:00.000Z",
+                        "energy_kwh":  1.396,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "7e43a005-d061-4ef9-b462-f53ab9acd982",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-24T00:00:00.000Z",
+                        "energy_kwh":  1.486,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "ad21133b-29ad-44cd-b96a-efd90da26633",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-24T00:30:00.000Z",
+                        "energy_kwh":  1.606,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "93e93f66-d541-4b3d-a71f-931095987321",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-24T01:00:00.000Z",
+                        "energy_kwh":  1.806,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "abd032e6-0ed7-4040-9c13-02ad3b3d2613",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-24T01:30:00.000Z",
+                        "energy_kwh":  2.214,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "97b00290-f0bb-4b49-98b5-abf5c87a5e20",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-24T02:00:00.000Z",
+                        "energy_kwh":  2.462,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "5d65c128-1380-469f-97c2-cc1a1ebea5cf",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-24T02:30:00.000Z",
+                        "energy_kwh":  2.221,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "4db626ac-dcf3-4b82-b27e-367fd3263c2f",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-24T03:00:00.000Z",
+                        "energy_kwh":  2.081,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "90fa2a29-605c-4420-987f-8bf69e55d325",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-24T03:30:00.000Z",
+                        "energy_kwh":  2.121,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "6f3308e2-47e1-4fa1-a79f-ee85a834d847",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-24T04:00:00.000Z",
+                        "energy_kwh":  2.368,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "8382e0ca-ae40-4834-8ca1-acd362f46a7f",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-24T04:30:00.000Z",
+                        "energy_kwh":  3.523,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "45432808-b56b-4ebe-9c9e-48823b9b5379",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-24T05:00:00.000Z",
+                        "energy_kwh":  3.458,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "44e447cb-3f5d-4034-94d8-9e5a78f5cf4e",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-24T05:30:00.000Z",
+                        "energy_kwh":  3.551,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "3eff5470-7a09-4142-886f-3ac5d5328ddf",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-24T06:00:00.000Z",
+                        "energy_kwh":  3.327999999999999,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "b376a408-a083-4fb8-969a-ebdf780bc2c9",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-24T06:30:00.000Z",
+                        "energy_kwh":  4.577,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "cb88dbed-c9ff-4777-b8aa-5f74a12cfc93",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-24T07:00:00.000Z",
+                        "energy_kwh":  3.955,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "08884a54-0155-4d82-9f7a-5016daf6d73a",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-24T07:30:00.000Z",
+                        "energy_kwh":  5.291000000000001,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "379c9d9b-fbf7-4a14-bbfe-d73339bbca2f",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-24T08:00:00.000Z",
+                        "energy_kwh":  5.282,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "9f0b2667-5df4-4d39-af94-1a93665400e6",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-24T08:30:00.000Z",
+                        "energy_kwh":  5.091,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "c898eab7-a71c-4cff-a085-3c0c41f13f02",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-24T09:00:00.000Z",
+                        "energy_kwh":  4.819,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "6970e082-8b31-4ce1-8ec7-813dbecc5525",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-24T09:30:00.000Z",
+                        "energy_kwh":  5.187,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "e47fb9fc-3d3d-499e-87cc-50274983d333",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-24T10:00:00.000Z",
+                        "energy_kwh":  5.019,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "5b1b5e60-dc96-453b-a10a-cfe4ab96f73a",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-24T10:30:00.000Z",
+                        "energy_kwh":  4.154,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "da900ef3-992f-4d9f-87fa-c867344564cc",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-24T11:00:00.000Z",
+                        "energy_kwh":  5.122,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "50f99815-e907-4dd0-8955-f9fd65f4885a",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-24T11:30:00.000Z",
+                        "energy_kwh":  6.583,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "e5526896-9656-4da3-a481-10134e371b85",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-24T12:00:00.000Z",
+                        "energy_kwh":  6.754999999999999,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "6b0dfab1-146f-4baa-8ca4-50c97f4b81e4",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-24T12:30:00.000Z",
+                        "energy_kwh":  6.674,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "655a2334-70bf-4052-98a3-75fa60fa239d",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-24T13:00:00.000Z",
+                        "energy_kwh":  9.088000000000001,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "610b4535-4981-4f97-b111-edf99b2943cb",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-24T13:30:00.000Z",
+                        "energy_kwh":  8.954999899999999,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "26059e36-f3dd-4c3b-99c3-3d5a9fbcc9bc",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-24T14:00:00.000Z",
+                        "energy_kwh":  8.017,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "ce9f5094-37c8-4d5f-8c1d-464559535d7d",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-24T14:30:00.000Z",
+                        "energy_kwh":  8.438,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "93b45203-5b72-42c3-89ce-3e31320fc523",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-24T15:00:00.000Z",
+                        "energy_kwh":  6.817,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "6c1ad13a-9d5f-4cdd-8101-2b69391480f3",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-24T15:30:00.000Z",
+                        "energy_kwh":  8.4000001,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "e1f4aa55-2279-4f37-9a73-e4a2f7bd0f1f",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-24T16:00:00.000Z",
+                        "energy_kwh":  7.960999999999999,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "18306b14-628e-4067-aaff-a4f142c8e657",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-24T16:30:00.000Z",
+                        "energy_kwh":  8.797,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "f487ad84-d526-44f0-8b6d-9b5050330b9b",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-24T17:00:00.000Z",
+                        "energy_kwh":  7.707000000000001,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "4c7215a6-c0c3-4e5f-ae48-4deeb05fefd7",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-24T17:30:00.000Z",
+                        "energy_kwh":  6.162999999999999,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "cfdf4a8c-7712-40be-bef8-fee225dc3ebe",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-24T18:00:00.000Z",
+                        "energy_kwh":  5.801,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "4042ecc7-492c-4236-8efa-cba7a207ea0e",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-24T18:30:00.000Z",
+                        "energy_kwh":  5.443000000000001,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "d3eee0cf-2f57-453e-a0d9-a8bad7b2e81b",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-24T19:00:00.000Z",
+                        "energy_kwh":  6.433,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "3ba3cd2b-d632-4567-9193-90eeaf7b62ae",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-24T19:30:00.000Z",
+                        "energy_kwh":  6.340000099999999,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "a3077fa2-77c6-4f71-a97f-9b2ca7c850ec",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-24T20:00:00.000Z",
+                        "energy_kwh":  6.3339999,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "918c37fa-5765-4b72-b367-0053f24148c7",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-24T20:30:00.000Z",
+                        "energy_kwh":  6.454999899999999,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "35336f4e-0b6b-47bc-b1ba-5778068f98d4",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-24T21:00:00.000Z",
+                        "energy_kwh":  5.940000099999999,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "3aab41e9-e1f9-457c-8947-fa482ab21143",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-24T21:30:00.000Z",
+                        "energy_kwh":  6.0310001,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "7654d5de-ae17-42c8-8806-cbe1a83f1842",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-24T22:00:00.000Z",
+                        "energy_kwh":  4.8919999,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "a68a2f11-18c5-494f-b603-cd19cd7960c5",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-24T22:30:00.000Z",
+                        "energy_kwh":  4.438,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "21dc70d5-aeb1-4a25-8f64-ebb926ef9444",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-24T23:00:00.000Z",
+                        "energy_kwh":  3.96,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "f16cee89-7ed8-4f90-8859-b7af70cd879a",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-24T23:30:00.000Z",
+                        "energy_kwh":  3.508,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "ac2d0683-c11a-497c-8144-a9c9bf4ca16d",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-25T00:00:00.000Z",
+                        "energy_kwh":  3.333,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "d7095ee0-29e6-419e-8caa-33afc84640d2",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-25T00:30:00.000Z",
+                        "energy_kwh":  3.776,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "c14a884e-cbe4-46f3-a6f8-ddc66631aec0",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-25T01:00:00.000Z",
+                        "energy_kwh":  3.697,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "05770a62-9080-4b66-b59f-0781898889d2",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-25T01:30:00.000Z",
+                        "energy_kwh":  3.728,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "3a762e09-7086-4b18-ba14-a1fe5687aa6e",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-25T02:00:00.000Z",
+                        "energy_kwh":  4.57,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "7f59e003-161d-4633-9e14-41f1c2cf9df8",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-25T02:30:00.000Z",
+                        "energy_kwh":  4.766999999999999,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "5439c9f3-ce8e-4f52-8e3d-75f9f56ae246",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-25T03:00:00.000Z",
+                        "energy_kwh":  4.475999999999999,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "83ee08e6-7cee-4415-8a2c-c759fe51becb",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-25T03:30:00.000Z",
+                        "energy_kwh":  5.008999999999999,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "6d08bb79-5b39-42b0-b320-cccd1f758f26",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-25T04:00:00.000Z",
+                        "energy_kwh":  4.445,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "7002d914-b132-434c-9668-741904c81a56",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-25T04:30:00.000Z",
+                        "energy_kwh":  4.984,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "44937052-20c5-400e-ae78-c2b41cbad4e7",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-25T05:00:00.000Z",
+                        "energy_kwh":  4.371,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "d690b723-8a93-4433-ad6b-b57930b03eb8",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-25T05:30:00.000Z",
+                        "energy_kwh":  4.145,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "9a50a409-fd69-471e-9c05-5c61ddf0753c",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-25T06:00:00.000Z",
+                        "energy_kwh":  6.4990001,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "cd90959b-7418-49c3-b5fd-3919f91f1b99",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-25T06:30:00.000Z",
+                        "energy_kwh":  6.571,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "d873d44b-e9f8-45de-a05b-4a821d3b6077",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-25T07:00:00.000Z",
+                        "energy_kwh":  4.46,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "f80f6cfd-74c9-4f06-ac78-be37778a6a8b",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-25T07:30:00.000Z",
+                        "energy_kwh":  6.097,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "6d8fbb27-a7b1-4ee2-85ed-121438bff21e",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-25T08:00:00.000Z",
+                        "energy_kwh":  5.742,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "863b1920-3a19-41e2-bb9b-95ea19f54f93",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-25T08:30:00.000Z",
+                        "energy_kwh":  6.427999999999999,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "5906d81d-c28a-461d-b735-14a69c0b1c53",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-25T09:00:00.000Z",
+                        "energy_kwh":  5.600000000000001,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "f9a17e96-55eb-4f84-8fa8-9c5d1ad9f423",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-25T09:30:00.000Z",
+                        "energy_kwh":  6.670000000000001,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "8d357e97-af13-4b02-ac31-08cb07dd3135",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-25T10:00:00.000Z",
+                        "energy_kwh":  5.503,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "351b82f4-bacb-4597-a3d2-495e13ea9439",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-25T10:30:00.000Z",
+                        "energy_kwh":  5.864,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "7d877969-4072-4e48-9d5b-8f840db50bcb",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-25T11:00:00.000Z",
+                        "energy_kwh":  7.5219999,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "f69ce5ba-dc96-4292-afff-d56e780209da",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-25T11:30:00.000Z",
+                        "energy_kwh":  9.1269999,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "df7d53bd-2ffe-4e11-8229-70fcbffa1102",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-25T12:00:00.000Z",
+                        "energy_kwh":  6.819,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "ae7061f0-3037-4a52-be8d-b895291d17f2",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-25T12:30:00.000Z",
+                        "energy_kwh":  5.964,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "d6b561a7-da1e-4e7b-bc44-90af465c03da",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-25T13:00:00.000Z",
+                        "energy_kwh":  7.890000000000001,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "63fd4b4b-a079-460c-8c64-4e1a969d1b9c",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-25T13:30:00.000Z",
+                        "energy_kwh":  9.134,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "25e74bd4-47cb-491c-bb47-6056348bbcc9",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-25T14:00:00.000Z",
+                        "energy_kwh":  10.03,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "3855a044-d7b4-491f-a4a0-fd90dbdc4884",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-25T14:30:00.000Z",
+                        "energy_kwh":  8.987,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "5e033c84-f960-4a9b-8073-2d46f053bef3",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-25T15:00:00.000Z",
+                        "energy_kwh":  8.654,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "40eed916-11c1-4a7a-8115-95c10fcd6747",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-25T15:30:00.000Z",
+                        "energy_kwh":  9.907,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "1ddb2de8-b4cd-4efc-981a-7dc06c6d8adb",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-25T16:00:00.000Z",
+                        "energy_kwh":  11.308,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "041b5d4e-d0b2-4801-a627-65889b9ccfdb",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-25T16:30:00.000Z",
+                        "energy_kwh":  10.418,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "ca2ae541-7714-499e-9b35-ac02e25483f0",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-25T17:00:00.000Z",
+                        "energy_kwh":  10.256,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "8e617d6a-1498-4abc-959e-ac7af7e9f6d0",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-25T17:30:00.000Z",
+                        "energy_kwh":  8.729,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "cf5e15fc-e4d6-4301-a103-be52d00ee143",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-25T18:00:00.000Z",
+                        "energy_kwh":  8.739,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "94e02011-8d47-4802-8ce9-2b9b78a383c8",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-25T18:30:00.000Z",
+                        "energy_kwh":  7.642,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "8ec89f18-82c1-4e83-b9b8-08cd401ef0ea",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-25T19:00:00.000Z",
+                        "energy_kwh":  8.9299999,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "abe9c474-143a-4ba6-a862-6263e01bd138",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-25T19:30:00.000Z",
+                        "energy_kwh":  7.414999999999999,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "a73944cf-2fc2-48af-88b5-719e0034582d",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-25T20:00:00.000Z",
+                        "energy_kwh":  6.5410001,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "73b45755-d9b4-42ed-b250-7aff162733ac",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-25T20:30:00.000Z",
+                        "energy_kwh":  6.595,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "012a81b4-2fec-4a90-b04a-3f254238fa2a",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-25T21:00:00.000Z",
+                        "energy_kwh":  5.868,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "c12bff8f-40f2-4e42-aeb9-2085f16b1c12",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-25T21:30:00.000Z",
+                        "energy_kwh":  5.453999899999999,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "00227979-e78e-46a1-a20a-ceddea2522d1",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-25T22:00:00.000Z",
+                        "energy_kwh":  3.637,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "76e0ddaf-b327-4e9d-9830-46e587a7940d",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-25T22:30:00.000Z",
+                        "energy_kwh":  3.246,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "e7b33173-a7d8-4a60-9861-e65ddc5cdd14",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-25T23:00:00.000Z",
+                        "energy_kwh":  4.543,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "9d0594f0-ca4b-469f-943e-20bc2635d582",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-25T23:30:00.000Z",
+                        "energy_kwh":  4.037,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "27b027a9-ce75-41a2-9145-ae2d39929fa5",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-26T00:00:00.000Z",
+                        "energy_kwh":  4.128,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "e75b77ce-551b-4620-8ad6-c17e1e0501e6",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-26T00:30:00.000Z",
+                        "energy_kwh":  4.538,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "36d1a19d-c978-437e-b937-ee8387e2df52",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-26T01:00:00.000Z",
+                        "energy_kwh":  4.421,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "b4c63412-364f-4805-af79-bacddbe85847",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-26T01:30:00.000Z",
+                        "energy_kwh":  4.43,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "69706990-23af-4d03-9ded-4ec1def4736a",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-26T02:00:00.000Z",
+                        "energy_kwh":  5.471,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "7a8d385e-3da9-4efd-8f6f-b7ae6781c9c6",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-26T02:30:00.000Z",
+                        "energy_kwh":  5.664,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "c90cd5c4-14b1-4eb7-94da-3e147126fca3",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-26T03:00:00.000Z",
+                        "energy_kwh":  4.752,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "10507b07-4a6c-42d5-82f2-55b0b89e03b4",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-26T03:30:00.000Z",
+                        "energy_kwh":  4.654,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "758a9cb8-df84-4a55-90d8-1ac90fe8e78b",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-26T04:00:00.000Z",
+                        "energy_kwh":  6.317,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "1cbe2503-ae6a-442a-870d-f274d75925f2",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-26T04:30:00.000Z",
+                        "energy_kwh":  5.534,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "2a8452b4-72ec-4a0b-890e-dd62d34ece13",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-26T05:00:00.000Z",
+                        "energy_kwh":  7.664999999999999,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "75fb82fc-5d46-464f-bd2d-dd8d5cc887d7",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-26T05:30:00.000Z",
+                        "energy_kwh":  7.567,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "32e1bbce-e6f2-457b-a73d-5688736586a5",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-26T06:00:00.000Z",
+                        "energy_kwh":  7.739,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "0dcde87c-6185-4e17-9afc-258a2eaac0ce",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-26T06:30:00.000Z",
+                        "energy_kwh":  6.942,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "63711287-a052-42b7-91da-89045311cdf8",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-26T07:00:00.000Z",
+                        "energy_kwh":  8.028,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "f6c047d9-09f6-465d-8ae8-2dcdd1d2c35c",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-26T07:30:00.000Z",
+                        "energy_kwh":  8.065,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "5f50198f-8c62-447d-ba54-5decf9b52e87",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-26T08:00:00.000Z",
+                        "energy_kwh":  10.406,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "873c68e7-a1d9-44f0-ac40-d7e78b3bcd3f",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-26T08:30:00.000Z",
+                        "energy_kwh":  9.811000100000001,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "405da433-6f9e-428c-8fa0-7741590d4628",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-26T09:00:00.000Z",
+                        "energy_kwh":  8.998999999999999,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "4d11723d-dcda-4a75-9fa4-af41e0994164",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-26T09:30:00.000Z",
+                        "energy_kwh":  11.086,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "c0d49f72-45db-4112-8918-143e36c25a95",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-26T10:00:00.000Z",
+                        "energy_kwh":  10.956,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "55dca67f-c81e-4a89-a6e6-be69bac30d75",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-26T10:30:00.000Z",
+                        "energy_kwh":  10.506,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "1135215a-5231-4b92-be8f-0e57d71ac863",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-26T11:00:00.000Z",
+                        "energy_kwh":  11.131,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "36d5aea9-3f23-45c6-8b3b-29a3e9103a08",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-26T11:30:00.000Z",
+                        "energy_kwh":  12.8129999,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "1a05569a-df10-44de-b670-b7b4bc37db7f",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-26T12:00:00.000Z",
+                        "energy_kwh":  14.036,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "f18a54f1-f2f0-4f40-adb0-ca7b6713d189",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-26T12:30:00.000Z",
+                        "energy_kwh":  12.739,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "9cb3af76-defb-43a3-a4b2-bd90e4d46005",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-26T13:00:00.000Z",
+                        "energy_kwh":  15.615,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "2ef9cd90-6d9b-4858-8815-8761fdf08020",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-26T13:30:00.000Z",
+                        "energy_kwh":  15.5419999,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "442d1a31-7618-4dda-9347-847610100b58",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-26T14:00:00.000Z",
+                        "energy_kwh":  14.088,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "e4f2162f-e358-4c19-8aa9-d283b034b242",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-26T14:30:00.000Z",
+                        "energy_kwh":  13.577,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "dd15d9df-260a-40cd-a3e7-0f8a461a71b1",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-26T15:00:00.000Z",
+                        "energy_kwh":  13.979,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "b08ff84a-8361-403b-be20-f44cd2509f00",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-26T15:30:00.000Z",
+                        "energy_kwh":  13.569,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "052bfadb-b5eb-4c1c-8ce4-13a3aaba07fc",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-26T16:00:00.000Z",
+                        "energy_kwh":  13.43,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "d1f90698-63ef-4372-9886-3d4c188f3d91",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-26T16:30:00.000Z",
+                        "energy_kwh":  13.647,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "c286adff-3711-4cc9-8dac-abfe72e6f5f6",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-26T17:00:00.000Z",
+                        "energy_kwh":  12.043,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "e7b32827-a418-4e33-9b50-bc8edd0b8bdb",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-26T17:30:00.000Z",
+                        "energy_kwh":  12.4029999,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "1a6689d0-b1e3-4f85-8bb6-55af5038e3e2",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-26T18:00:00.000Z",
+                        "energy_kwh":  10.777,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "a36f4594-9699-4498-a5ab-6c693ca6289a",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-26T18:30:00.000Z",
+                        "energy_kwh":  7.956,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "8a89a3d1-4772-4561-9d06-d6ec2ec788ac",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-26T19:00:00.000Z",
+                        "energy_kwh":  10.2279999,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "af6d9e3a-7627-48d6-9bbf-9426318bb912",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-26T19:30:00.000Z",
+                        "energy_kwh":  9.767000099999999,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "6ada5212-ee17-41ac-8781-f3f098fc5369",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-26T20:00:00.000Z",
+                        "energy_kwh":  9.311,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "06c2c75c-aa32-467d-a0de-cdfc7931aae3",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-26T20:30:00.000Z",
+                        "energy_kwh":  8.6189999,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "1024057f-6801-456c-a851-4a2f29b7dd9f",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-26T21:00:00.000Z",
+                        "energy_kwh":  7.601000000000001,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "c21126dd-53f5-4e01-a09c-0d4b3d0342f1",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-26T21:30:00.000Z",
+                        "energy_kwh":  6.287000000000001,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "26abb1f7-9ea0-4c6f-8cb6-f78ca31c5b4c",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-26T22:00:00.000Z",
+                        "energy_kwh":  5.66,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "a53c5851-ec46-4ef1-811f-3ce18feff612",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-26T22:30:00.000Z",
+                        "energy_kwh":  5.653999999999999,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "0b5c1a5f-e878-4242-a83c-1bb6ec6fa8e5",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-26T23:00:00.000Z",
+                        "energy_kwh":  6.1780001,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "dac95d88-7f4b-4b90-bdd5-a5d2879142b7",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-26T23:30:00.000Z",
+                        "energy_kwh":  6.245000099999999,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "a8eceb8e-573a-4c1c-83b6-1d278bbb86c7",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-27T00:00:00.000Z",
+                        "energy_kwh":  6.135999999999999,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "f1a1de8b-ec8a-4457-9e01-d917290767a4",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-27T00:30:00.000Z",
+                        "energy_kwh":  5.772,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "f25a79fc-dec5-481a-a43e-cf7ba31bfc9d",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-27T01:00:00.000Z",
+                        "energy_kwh":  6.06,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "0aa573a4-fb46-4fe1-9875-7cc2f1ee95bc",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-27T01:30:00.000Z",
+                        "energy_kwh":  6.448,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "28d49218-b232-47dc-af2d-0d40a35c61a7",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-27T02:00:00.000Z",
+                        "energy_kwh":  6.032,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "2600c6ac-0a2f-4f1b-b2db-87fabddd15ef",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-27T02:30:00.000Z",
+                        "energy_kwh":  6.237,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "92759c7f-f1d9-4ce6-b6fe-a2683ce1fda5",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-27T03:00:00.000Z",
+                        "energy_kwh":  6.436,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "6ead4d05-2253-4f41-b81e-ebf9845cbb40",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-27T03:30:00.000Z",
+                        "energy_kwh":  7.069,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "c1847382-6656-42e3-919f-f73884bc29ed",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-27T04:00:00.000Z",
+                        "energy_kwh":  8.309,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "64c3c145-3c36-4023-b147-1bde0c22b637",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-27T04:30:00.000Z",
+                        "energy_kwh":  6.984999999999999,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "fe4997d9-2579-460e-9126-c0e1fff3e61c",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-27T05:00:00.000Z",
+                        "energy_kwh":  7.699999999999998,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "babe16eb-5351-4596-86c0-5dc2b492ba26",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-27T05:30:00.000Z",
+                        "energy_kwh":  8.498,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "ff4cfed3-c0fa-482e-96f5-0ca188f30a0d",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-27T06:00:00.000Z",
+                        "energy_kwh":  7.964,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "78380888-c8df-43b1-8cc4-2ee2afa6901a",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-27T06:30:00.000Z",
+                        "energy_kwh":  9.209999999999999,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    },
+                    {
+                        "id":  "ffcb7d83-6cee-4173-b782-5b3e42d8fb2e",
+                        "upload_id":  "740d107b-e385-435c-8e08-ee427d22fe94",
+                        "user_id":  "99261c1a-d0bc-4ddc-97e3-0a517c133063",
+                        "timestamp":  "2011-11-27T07:00:00.000Z",
+                        "energy_kwh":  9.715,
+                        "created_at":  "2026-09-29T19:05:21.303Z"
+                    }
+                ]
+}

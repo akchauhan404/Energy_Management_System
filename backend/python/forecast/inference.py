@@ -22,7 +22,7 @@ import joblib
 import numpy as np
 import torch
 import torch.nn as nn
-
+from captum.attr import IntegratedGradients
 
 # ---------------------------------------------------------------------
 # Configuration
@@ -510,6 +510,182 @@ def build_feature_rows(history_records):
 
     return feature_matrix
 
+# ---------------------------------------------------------------------
+# Transformer explainability
+# ---------------------------------------------------------------------
+
+FEATURE_LABELS = {
+    "energy_kwh": "Recent Energy Consumption",
+    "hour_sin": "Time of Day Sinusoidal Component",
+    "hour_cos": "Time of Day Cosine Component",
+    "dow_sin": "Day of Week Sinusoidal Component",
+    "dow_cos": "Day of Week Cosine Component",
+    "month_sin": "Seasonal Sinusoidal Component",
+    "month_cos": "Seasonal Cosine Component",
+    "lag_1": "Immediate Prior Step",
+    "lag_2": "1-Hour Prior Consumption",
+    "lag_4": "2-Hour Prior Consumption",
+    "lag_48": "Previous Day Same-Step Demand",
+    "rolling_mean_2": "1-Hour Rolling Mean",
+    "rolling_mean_4": "2-Hour Rolling Mean",
+    "rolling_mean_48": "24-Hour Rolling Mean",
+    "rolling_max_48": "24-Hour Peak Envelope",
+}
+
+
+def run_xai(history_records):
+    """
+    Compute Integrated Gradients for the actual Transformer input.
+
+    The explanation target is the mean of the 48 forecast outputs.
+    Therefore each feature attribution represents its signed
+    contribution to the overall 24-hour forecast trajectory.
+
+    The baseline is zero in standardized feature space.
+    """
+
+    model, scaler = load_artifacts()
+
+    feature_matrix = build_feature_rows(
+        history_records
+    )
+
+    input_features = feature_matrix[
+        -LOOKBACK_STEPS:
+    ]
+
+    if input_features.shape != (
+        LOOKBACK_STEPS,
+        FEATURE_COUNT
+    ):
+        raise ValueError(
+            f"Expected input shape "
+            f"({LOOKBACK_STEPS}, {FEATURE_COUNT}), "
+            f"got {input_features.shape}"
+        )
+
+    # Apply exactly the same scaler used by the Transformer.
+    scaled_features = scaler.transform(
+        input_features
+    )
+
+    model_input = torch.tensor(
+        scaled_features,
+        dtype=torch.float32
+    ).unsqueeze(0)
+
+    # Zero in standardized space corresponds to the
+    # scaler's reference/mean feature values.
+    baseline = torch.zeros_like(
+        model_input
+    )
+
+    def forecast_mean(inputs):
+        return model(inputs).mean(
+            dim=1
+        )
+
+    integrated_gradients = IntegratedGradients(
+        forecast_mean
+    )
+
+    attributions, convergence_delta = (
+        integrated_gradients.attribute(
+            model_input,
+            baselines=baseline,
+            n_steps=32,
+            return_convergence_delta=True
+        )
+    )
+
+    # Collapse the 48 temporal positions into one
+    # attribution per model feature.
+    feature_attributions = (
+        attributions
+        .mean(dim=1)
+        .squeeze(0)
+        .detach()
+        .cpu()
+        .numpy()
+    )
+
+    delta = float(
+        convergence_delta
+        .detach()
+        .cpu()
+        .item()
+    )
+
+    if not np.isfinite(
+        feature_attributions
+    ).all():
+        raise RuntimeError(
+            "Integrated Gradients produced "
+            "non-finite feature attributions."
+        )
+
+    explanations = []
+
+    for feature, contribution in zip(
+        FEATURE_COLUMNS,
+        feature_attributions
+    ):
+        value = float(contribution)
+
+        if value > 0:
+            direction = "POSITIVE"
+        elif value < 0:
+            direction = "NEGATIVE"
+        else:
+            direction = "NEUTRAL"
+
+        label = FEATURE_LABELS.get(
+            feature,
+            feature
+        )
+
+        if direction == "POSITIVE":
+            explanation = (
+                f"{label} pushes the model's "
+                f"24-hour forecast upward relative "
+                f"to the baseline."
+            )
+        elif direction == "NEGATIVE":
+            explanation = (
+                f"{label} pushes the model's "
+                f"24-hour forecast downward relative "
+                f"to the baseline."
+            )
+        else:
+            explanation = (
+                f"{label} has negligible signed "
+                f"attribution for this forecast."
+            )
+
+        explanations.append(
+            {
+                "feature": feature,
+                "label": label,
+                "contribution": value,
+                "direction": direction,
+                "explanation": explanation
+            }
+        )
+
+    return {
+        "success": True,
+        "status": "COMPLETED",
+        "method": "Integrated Gradients",
+        "target": "mean_24h_forecast",
+        "baseline": "zero_standardized_input",
+        "steps": 32,
+        "convergence_delta": delta,
+        "features": FEATURE_COUNT,
+        "lookback_steps": LOOKBACK_STEPS,
+        "horizon_steps": HORIZON_STEPS,
+        "explanations": explanations
+    }
+
 
 # ---------------------------------------------------------------------
 # Forecast inference
@@ -670,6 +846,15 @@ def handle_request(request):
         )
 
         return run_forecast(
+            history_records
+        )
+    if action == "xai":
+
+        history_records = request.get(
+            "history_records"
+        )
+
+        return run_xai(
             history_records
         )
 

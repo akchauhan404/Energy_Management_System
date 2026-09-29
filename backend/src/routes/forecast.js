@@ -9,130 +9,6 @@ const router = express.Router();
 const FORECAST_MODEL_VERSION = 'v1.0.0';
 const FORECAST_MODEL_NAME =
   'Horizon-Specific Multi-Scale Transformer';
-
-const mock15Explanations = [
-  {
-    feature: 'energy_kwh',
-    label: 'Recent Energy Consumption (lag 0)',
-    contribution: 0.284,
-    direction: 'POSITIVE',
-    explanation:
-      'Recent consumption level influenced the forecast baseline.'
-  },
-  {
-    feature: 'lag_48',
-    label: 'Previous Day Same-Step Demand (lag 48)',
-    contribution: 0.241,
-    direction: 'POSITIVE',
-    explanation:
-      'The previous-day same-time demand captures the daily consumption pattern.'
-  },
-  {
-    feature: 'rolling_mean_48',
-    label: '24-Hour Rolling Average',
-    contribution: 0.165,
-    direction: 'POSITIVE',
-    explanation:
-      'The recent 24-hour average provides a longer-term demand baseline.'
-  },
-  {
-    feature: 'hour_sin',
-    label: 'Time of Day Sinusoidal Component',
-    contribution: 0.118,
-    direction: 'POSITIVE',
-    explanation:
-      'The time-of-day feature represents the recurring daily consumption cycle.'
-  },
-  {
-    feature: 'lag_1',
-    label: 'Immediate Prior Step (lag 1)',
-    contribution: 0.092,
-    direction: 'POSITIVE',
-    explanation:
-      'The immediately preceding consumption value captures short-term continuity.'
-  },
-  {
-    feature: 'rolling_max_48',
-    label: '24-Hour Peak Envelope',
-    contribution: 0.075,
-    direction: 'POSITIVE',
-    explanation:
-      'The previous 24-hour peak provides information about recent demand extremes.'
-  },
-  {
-    feature: 'dow_sin',
-    label: 'Day-of-Week Sinusoidal Component',
-    contribution: -0.063,
-    direction: 'NEGATIVE',
-    explanation:
-      'The weekly cycle adjusts the forecast according to the day of the week.'
-  },
-  {
-    feature: 'rolling_mean_4',
-    label: '2-Hour Moving Trend',
-    contribution: 0.051,
-    direction: 'POSITIVE',
-    explanation:
-      'The recent short-term average captures local consumption movement.'
-  },
-  {
-    feature: 'hour_cos',
-    label: 'Time of Day Cosine Component',
-    contribution: -0.048,
-    direction: 'NEGATIVE',
-    explanation:
-      'The second daily temporal component contributes to the time-of-day pattern.'
-  },
-  {
-    feature: 'lag_2',
-    label: '1-Hour Prior Consumption (lag 2)',
-    contribution: 0.038,
-    direction: 'POSITIVE',
-    explanation:
-      'Recent historical consumption provides additional short-term context.'
-  },
-  {
-    feature: 'rolling_mean_2',
-    label: '1-Hour Rolling Mean',
-    contribution: 0.029,
-    direction: 'POSITIVE',
-    explanation:
-      'The short rolling average helps stabilize the recent consumption signal.'
-  },
-  {
-    feature: 'lag_4',
-    label: '2-Hour Prior Consumption (lag 4)',
-    contribution: -0.024,
-    direction: 'NEGATIVE',
-    explanation:
-      'Earlier consumption provides additional short-term historical context.'
-  },
-  {
-    feature: 'dow_cos',
-    label: 'Day-of-Week Cosine Component',
-    contribution: 0.019,
-    direction: 'POSITIVE',
-    explanation:
-      'The weekly temporal representation contributes to the forecast pattern.'
-  },
-  {
-    feature: 'month_sin',
-    label: 'Seasonal Sinusoidal Component',
-    contribution: 0.015,
-    direction: 'POSITIVE',
-    explanation:
-      'The seasonal feature represents recurring annual consumption variation.'
-  },
-  {
-    feature: 'month_cos',
-    label: 'Seasonal Cosine Component',
-    contribution: -0.011,
-    direction: 'NEGATIVE',
-    explanation:
-      'The second seasonal component provides additional annual-cycle information.'
-  }
-];
-
 /**
  * Find or create the active Transformer model version.
  *
@@ -268,6 +144,33 @@ const generateForecast = async (userId) => {
 
     throw error;
   }
+  const xaiResult =
+    await runPythonInference({
+      action: 'xai',
+      history_records: history.map(
+        (record) => ({
+          timestamp:
+            record.timestamp.toISOString(),
+          energy_kwh: record.energy_kwh
+        })
+      )
+    });
+
+  if (
+    !xaiResult.success ||
+    xaiResult.status !== 'COMPLETED' ||
+    !Array.isArray(xaiResult.explanations) ||
+    xaiResult.explanations.length !== 15
+  ) {
+    const error = new Error(
+      'Transformer XAI attribution failed.'
+    );
+
+    error.statusCode = 502;
+    error.code = 'TRANSFORMER_XAI_FAILED';
+
+    throw error;
+  }
 
   const model = await getForecastModel();
 
@@ -311,7 +214,7 @@ const generateForecast = async (userId) => {
 
         explanations: {
           create:
-            mock15Explanations.map(
+            xaiResult.explanation.map(
               (explanation) => ({
                 feature:
                   explanation.feature,
@@ -385,6 +288,16 @@ const generateForecast = async (userId) => {
         inferenceResult.lookback_steps,
       horizon_steps:
         inferenceResult.horizon_steps
+    },
+    xai: {
+      method: xaiResult.method,
+      target: xaiResult.target,
+      baseline: xaiResult.baseline,
+      steps: xaiResult.steps,
+      convergence_delta:
+        xaiResult.convergence_delta,
+      features:
+        xaiResult.features
     }
   };
 };
@@ -613,7 +526,7 @@ router.get(
           forecast.id,
         explanations,
         disclaimer:
-          'Feature attribution values are currently placeholder explanations. Real Captum Integrated Gradients will be connected in the XAI phase.'
+          'Integrated Gradients measures the signed contribution of each model input feature relative to the selected baseline. These attributions describe model sensitivity and should not be interpreted as proof of physical causality.'
       });
     } catch (error) {
       next(error);
