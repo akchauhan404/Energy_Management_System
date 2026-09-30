@@ -13,20 +13,42 @@ export const Optimization = () => {
   const [loading, setLoading] = useState(true);
   const [running, setRunning] = useState(false);
   const [optimization, setOptimization] = useState(null);
+  const [xai, setXai] = useState(null);
   const [scheduleOpen, setScheduleOpen] = useState(false);
   const [explanationOpen, setExplanationOpen] = useState(false);
 
   const fetchOptimization = async () => {
-    try {
-      setLoading(true);
-      const data = await optimizationApi.getLatestOptimization();
-      setOptimization(data);
-    } catch (err) {
-      console.error('Failed to load optimization:', err);
-    } finally {
-      setLoading(false);
+  try {
+    setLoading(true);
+
+    const data = await optimizationApi.getLatestOptimization();
+
+    setOptimization(data);
+
+    if (data?.id) {
+      try {
+        const explanation =
+          await optimizationApi.getExplanation(data.id);
+
+        setXai(explanation);
+      } catch (xaiError) {
+        console.error(
+          'Failed to load PPO XAI explanation:',
+          xaiError
+        );
+
+        setXai(null);
+      }
     }
-  };
+  } catch (err) {
+    console.error(
+      'Failed to load optimization:',
+      err
+    );
+  } finally {
+    setLoading(false);
+  }
+};
 
   useEffect(() => {
     fetchOptimization();
@@ -46,9 +68,27 @@ export const Optimization = () => {
     }
 
     const res =
-      await optimizationApi.runOptimization(
-        forecast.id
-      );
+  await optimizationApi.runOptimization(
+    forecast.id
+  );
+
+setOptimization(res);
+
+if (res?.id) {
+  try {
+    const explanation =
+      await optimizationApi.getExplanation(res.id);
+      console.log('PPO XAI RESPONSE:', explanation);
+    setXai(explanation);
+  } catch (xaiError) {
+    console.error(
+      'Failed to load PPO XAI explanation:',
+      xaiError
+    );
+
+    setXai(null);
+  }
+}
 
     setOptimization(res);
   } catch (err) {
@@ -91,6 +131,7 @@ export const Optimization = () => {
       {/* Inline PPO Decision Explanations */}
       <OptimizationExplanation
         explanations={optimization?.explanations || []}
+        xai={xai}
         isOpen={explanationOpen}
       />
 

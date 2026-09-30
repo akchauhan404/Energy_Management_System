@@ -291,68 +291,399 @@ export const OptimizationSchedule = ({ schedule = [], isOpen }) => {
   );
 };
 
-export const OptimizationExplanation = ({ explanations = [], isOpen }) => {
+export const OptimizationExplanation = ({
+  explanations = [],
+  xai = null,
+  isOpen
+}) => {
   if (!isOpen) return null;
+
+  const firstExplanation = explanations[0] || {};
+
+  const firstAttributions =
+    firstExplanation.xai_attributions || {};
+
+  const firstAction =
+    Object.values(firstAttributions)[0] || {};
+
+  const xaiMetadata = {
+    method:
+      xai?.method ||
+      firstExplanation.xai_method ||
+      'Integrated Gradients',
+
+    baseline:
+      xai?.baseline ||
+      firstExplanation.xai_baseline ||
+      'zero_normalized_observation',
+
+    steps:
+      xai?.steps ??
+      firstExplanation.xai_steps ??
+      0,
+
+    observation_dimensions:
+      xai?.observation_dimensions ??
+      Object.keys(firstAction).length,
+
+    action_dimensions:
+      xai?.action_dimensions ??
+      Object.keys(firstAttributions).length
+  };
+
+  const formatValue = (value) => {
+    const number = Number(value);
+
+    if (!Number.isFinite(number)) {
+      return '0';
+    }
+
+    return number.toFixed(4);
+  };
+  const formatConvergence = (value) => {
+  const number = Number(value);
+
+  if (!Number.isFinite(number)) {
+    return '0';
+  }
+
+  if (Math.abs(number) < 0.0001 && number !== 0) {
+    return number.toExponential(3);
+  }
+
+  return number.toFixed(4);
+};
+
+  const formatPercentage = (value) => {
+    const number = Number(value);
+
+    if (!Number.isFinite(number)) {
+      return '0.00%';
+    }
+
+    return `${(number * 100).toFixed(2)}%`;
+  };
 
   return (
     <div className="glass-panel p-6 border-t-2 border-t-[var(--color-primary)] animate-fadeIn transition-all duration-300">
-      <div className="flex items-start justify-between gap-3 mb-4">
+
+      {/* Header */}
+      <div className="flex items-start justify-between gap-3 mb-5">
         <div>
           <h4 className="text-sm font-bold text-theme-text">
-            PPO Action Decision Reasoning (Contextual State Layer)
+            PPO Explainable AI (Integrated Gradients)
           </h4>
+
           <p className="text-xs text-theme-muted mt-0.5">
-            Interpreting why specific battery and flexible load policies were triggered by the RL agent.
+            Feature-level attribution showing how the PPO policy output
+            responds to the normalized observation state.
           </p>
         </div>
-        <Badge variant="primary">State-Grounded XAI</Badge>
+
+        <Badge variant="primary">
+          Integrated Gradients
+        </Badge>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-        {explanations.map((exp, idx) => (
-          <div 
-            key={idx}
-            className="p-4 rounded-xl bg-white/[0.02] border border-white/5 hover:border-white/10 transition-colors"
-          >
-            <div className="flex items-center justify-between mb-2">
-              <span className="font-mono text-xs font-bold text-[var(--color-primary)]">
-                Step {exp.step_index + 1} • {exp.time}
-              </span>
-              <span 
-                className={`text-[10px] font-mono font-bold px-2 py-0.5 rounded border ${
-                  exp.peak_risk === 'HIGH' 
-                    ? 'bg-[var(--state-danger-bg)] text-[var(--state-danger-fg)] border-[var(--state-danger-border)]' 
-                    : 'bg-[var(--state-success-bg)] text-[var(--state-success-fg)] border-[var(--state-success-border)]'
-                }`}
-              >
-                {exp.peak_risk} PEAK RISK
-              </span>
-            </div>
+      {/* XAI Method Information */}
+      {xai && (
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-3 mb-5">
 
-            <div className="p-2 rounded bg-black/20 text-xs font-mono mb-2.5 text-theme-text font-semibold">
-              Action: {exp.selected_action}
-            </div>
-
-            <div className="grid grid-cols-2 gap-2 text-[11px] text-theme-muted mb-2.5">
-              <div>Demand: <strong className="text-theme-text font-mono">{exp.forecast_demand}</strong></div>
-              <div>Tariff: <strong className="text-theme-text font-mono">{exp.tariff}</strong></div>
-              <div>Battery SOC: <strong className="text-theme-text font-mono">{exp.battery_soc}</strong></div>
-            </div>
-
-            <p className="text-xs text-theme-muted leading-relaxed">
-              {exp.reason}
-            </p>
+          <div className="p-3 rounded-lg bg-white/[0.02] border border-white/5">
+            <span className="eyebrow block text-[10px]">
+              Method
+            </span>
+            <span className="font-bold text-theme-text text-xs">
+              {xaiMetadata.method}
+            </span>
           </div>
-        ))}
+
+          <div className="p-3 rounded-lg bg-white/[0.02] border border-white/5">
+            <span className="eyebrow block text-[10px]">
+              Baseline
+            </span>
+            <span className="font-bold text-theme-text text-xs font-mono">
+              {xaiMetadata.baseline}
+            </span>
+          </div>
+
+          <div className="p-3 rounded-lg bg-white/[0.02] border border-white/5">
+            <span className="eyebrow block text-[10px]">
+              Integration Steps
+            </span>
+            <span className="font-bold text-theme-text text-xs font-mono">
+              {xaiMetadata.steps ?? 0}
+            </span>
+          </div>
+
+          <div className="p-3 rounded-lg bg-white/[0.02] border border-white/5">
+            <span className="eyebrow block text-[10px]">
+              Observation Dimensions
+            </span>
+            <span className="font-bold text-theme-text text-xs font-mono">
+              {xaiMetadata.observation_dimensions ?? 0}
+            </span>
+          </div>
+          <div className="p-3 rounded-lg bg-white/[0.02] border border-white/5">
+  <span className="eyebrow block text-[10px]">
+    Action Dimensions
+  </span>
+
+  <span className="font-bold text-theme-text text-xs font-mono">
+    {xaiMetadata.action_dimensions}
+  </span>
+</div>
+
+        </div>
+      )}
+
+      {/* Per-Step XAI */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+
+        {explanations.map((exp, idx) => {
+
+          const attributions =
+            exp.xai_attributions || {};
+
+          const convergence =
+            exp.xai_convergence || {};
+
+          return (
+            <div
+              key={exp.id || idx}
+              className="p-4 rounded-xl bg-white/[0.02] border border-white/5 hover:border-white/10 transition-colors"
+            >
+
+              {/* Step Header */}
+              <div className="flex items-center justify-between mb-3">
+
+                <span className="font-mono text-xs font-bold text-[var(--color-primary)]">
+                  Step {Number(exp.step_index ?? idx) + 1}
+                  {exp.time ? ` • ${exp.time}` : ''}
+                </span>
+
+                <span
+                  className={`text-[10px] font-mono font-bold px-2 py-0.5 rounded border ${
+                    exp.peak_risk === 'HIGH'
+                      ? 'bg-[var(--state-danger-bg)] text-[var(--state-danger-fg)] border-[var(--state-danger-border)]'
+                      : 'bg-[var(--state-success-bg)] text-[var(--state-success-fg)] border-[var(--state-success-border)]'
+                  }`}
+                >
+                  {exp.peak_risk || 'UNKNOWN'} PEAK RISK
+                </span>
+
+              </div>
+
+              {/* Selected Action */}
+              <div className="p-2.5 rounded bg-black/20 text-xs font-mono mb-3 text-theme-text font-semibold">
+                Selected Action: {exp.selected_action || 'N/A'}
+              </div>
+
+              {/* State Information */}
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-2 text-[11px] text-theme-muted mb-4">
+
+                <div>
+                  Demand:
+                  <strong className="text-theme-text font-mono ml-1">
+                    {formatValue(exp.forecast_demand)}
+                  </strong>
+                </div>
+
+                <div>
+                  Tariff:
+                  <strong className="text-theme-text font-mono ml-1">
+                    {formatValue(exp.tariff)}
+                  </strong>
+                </div>
+
+                <div>
+                  Battery SOC:
+                  <strong className="text-theme-text font-mono ml-1">
+                    {(Number(exp.battery_soc) * 100).toFixed(2)}%
+                  </strong>
+                </div>
+
+              </div>
+
+              {/* Contextual Reason */}
+              <div className="mb-4">
+                <span className="eyebrow block text-[10px] mb-1">
+                  Contextual Decision Reason
+                </span>
+
+                <p className="text-xs text-theme-muted leading-relaxed">
+                  {exp.reason || 'No contextual explanation available.'}
+                </p>
+              </div>
+
+              {/* Integrated Gradients */}
+              <div className="border-t border-white/5 pt-3">
+
+                <div className="flex items-center justify-between mb-3">
+                  <div>
+                    <span className="eyebrow block text-[10px]">
+                      Integrated Gradients Attribution
+                    </span>
+
+                    <span className="text-[10px] text-theme-muted">
+                      Signed sensitivity of each PPO action to observation features
+                    </span>
+                  </div>
+
+                  <Badge variant="primary">
+                    {exp.xai_method || 'Integrated Gradients'}
+                  </Badge>
+                </div>
+
+                {Object.keys(attributions).length > 0 ? (
+
+                  <div className="space-y-3">
+
+                    {Object.entries(attributions).map(
+                      ([action, features]) => {
+
+                        const featureEntries =
+                          Object.entries(features || {});
+
+                        return (
+                          <div
+                            key={action}
+                            className="rounded-lg border border-white/5 bg-black/10 p-3"
+                          >
+
+                            {/* Action */}
+                            <div className="flex items-center justify-between mb-2">
+
+                              <span className="text-xs font-bold text-theme-text">
+                                {action}
+                              </span>
+
+                              <span className="text-[10px] text-theme-muted font-mono">
+                                {featureEntries.length} features
+                              </span>
+
+                            </div>
+
+                            {/* Feature Attributions */}
+                            <div className="space-y-1.5">
+
+                              {featureEntries.map(
+                                ([feature, value]) => {
+
+                                  const numericValue =
+                                    Number(value);
+
+                                  const positive =
+                                    Number.isFinite(numericValue) &&
+                                    numericValue > 0;
+
+                                  const negative =
+                                    Number.isFinite(numericValue) &&
+                                    numericValue < 0;
+
+                                  return (
+                                    <div
+                                      key={feature}
+                                      className="flex items-center justify-between gap-3 text-[11px]"
+                                    >
+
+                                      <span className="text-theme-muted">
+                                        {feature}
+                                      </span>
+
+                                      <span
+                                        className={`font-mono font-semibold ${
+                                          positive
+                                            ? 'text-[var(--state-success-fg)]'
+                                            : negative
+                                            ? 'text-[var(--state-danger-fg)]'
+                                            : 'text-theme-muted'
+                                        }`}
+                                      >
+                                        {formatValue(value)}
+                                      </span>
+
+                                    </div>
+                                  );
+                                }
+                              )}
+
+                            </div>
+
+                          </div>
+                        );
+                      }
+                    )}
+
+                  </div>
+
+                ) : (
+                  <div className="text-xs text-theme-muted">
+                    No Integrated Gradients attribution data is available
+                    for this step.
+                  </div>
+                )}
+
+              </div>
+
+              {/* Convergence */}
+              {Object.keys(convergence).length > 0 && (
+                <div className="border-t border-white/5 mt-4 pt-3">
+
+                  <span className="eyebrow block text-[10px] mb-2">
+                    Attribution Convergence
+                  </span>
+
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+
+                    {Object.entries(convergence).map(
+                      ([action, value]) => (
+                        <div
+                          key={action}
+                          className="p-2 rounded bg-white/[0.02] border border-white/5"
+                        >
+                          <span className="block text-[9px] text-theme-muted truncate">
+                            {action}
+                          </span>
+
+                          <span className="font-mono text-[10px] text-theme-text">
+                            {formatConvergence(value)}
+                          </span>
+                        </div>
+                      )
+                    )}
+
+                  </div>
+
+                </div>
+              )}
+
+            </div>
+          );
+        })}
+
       </div>
 
-      {/* Explanatory caveat disclaimer */}
-      <div className="mt-5 p-3.5 rounded-lg border flex items-start gap-2.5 text-xs text-theme-muted" style={{backgroundColor:'var(--color-surface)',borderColor:'var(--color-border)'}}>
+      {/* XAI Disclaimer */}
+      <div
+        className="mt-5 p-3.5 rounded-lg border flex items-start gap-2.5 text-xs text-theme-muted"
+        style={{
+          backgroundColor: 'var(--color-surface)',
+          borderColor: 'var(--color-border)'
+        }}
+      >
         <Info className="w-4 h-4 text-theme-muted shrink-0 mt-0.5" />
+
         <span>
-          <strong>Decision Interpretation Note:</strong> Reinforcement learning agents optimize numerical reward functions; this explanation layer decodes underlying state dimensions (tariff differentials, battery constraints, peak envelope) rather than asserting intrinsic causal cognition.
+          <strong>Integrated Gradients Note:</strong>{' '}
+          {xai?.method || 'Integrated Gradients'} measures the signed
+          sensitivity of the PPO policy outputs to normalized observation
+          features relative to the selected baseline. These attributions
+          describe model sensitivity and should not be interpreted as proof
+          of physical causality.
         </span>
       </div>
+
     </div>
   );
 };
