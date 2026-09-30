@@ -102,7 +102,11 @@ export const OptimizationSummary = ({
           </div>
           <div className="mt-2 text-[11px] text-theme-muted flex justify-between pt-2 border-t border-white/5">
             <span>Baseline: {summary?.baseline_grid_energy?.toFixed(3) ?? '80.816'} kWh</span>
-            <span className="text-[var(--state-success-fg)] font-mono">Saved: 3.80 kWh</span>
+            <span className="text-[var(--state-success-fg)] font-mono">
+              Saved: {(
+                  Number(summary?.baseline_grid_energy ?? 0) -
+                  Number(summary?.optimized_grid_energy ?? 0)
+                ).toFixed(2)} kWh</span>
           </div>
         </div>
 
@@ -124,7 +128,11 @@ export const OptimizationSummary = ({
           </div>
           <div className="mt-2 text-[11px] text-theme-muted flex justify-between pt-2 border-t border-white/5">
             <span>Baseline: ₹{summary?.baseline_cost?.toFixed(2) ?? '565.50'}</span>
-            <span className="text-[var(--color-primary)] font-mono">Saved: ₹15.20</span>
+            <span className="text-[var(--color-primary)] font-mono">
+              Saved: ₹{(
+                Number(summary?.baseline_cost ?? 0) -
+                Number(summary?.optimized_cost ?? 0)
+              ).toFixed(2)}</span>
           </div>
         </div>
 
@@ -147,7 +155,11 @@ export const OptimizationSummary = ({
           </div>
           <div className="mt-2 text-[11px] text-theme-muted flex justify-between pt-2 border-t border-white/5">
             <span>Baseline: {summary?.baseline_peak_demand?.toFixed(3) ?? '8.414'} kW</span>
-            <span className="text-[var(--state-warning-fg)] font-mono">Shaved: 0.837 kW</span>
+            <span className="text-[var(--state-warning-fg)] font-mono">
+              Saved: {(
+                Number(summary?.baseline_peak_demand ?? 0) -
+                Number(summary?.optimized_peak_demand ?? 0)
+              ).toFixed(3)} kW</span>
           </div>
         </div>
       </div>

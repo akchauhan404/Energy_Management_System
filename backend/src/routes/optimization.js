@@ -281,6 +281,9 @@ router.get('/', authMiddleware, async (req, res) => {
         steps: {
           orderBy: {
             step_index: 'asc'
+          },
+          include:{
+            explanations: true
           }
         },
         summary: true
@@ -297,10 +300,48 @@ router.get('/', authMiddleware, async (req, res) => {
       });
     }
 
+    const baselineGridEnergy =
+  Number(optimization.summary?.baseline_grid_energy ?? 0);
+
+const optimizedGridEnergy =
+  Number(optimization.summary?.optimized_grid_energy ?? 0);
+
+const baselineCost =
+  Number(optimization.summary?.baseline_cost ?? 0);
+
+const optimizedCost =
+  Number(optimization.summary?.optimized_cost ?? 0);
+
+const baselinePeakDemand =
+  Number(optimization.summary?.baseline_peak_demand ?? 0);
+
+const optimizedPeakDemand =
+  Number(optimization.summary?.optimized_peak_demand ?? 0);
+
+const evaluation = {
+  grid_reduction_pct:
+    baselineGridEnergy > 0
+      ? ((baselineGridEnergy - optimizedGridEnergy) / baselineGridEnergy) * 100
+      : 0,
+
+  cost_reduction_pct:
+    baselineCost > 0
+      ? ((baselineCost - optimizedCost) / baselineCost) * 100
+      : 0,
+
+  peak_reduction_pct:
+    baselinePeakDemand > 0
+      ? ((baselinePeakDemand - optimizedPeakDemand) / baselinePeakDemand) * 100
+      : 0
+};
+
     return res.json({
-      success: true,
-      data: optimization
-    });
+  success: true,
+  data: {
+    ...optimization,
+    evaluation
+  }
+});
   } catch (error) {
     console.error('Failed to retrieve optimization:', error);
 
