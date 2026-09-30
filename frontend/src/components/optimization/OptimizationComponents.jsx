@@ -92,16 +92,22 @@ export const OptimizationSummary = ({
           <div className="flex items-baseline justify-between mt-1">
             <div>
               <span className="text-2xl font-bold font-mono text-theme-text tabular-nums">
-                {summary?.optimized_grid_energy?.toFixed(3) ?? '77.016'}
+                {summary?.optimized_grid_energy != null
+  ? Number(summary.optimized_grid_energy).toFixed(3)
+  : 'N/A'}
               </span>
               <span className="text-xs text-theme-muted ml-1 font-mono">kWh</span>
             </div>
             <span className="text-xs font-mono font-bold px-2 py-0.5 rounded bg-[var(--state-success-bg)] text-[var(--state-success-fg)] border border-[var(--state-success-border)] flex items-center gap-0.5">
-              <TrendingDown className="w-3.5 h-3.5" /> -{summary?.grid_reduction_pct?.toFixed(2) ?? '4.70'}%
+              <TrendingDown className="w-3.5 h-3.5" /> {summary?.grid_reduction_pct != null
+  ? `-${Number(summary.grid_reduction_pct).toFixed(2)}%`
+  : 'N/A'}
             </span>
           </div>
           <div className="mt-2 text-[11px] text-theme-muted flex justify-between pt-2 border-t border-white/5">
-            <span>Baseline: {summary?.baseline_grid_energy?.toFixed(3) ?? '80.816'} kWh</span>
+            <span>Baseline: {summary?.baseline_grid_energy != null
+  ? Number(summary.baseline_grid_energy).toFixed(3)
+  : 'N/A'} kWh</span>
             <span className="text-[var(--state-success-fg)] font-mono">
               Saved: {(
                   Number(summary?.baseline_grid_energy ?? 0) -
@@ -119,15 +125,21 @@ export const OptimizationSummary = ({
           <div className="flex items-baseline justify-between mt-1">
             <div>
               <span className="text-2xl font-bold font-mono text-theme-text tabular-nums">
-                ₹{summary?.optimized_cost?.toFixed(2) ?? '550.30'}
+                ₹{summary?.optimized_cost != null
+  ? Number(summary.optimized_cost).toFixed(2)
+  : 'N/A'}
               </span>
             </div>
             <span className="text-xs font-mono font-bold px-2 py-0.5 rounded bg-[var(--state-success-bg)] text-[var(--state-success-fg)] border border-[var(--state-success-border)] flex items-center gap-0.5">
-              <TrendingDown className="w-3.5 h-3.5" /> -{summary?.cost_reduction_pct?.toFixed(2) ?? '2.69'}%
+              <TrendingDown className="w-3.5 h-3.5" /> {summary?.cost_reduction_pct != null
+  ? `-${Number(summary.cost_reduction_pct).toFixed(2)}%`
+  : 'N/A'}
             </span>
           </div>
           <div className="mt-2 text-[11px] text-theme-muted flex justify-between pt-2 border-t border-white/5">
-            <span>Baseline: ₹{summary?.baseline_cost?.toFixed(2) ?? '565.50'}</span>
+            <span>Baseline: ₹{summary?.baseline_cost != null
+  ? Number(summary.baseline_cost).toFixed(2)
+  : 'N/A'}</span>
             <span className="text-[var(--color-primary)] font-mono">
               Saved: ₹{(
                 Number(summary?.baseline_cost ?? 0) -
@@ -145,16 +157,22 @@ export const OptimizationSummary = ({
           <div className="flex items-baseline justify-between mt-1">
             <div>
               <span className="text-2xl font-bold font-mono text-theme-text tabular-nums">
-                {summary?.optimized_peak_demand?.toFixed(3) ?? '7.577'}
+               {summary?.optimized_peak_demand != null
+  ? Number(summary.optimized_peak_demand).toFixed(3)
+  : 'N/A'}
               </span>
               <span className="text-xs text-theme-muted ml-1 font-mono">kW</span>
             </div>
             <span className="text-xs font-mono font-bold px-2 py-0.5 rounded bg-[var(--state-success-bg)] text-[var(--state-success-fg)] border border-[var(--state-success-border)] flex items-center gap-0.5">
-              <TrendingDown className="w-3.5 h-3.5" /> -{summary?.peak_reduction_pct?.toFixed(2) ?? '9.95'}%
+              <TrendingDown className="w-3.5 h-3.5" /> {summary?.peak_reduction_pct != null
+  ? `-${Number(summary.peak_reduction_pct).toFixed(2)}%`
+  : 'N/A'}
             </span>
           </div>
           <div className="mt-2 text-[11px] text-theme-muted flex justify-between pt-2 border-t border-white/5">
-            <span>Baseline: {summary?.baseline_peak_demand?.toFixed(3) ?? '8.414'} kW</span>
+            <span>Baseline: {summary?.baseline_peak_demand != null
+  ? Number(summary.baseline_peak_demand).toFixed(3)
+  : 'N/A'} kW</span>
             <span className="text-[var(--state-warning-fg)] font-mono">
               Saved: {(
                 Number(summary?.baseline_peak_demand ?? 0) -
@@ -171,7 +189,9 @@ export const OptimizationSummary = ({
           <div>
             <span className="eyebrow block text-[10px]">Renewable Self-Use</span>
             <span className="font-bold text-theme-text font-mono tabular-nums">
-              {summary?.renewable_utilization ?? 100}%
+             {summary?.renewable_utilization != null
+  ? `${Number(summary.renewable_utilization).toFixed(2)}%`
+  : 'N/A'}
             </span>
           </div>
         </div>
@@ -180,7 +200,9 @@ export const OptimizationSummary = ({
           <div>
             <span className="eyebrow block text-[10px]">Constraint Violations</span>
             <span className="font-bold text-theme-text font-mono tabular-nums">
-              {summary?.constraint_violations ?? 0}
+              {summary?.constraint_violations != null
+  ? Number(summary.constraint_violations)
+  : 'N/A'}
             </span>
           </div>
         </div>
