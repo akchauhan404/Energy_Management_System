@@ -88,8 +88,6 @@ if (res?.id) {
     setXai(null);
   }
 }
-
-    setOptimization(res);
   } catch (err) {
     console.error(
       'Failed to run optimization:',
