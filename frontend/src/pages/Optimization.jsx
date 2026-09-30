@@ -78,7 +78,6 @@ if (res?.id) {
   try {
     const explanation =
       await optimizationApi.getExplanation(res.id);
-      console.log('PPO XAI RESPONSE:', explanation);
     setXai(explanation);
   } catch (xaiError) {
     console.error(
