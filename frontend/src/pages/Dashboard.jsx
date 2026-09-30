@@ -98,7 +98,11 @@ export const Dashboard = () => {
         {/* 2. Next 24h Forecast */}
         <MetricCard
           title="Next 24h Forecast"
-          value={forecast?.summary?.total_forecast_kwh ?? '89.95'}
+          value={
+  forecast?.summary?.total_forecast_kwh != null
+    ? Number(forecast.summary.total_forecast_kwh).toFixed(2)
+    : '—'
+}
           unit="kWh"
           subtitle="48-step projection"
           icon={TrendingUp}
@@ -109,11 +113,19 @@ export const Dashboard = () => {
         {/* 3. Estimated Energy Cost */}
         <MetricCard
           title="Estimated Energy Cost"
-          value={optimization?.summary?.optimized_cost ? `₹${optimization.summary.optimized_cost.toFixed(2)}` : '₹550.30'}
+          value={
+  optimization?.summary?.optimized_cost != null
+    ? `₹${Number(optimization.summary.optimized_cost).toFixed(2)}`
+    : '—'
+}
           unit=""
           subtitle="Optimized 24h tariff"
           icon={DollarSign}
-          delta="-2.69% Shaved"
+          delta={
+  optimization?.summary?.cost_reduction_pct != null
+    ? `-${Number(optimization.summary.cost_reduction_pct).toFixed(2)}% Shaved`
+    : 'No evaluation'
+}
           deltaType="positive"
         />
 
@@ -122,9 +134,17 @@ export const Dashboard = () => {
           title="Optimization Status"
           value={optimization?.status === 'COMPLETED' ? 'DISPATCHED' : 'READY'}
           unit=""
-          subtitle="Zero constraint violations"
+         subtitle={
+  optimization?.summary?.constraint_violations != null
+    ? `${Number(optimization.summary.constraint_violations)} constraint violations`
+    : 'Constraint status unavailable'
+}
           icon={Cpu}
-          delta="100% Solar Self-Use"
+          delta={
+  optimization?.summary?.renewable_utilization != null
+    ? `${Number(optimization.summary.renewable_utilization).toFixed(2)}% Solar Self-Use`
+    : 'No renewable data'
+}
           deltaType="positive"
         />
       </div>
@@ -213,40 +233,56 @@ export const Dashboard = () => {
             <div className="p-3.5 rounded-xl bg-white/[0.02] border border-[var(--color-border-subtle)]">
               <span className="eyebrow block mb-1">Grid Energy</span>
               <span className="text-base sm:text-lg font-bold text-theme-text font-mono tabular-nums block">
-                {optimization?.summary?.optimized_grid_energy ?? 77.016} kWh
+                {optimization?.summary?.optimized_grid_energy != null
+  ? Number(optimization.summary.optimized_grid_energy).toFixed(3)
+  : 'N/A'} kWh
               </span>
               <span className="text-[11px] text-[var(--state-success-fg)] block mt-1 font-mono">
-                -4.70% vs Baseline
+                {optimization?.summary?.grid_reduction_pct != null
+  ? `-${Number(optimization.summary.grid_reduction_pct).toFixed(2)}% vs Baseline`
+  : 'No evaluation data'}
               </span>
             </div>
 
             <div className="p-3.5 rounded-xl bg-white/[0.02] border border-[var(--color-border-subtle)]">
               <span className="eyebrow block mb-1">Electricity Cost</span>
               <span className="text-base sm:text-lg font-bold text-theme-text font-mono tabular-nums block">
-                ₹{optimization?.summary?.optimized_cost?.toFixed(2) ?? '550.30'}
+               ₹{optimization?.summary?.optimized_cost != null
+  ? Number(optimization.summary.optimized_cost).toFixed(2)
+  : 'N/A'}
               </span>
               <span className="text-[11px] text-[var(--state-success-fg)] block mt-1 font-mono">
-                -2.69% Shaved
+               {optimization?.summary?.cost_reduction_pct != null
+  ? `-${Number(optimization.summary.cost_reduction_pct).toFixed(2)}% Shaved`
+  : 'No evaluation data'}
               </span>
             </div>
 
             <div className="p-3.5 rounded-xl bg-white/[0.02] border border-[var(--color-border-subtle)]">
               <span className="eyebrow block mb-1">Peak Demand</span>
               <span className="text-base sm:text-lg font-bold text-theme-text font-mono tabular-nums block">
-                {optimization?.summary?.optimized_peak_demand ?? 7.577} kW
+                {optimization?.summary?.optimized_peak_demand != null
+  ? Number(optimization.summary.optimized_peak_demand).toFixed(3)
+  : 'N/A'} kW
               </span>
               <span className="text-[11px] text-[var(--state-success-fg)] block mt-1 font-mono">
-                -9.95% Cut
+              {optimization?.summary?.peak_reduction_pct != null
+  ? `-${Number(optimization.summary.peak_reduction_pct).toFixed(2)}% Cut`
+  : 'No evaluation data'}
               </span>
             </div>
 
             <div className="p-3.5 rounded-xl bg-white/[0.02] border border-[var(--color-border-subtle)]">
               <span className="eyebrow block mb-1">Renewable Use</span>
               <span className="text-base sm:text-lg font-bold text-theme-text font-mono tabular-nums block">
-                {optimization?.summary?.renewable_utilization ?? 100}%
+                {optimization?.summary?.renewable_utilization != null
+  ? Number(optimization.summary.renewable_utilization).toFixed(2)
+  : 'N/A'}%
               </span>
               <span className="text-[11px] text-[var(--state-success-fg)] block mt-1 font-mono">
-                0 Violations
+                {optimization?.summary?.constraint_violations != null
+  ? `${Number(optimization.summary.constraint_violations)} Violations`
+  : 'Constraint data unavailable'}
               </span>
             </div>
           </div>
