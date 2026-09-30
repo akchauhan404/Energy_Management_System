@@ -13,22 +13,34 @@ export const EnergyData = () => {
   const [uploads, setUploads] = useState([]);
   const [lastValidation, setLastValidation] = useState(null);
   const [successBanner, setSuccessBanner] = useState('');
+  const [error, setError] = useState('');
 
   const loadData = async () => {
-    try {
-      setLoading(true);
-      const [recs, ups] = await Promise.all([
-        energyDataApi.getLatestRecords(),
-        energyDataApi.getUploads()
-      ]);
-      setRecords(recs || []);
-      setUploads(ups || []);
-    } catch (err) {
-      console.error('Failed to load energy data:', err);
-    } finally {
-      setLoading(false);
-    }
-  };
+  try {
+    setLoading(true);
+    setError('');
+
+    const [recs, ups] = await Promise.all([
+      energyDataApi.getLatestRecords(),
+      energyDataApi.getUploads()
+    ]);
+
+    setRecords(recs || []);
+    setUploads(ups || []);
+  } catch (err) {
+    console.error(
+      'Failed to load energy data:',
+      err
+    );
+
+    setError(
+      err.message ||
+      'Failed to load historical energy data.'
+    );
+  } finally {
+    setLoading(false);
+  }
+};
 
   useEffect(() => {
     loadData();
@@ -56,6 +68,37 @@ export const EnergyData = () => {
   if (loading) {
     return <LoadingState message="Loading historical energy telemetry..." />;
   }
+  if (error) {
+  return (
+    <div className="space-y-6">
+      <div>
+        <h2 className="text-xl font-bold tracking-tight text-theme-text font-mono">
+          Energy Data
+        </h2>
+
+        <p className="text-xs text-theme-muted mt-0.5">
+          Upload historical energy consumption data to generate forecasts.
+        </p>
+      </div>
+
+      <div className="p-4 rounded-xl bg-[var(--state-danger-bg)] border border-[var(--state-danger-border)] text-[var(--state-danger-fg)]">
+        <div className="flex items-center gap-2">
+          <AlertCircle className="w-4 h-4" />
+          <span className="text-sm">
+            {error}
+          </span>
+        </div>
+      </div>
+
+      <button
+        onClick={loadData}
+        className="btn-primary text-xs px-4 py-2"
+      >
+        Retry
+      </button>
+    </div>
+  );
+}
 
   return (
     <div className="space-y-6">

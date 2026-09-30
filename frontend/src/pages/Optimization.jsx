@@ -7,6 +7,7 @@ import {
 import { OptimizationScheduleChart } from '../components/charts/OptimizationScheduleChart';
 import { LoadingState } from '../components/common/States';
 import { optimizationApi } from '../services/api/optimizationApi';
+import { forecastApi } from '../services/api/forecastApi';
 
 export const Optimization = () => {
   const [loading, setLoading] = useState(true);
@@ -31,17 +32,34 @@ export const Optimization = () => {
     fetchOptimization();
   }, []);
 
-  const handleRunOptimization = async () => {
-    try {
-      setRunning(true);
-      const res = await optimizationApi.runOptimization();
-      setOptimization(res);
-    } catch (err) {
-      console.error('Failed to run optimization:', err);
-    } finally {
-      setRunning(false);
+ const handleRunOptimization = async () => {
+  try {
+    setRunning(true);
+
+    const forecast =
+      await forecastApi.getLatestForecast();
+
+    if (!forecast?.id) {
+      throw new Error(
+        'No forecast is available. Generate a forecast before running optimization.'
+      );
     }
-  };
+
+    const res =
+      await optimizationApi.runOptimization(
+        forecast.id
+      );
+
+    setOptimization(res);
+  } catch (err) {
+    console.error(
+      'Failed to run optimization:',
+      err
+    );
+  } finally {
+    setRunning(false);
+  }
+};
 
   if (loading) {
     return <LoadingState message="Executing PPO policy dispatch on 48-step forecast environment..." />;

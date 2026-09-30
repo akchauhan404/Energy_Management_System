@@ -28,31 +28,39 @@ const getStoredMockUploads = () => {
 
 export const energyDataApi = {
   async getUploads() {
-    if (USE_MOCK) {
-      await new Promise(r => setTimeout(r, 300));
-      return getStoredMockUploads();
-    }
-    try {
-      return await apiRequest('/energy-data');
-    } catch {
-      return getStoredMockUploads();
-    }
-  },
+  if (USE_MOCK) {
+    await new Promise(r => setTimeout(r, 300));
+    return getStoredMockUploads();
+  }
 
-  async getLatestRecords() {
-    if (USE_MOCK) {
-      const stored = localStorage.getItem(MOCK_RECORDS_KEY);
-      if (stored) return JSON.parse(stored);
-      const generated = generateMockHistoricalRecords();
-      localStorage.setItem(MOCK_RECORDS_KEY, JSON.stringify(generated));
-      return generated;
+  const response = await apiRequest('/energy-data');
+
+  return response.uploads || [];
+},
+
+async getLatestRecords() {
+  if (USE_MOCK) {
+    const stored = localStorage.getItem(MOCK_RECORDS_KEY);
+
+    if (stored) {
+      return JSON.parse(stored);
     }
-    try {
-      return await apiRequest('/energy-data/latest-records');
-    } catch {
-      return generateMockHistoricalRecords();
-    }
-  },
+
+    const generated = generateMockHistoricalRecords();
+
+    localStorage.setItem(
+      MOCK_RECORDS_KEY,
+      JSON.stringify(generated)
+    );
+
+    return generated;
+  }
+
+  const response =
+    await apiRequest('/energy-data/latest-records');
+
+  return response.records || [];
+},
 
   // Authoritative CSV client-side pre-validation + server upload
   async uploadCsv(file, parsedRows) {

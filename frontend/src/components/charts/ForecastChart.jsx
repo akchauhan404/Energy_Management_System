@@ -18,11 +18,14 @@ export const ForecastChart = ({ points = [], height = 320 }) => {
     );
   }
 
-  const chartData = points.map((p) => ({
-    time: p.timeFormatted,
-    kwh: p.predicted_energy_kwh,
-    step: p.step_index + 1
-  }));
+ const chartData = points.map((p) => ({
+  time: new Date(p.timestamp).toLocaleTimeString([], {
+    hour: '2-digit',
+    minute: '2-digit'
+  }),
+  kwh: Number(p.predicted_energy_kwh),
+  step: p.step_index + 1
+}));
 
   return (
     <div className="w-full" style={{ height }}>

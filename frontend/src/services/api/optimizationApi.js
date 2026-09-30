@@ -256,40 +256,48 @@ export const optimizationApi = {
       response.data
     );
   },
+  async runOptimization(forecastId) {
+  if (USE_MOCK) {
+    await new Promise((resolve) =>
+      setTimeout(resolve, 1400)
+    );
 
-  async runOptimization() {
-    if (USE_MOCK) {
-      await new Promise((resolve) =>
-        setTimeout(resolve, 1400)
-      );
+    const optimization = {
+      ...createMockOptimization(),
+      id: 'opt-' + Date.now(),
+      created_at:
+        new Date().toISOString()
+    };
 
-      const optimization = {
-        ...createMockOptimization(),
-        id: 'opt-' + Date.now(),
-        created_at:
-          new Date().toISOString()
-      };
+    localStorage.setItem(
+      MOCK_OPTIMIZATION_KEY,
+      JSON.stringify(optimization)
+    );
 
-      localStorage.setItem(
-        MOCK_OPTIMIZATION_KEY,
-        JSON.stringify(optimization)
-      );
+    return optimization;
+  }
 
-      return optimization;
+  if (!forecastId) {
+    throw new Error(
+      'A forecast ID is required to run optimization.'
+    );
+  }
+
+  const response = await apiRequest(
+    '/optimization/run',
+    {
+      method: 'POST',
+      body: JSON.stringify({
+        forecast_id: forecastId
+      })
     }
+  );
 
-    const response = await apiRequest(
-      '/optimization/run',
-      {
-        method: 'POST'
-      }
-    );
-
-    return normalizeOptimization(
-      response.data
-    );
-  },
-
+  return normalizeOptimization(
+    response.data
+  );
+},
+  
   async getExplanation(optimizationId) {
     if (USE_MOCK) {
       return {
