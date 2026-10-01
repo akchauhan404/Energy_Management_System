@@ -1,9 +1,9 @@
-// Centralized API client with JWT attachment and Mock Mode fallback support
+// Centralized API client with JWT attachment
 
-const USE_MOCK = import.meta.env.VITE_USE_MOCK_API === 'true';
 const BASE_URL = import.meta.env.VITE_API_URL || '/api';
 
 export const getAuthToken = () => localStorage.getItem('token');
+
 export const setAuthToken = (token) => {
   if (token) {
     localStorage.setItem('token', token);
@@ -22,35 +22,36 @@ export async function apiRequest(endpoint, options = {}) {
     ...(options.headers || {})
   };
 
-  // If body is FormData (e.g. file upload), let the browser set Content-Type
+  // If body is FormData (e.g. file upload),
+  // let the browser set the Content-Type boundary.
   if (options.body instanceof FormData) {
     delete headers['Content-Type'];
   }
 
-  try {
-    const response = await fetch(url, {
-      ...options,
-      headers
-    });
+  const response = await fetch(url, {
+    ...options,
+    headers
+  });
 
-    if (response.status === 401) {
-      // Token expired or invalid
-      setAuthToken(null);
-      if (!window.location.pathname.includes('/login') && !window.location.pathname.includes('/register')) {
-        window.location.href = '/login';
-      }
+  if (response.status === 401) {
+    setAuthToken(null);
+
+    if (
+      !window.location.pathname.includes('/login') &&
+      !window.location.pathname.includes('/register')
+    ) {
+      window.location.href = '/login';
     }
-
-    const data = await response.json().catch(() => ({}));
-    if (!response.ok) {
-      throw new Error(data.message || `Request failed with status ${response.status}`);
-    }
-
-    return data;
-  } catch (err) {
-    // If backend isn't reached and mock mode is permissible, caller fallback handles it
-    throw err;
   }
-}
 
-export { USE_MOCK };
+  const data = await response.json().catch(() => ({}));
+
+  if (!response.ok) {
+    throw new Error(
+      data.message ||
+      `Request failed with status ${response.status}`
+    );
+  }
+
+  return data;
+}
