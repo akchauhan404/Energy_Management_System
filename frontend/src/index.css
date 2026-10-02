@@ -898,146 +898,39 @@ body {
     min-height: 105px;
   }
 }
-
-/* ============================================================
+/* =========================================================
    GRIDPULSE LANDING PAGE
-   ============================================================ */
+   ========================================================= */
 
 .gridpulse-landing {
   position: relative;
   width: 100%;
   min-height: 100vh;
   overflow-x: hidden;
-  background: #020a12;
-  color: #f0fdf4;
+  background: var(--color-background, #f8fafc);
+  color: var(--color-text, #0f172a);
 }
 
-/* ============================================================
+
+/* =========================================================
    HERO
-   ============================================================ */
+   ========================================================= */
 
 .gridpulse-hero {
   position: relative;
-  min-height: 100vh;
-  width: 100%;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  isolation: isolate;
-}
-
-.gridpulse-hero-video {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  z-index: -3;
-  filter: saturate(0.85) brightness(0.72);
-  transform: scale(1.02);
-}
-
-.gridpulse-hero-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: -2;
-  background:
-    linear-gradient(
-      180deg,
-      rgba(2, 10, 18, 0.72) 0%,
-      rgba(2, 10, 18, 0.35) 45%,
-      rgba(2, 10, 18, 0.88) 100%
-    );
-}
-
-.gridpulse-hero-glow {
-  position: absolute;
-  width: 55vw;
-  height: 55vw;
-  max-width: 800px;
-  max-height: 800px;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    rgba(34, 255, 136, 0.13) 0%,
-    rgba(0, 240, 255, 0.05) 35%,
-    transparent 70%
-  );
-  filter: blur(20px);
-  z-index: -1;
-  pointer-events: none;
-}
-
-.gridpulse-hero-content {
-  position: relative;
-  z-index: 2;
-  width: min(1100px, 92vw);
-  text-align: center;
-  opacity: 0;
-  transform: translateY(25px);
-  transition:
-    opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.gridpulse-hero-content.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ============================================================
-   GRIDPULSE LANDING PAGE — LIGHT THEME
-   ============================================================ */
-
-.gridpulse-landing {
-  position: relative;
   width: 100%;
   min-height: 100vh;
-  overflow-x: hidden;
-
-  background: #f8fafc;
-  color: #0f172a;
-}
-
-/* ============================================================
-   HERO
-   ============================================================ */
-
-.gridpulse-hero {
-  position: relative;
-  min-height: 100vh;
-  width: 100%;
-  overflow: hidden;
+  height: 100vh;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
+  overflow: hidden;
   isolation: isolate;
 }
+/* Light overlay */
 
-.gridpulse-hero-video {
-  position: absolute;
-  inset: 0;
-
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-  object-position: center;
-
-  z-index: -3;
-
-  filter:
-    saturate(0.9)
-    brightness(1.05);
-
-  transform: scale(1.02);
-}
-
-/* Light translucent layer over video */
 .gridpulse-hero-overlay {
   position: absolute;
   inset: 0;
@@ -1047,48 +940,21 @@ body {
   background:
     linear-gradient(
       180deg,
-      rgba(255, 255, 255, 0.72) 0%,
-      rgba(255, 255, 255, 0.30) 45%,
-      rgba(248, 250, 252, 0.90) 100%
+      rgba(255, 255, 255, 0.68) 0%,
+      rgba(255, 255, 255, 0.30) 42%,
+      rgba(248, 250, 252, 0.88) 100%
     );
 }
 
-/* Soft energy glow */
-.gridpulse-hero-glow {
-  position: absolute;
 
-  width: 55vw;
-  height: 55vw;
-
-  max-width: 800px;
-  max-height: 800px;
-
-  border-radius: 50%;
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(16, 185, 129, 0.12) 0%,
-      rgba(14, 165, 233, 0.07) 35%,
-      transparent 70%
-    );
-
-  filter: blur(20px);
-
-  z-index: -1;
-
-  pointer-events: none;
-}
-
-/* ============================================================
-   HERO CONTENT
-   ============================================================ */
+/* Hero content */
 
 .gridpulse-hero-content {
   position: relative;
   z-index: 2;
 
-  width: min(1100px, 92vw);
+  width: 96vw;
+  max-width: 1500px;
 
   text-align: center;
 
@@ -1100,34 +966,63 @@ body {
     transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+
+/*
+ * Hero animation is activated immediately
+ * because LandingPage.jsx gives it "is-visible".
+ */
+
 .gridpulse-hero-content.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* ============================================================
+
+/* =========================================================
    GRIDPULSE TITLE
-   ============================================================ */
+   ========================================================= */
 
 .gridpulse-title-wrapper {
   width: 100%;
-  max-width: 1250px;
+  max-width: 1500px;
   margin: 0 auto;
 }
 
+
 .gridpulse-title-svg {
   display: block;
+
   width: 100%;
-  height: auto;
-  min-height: 180px;
+  height: 300px;
+
   overflow: visible;
 }
+
+
+/*
+ * SVG text size
+ *
+ * This is intentionally very large so GridPulse
+ * becomes the main visual element of the hero.
+ */
+
+.gridpulse-title-stroke,
+.gridpulse-title-fill {
+  font-family: var(--font-sans, Inter, sans-serif);
+
+  font-size: 220px;
+  font-weight: 800;
+
+  letter-spacing: -8px;
+}
+
+
+/* Stroke drawing animation */
 
 .gridpulse-title-stroke {
   fill: transparent;
 
-  stroke: var(--color-primary);
-
+  stroke: var(--color-primary, #059669);
   stroke-width: 2.5;
 
   stroke-linejoin: round;
@@ -1137,8 +1032,12 @@ body {
   stroke-dashoffset: 2600;
 
   filter:
-    drop-shadow(0 0 4px var(--color-primary))
-    drop-shadow(0 0 12px var(--color-glow));
+    drop-shadow(
+      0 0 4px var(--color-primary, #059669)
+    )
+    drop-shadow(
+      0 0 12px var(--color-glow, rgba(5, 150, 105, 0.35))
+    );
 
   animation:
     gridpulse-title-draw
@@ -1147,6 +1046,16 @@ body {
     0.25s
     forwards;
 }
+
+
+@keyframes gridpulse-title-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+
+/* Fill appears after stroke */
 
 .gridpulse-title-fill {
   fill: rgba(15, 23, 42, 0);
@@ -1161,48 +1070,30 @@ body {
     forwards;
 }
 
-@keyframes gridpulse-title-draw {
-  0% {
-    stroke-dashoffset: 2600;
-    opacity: 0;
-  }
-
-  8% {
-    opacity: 1;
-  }
-
-  100% {
-    stroke-dashoffset: 0;
-    opacity: 1;
-  }
-}
 
 @keyframes gridpulse-title-fill {
-  from {
-    fill: rgba(15, 23, 42, 0);
-  }
-
   to {
-    fill: rgba(15, 23, 42, 0.95);
+    fill: var(--color-text, #0f172a);
   }
 }
 
-/* ============================================================
+
+/* =========================================================
    TAGLINE
-   ============================================================ */
+   ========================================================= */
 
 .gridpulse-tagline {
-  margin: 5px 0 0;
+  margin: -5px 0 0;
 
-  color: var(--color-primary);
+  color: var(--color-primary, #059669);
 
-  font-family: var(--font-mono);
+  font-family: var(--font-mono, monospace);
 
-  font-size: clamp(0.55rem, 1.1vw, 0.85rem);
+  font-size: clamp(0.55rem, 1vw, 0.8rem);
 
   font-weight: 500;
 
-  letter-spacing: 0.28em;
+  letter-spacing: 0.3em;
 
   text-transform: uppercase;
 
@@ -1215,365 +1106,363 @@ body {
     2.55s
     forwards;
 }
+
+
 @keyframes gridpulse-tagline-in {
   from {
     opacity: 0;
-
     transform: translateY(12px);
-
-    letter-spacing: 0.6em;
   }
 
   to {
-    opacity: 0.95;
-
+    opacity: 1;
     transform: translateY(0);
-
-    letter-spacing: 0.35em;
   }
 }
 
-/* ============================================================
+
+/* =========================================================
    SCROLL INDICATOR
-   ============================================================ */
+   ========================================================= */
 
 .gridpulse-scroll-indicator {
   position: absolute;
 
   left: 50%;
-  bottom: 34px;
+  bottom: 38px;
 
-  z-index: 5;
+  transform: translateX(-50%);
 
   display: flex;
   flex-direction: column;
   align-items: center;
-
   gap: 10px;
 
-  border: 0;
+  z-index: 3;
 
-  background: transparent;
-
-  color: #0f172a;
-
-  cursor: pointer;
-
-  transform: translateX(-50%);
-
-  transition:
-    opacity 0.3s ease,
-    transform 0.3s ease;
+  color: var(--color-text-secondary, #64748b);
 }
 
-.gridpulse-scroll-indicator:hover {
-  transform: translateX(-50%) translateY(-4px);
-}
 
-.gridpulse-mouse {
-  position: relative;
-
-  width: 25px;
-  height: 40px;
-
-  border: 1.5px solid rgba(15, 23, 42, 0.65);
-
-  border-radius: 14px;
-
-  background: rgba(255, 255, 255, 0.35);
-
-  backdrop-filter: blur(8px);
-
-  box-shadow:
-    0 4px 15px rgba(15, 23, 42, 0.08),
-    inset 0 0 10px rgba(16, 185, 129, 0.05);
-}
-
-.gridpulse-mouse-wheel {
-  position: absolute;
-
-  top: 7px;
-  left: 50%;
-
-  width: 3px;
-  height: 7px;
-
-  border-radius: 999px;
-
-  background: var(--color-primary);
-
-  transform: translateX(-50%);
-
-  box-shadow:
-    0 0 7px var(--color-primary),
-    0 0 14px var(--color-glow);
-
-  animation:
-    gridpulse-wheel
-    1.8s
-    ease-in-out
-    infinite;
-}
-
-@keyframes gridpulse-wheel {
-  0% {
-    transform: translate(-50%, 0);
-    opacity: 0;
-  }
-
-  20% {
-    opacity: 1;
-  }
-
-  70% {
-    opacity: 1;
-  }
-
-  100% {
-    transform: translate(-50%, 15px);
-    opacity: 0;
-  }
-}
-
-.gridpulse-scroll-label {
-  font-family: var(--font-mono);
+.gridpulse-scroll-text {
+  font-family: var(--font-mono, monospace);
 
   font-size: 9px;
-
-  letter-spacing: 0.3em;
-
-  text-transform: uppercase;
-
-  color: rgba(15, 23, 42, 0.65);
-}
-
-/* ============================================================
-   DESCRIPTION
-   ============================================================ */
-
-.gridpulse-description {
-  position: relative;
-
-  min-height: 100vh;
-  width: 100%;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  padding: 100px 7vw;
-
-  background:
-    radial-gradient(
-      circle at 50% 45%,
-      rgba(16, 185, 129, 0.08),
-      transparent 42%
-    ),
-    #ffffff;
-}
-
-.gridpulse-description-inner {
-  width: min(1000px, 100%);
-}
-
-.gridpulse-section-label {
-  display: block;
-
-  color: var(--color-primary);
-
-  font-family: var(--font-mono);
-
-  font-size: 10px;
-
-  font-weight: 500;
 
   letter-spacing: 0.25em;
 
   text-transform: uppercase;
 
-  margin-bottom: 25px;
+  opacity: 0.7;
 }
 
-.gridpulse-description-line {
-  width: 55px;
-  height: 2px;
 
-  margin-bottom: 40px;
+.gridpulse-scroll-line {
+  position: relative;
 
-  background: var(--color-primary);
+  width: 1px;
+  height: 46px;
 
-  box-shadow:
-    0 0 10px var(--color-glow);
+  overflow: hidden;
+
+  background: rgba(100, 116, 139, 0.25);
 }
 
-.gridpulse-description-text {
-  max-width: 950px;
 
-  margin: 0;
+.gridpulse-scroll-line::after {
+  content: '';
 
-  font-family: var(--font-mono);
+  position: absolute;
 
-  font-size: clamp(1.5rem, 4vw, 3.2rem);
+  top: -100%;
+  left: 0;
 
-  line-height: 1.35;
+  width: 100%;
+  height: 100%;
 
-  font-weight: 400;
+  background: var(--color-primary, #059669);
 
-  color: #1e293b;
+  animation:
+    gridpulse-scroll-line
+    1.8s
+    ease-in-out
+    infinite;
 }
 
-.gridpulse-description-char {
+
+@keyframes gridpulse-scroll-line {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(100%);
+  }
+
+  50.01% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================================
+   DESCRIPTION SECTION
+   ========================================================= */
+
+.gridpulse-description {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 120px 40px;
+
+  background: var(--color-background, #f8fafc);
+}
+
+
+.gridpulse-description-inner {
+  width: min(1100px, 90vw);
+
+  margin: 0 auto;
+
+  text-align: center;
+}
+
+
+.gridpulse-description-label {
+  margin: 0 0 32px;
+
+  font-family: var(--font-mono, monospace);
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.28em;
+
+  text-transform: uppercase;
+
+  color: var(--color-primary, #059669);
+
+  opacity: 0.8;
+}
+
+
+/*
+ * IMPORTANT:
+ *
+ * Characters are initially invisible.
+ *
+ * There is NO animation here.
+ *
+ * Animation is applied ONLY when the parent section
+ * receives the "is-visible" class.
+ */
+
+.gridpulse-description-text span {
   display: inline-block;
 
   opacity: 0;
 
-  transform: translateY(12px);
+  transform: translateY(18px);
 
-  animation:
-    gridpulse-letter-glow
-    0.8s
-    cubic-bezier(0.16, 1, 0.3, 1)
-    calc(0.025s * var(--char-index))
-    forwards;
+  filter: blur(4px);
 }
 
-@keyframes gridpulse-letter-glow {
-  0% {
+
+/*
+ * The IntersectionObserver in LandingPage.jsx
+ * adds .is-visible when the user scrolls here.
+ */
+
+.gridpulse-description.is-visible
+.gridpulse-description-text span {
+  animation:
+    gridpulse-char-reveal
+    0.7s
+    cubic-bezier(0.16, 1, 0.3, 1)
+    forwards;
+
+  animation-delay:
+    calc(var(--char-index) * 0.025s);
+}
+
+
+@keyframes gridpulse-char-reveal {
+  from {
     opacity: 0;
 
-    transform: translateY(12px);
+    transform:
+      translateY(18px);
 
-    color: var(--color-primary);
-
-    text-shadow:
-      0 0 20px var(--color-primary),
-      0 0 40px var(--color-glow);
+    filter: blur(4px);
   }
 
-  35% {
+  to {
     opacity: 1;
 
-    color: var(--color-primary);
+    transform:
+      translateY(0);
 
-    text-shadow:
-      0 0 12px var(--color-primary),
-      0 0 25px var(--color-glow);
-  }
-
-  100% {
-    opacity: 1;
-
-    transform: translateY(0);
-
-    color: #1e293b;
-
-    text-shadow: none;
+    filter: blur(0);
   }
 }
 
-/* ============================================================
-   GET STARTED
-   ============================================================ */
+
+.gridpulse-description-text {
+  margin: 0;
+
+  color: var(--color-text, #0f172a);
+
+  font-family: var(--font-sans, Inter, sans-serif);
+
+  font-size: clamp(1.7rem, 3.2vw, 3.2rem);
+
+  font-weight: 500;
+
+  line-height: 1.25;
+
+  letter-spacing: -0.025em;
+}
+
+
+/* =========================================================
+   GET STARTED SECTION
+   ========================================================= */
 
 .gridpulse-get-started {
   position: relative;
 
-  min-height: 100vh;
   width: 100%;
+  min-height: 100vh;
 
   display: flex;
-
   align-items: center;
   justify-content: center;
 
-  text-align: center;
+  padding: 120px 40px;
 
-  padding: 100px 7vw;
-
-  background:
-    radial-gradient(
-      circle at center,
-      rgba(14, 165, 233, 0.07),
-      transparent 40%
-    ),
-    #f8fafc;
+  background: var(--color-background, #f8fafc);
 }
+
 
 .gridpulse-get-started-inner {
-  width: min(1100px, 100%);
+  width: min(1200px, 90vw);
+
+  margin: 0 auto;
+
+  text-align: center;
 }
 
-.gridpulse-get-started-title {
-  display: flex;
 
-  justify-content: center;
+/* =========================================================
+   GET STARTED TEXT
+   ========================================================= */
 
-  flex-wrap: wrap;
 
-  margin: 20px 0 55px;
+/*
+ * Initially hidden.
+ *
+ * This means the animation CANNOT start
+ * when the page initially loads.
+ */
 
-  font-size: clamp(3.5rem, 11vw, 9rem);
-
-  line-height: 0.9;
-
-  font-weight: 800;
-
-  letter-spacing: -0.055em;
-
-  color: #0f172a;
-
-  overflow: hidden;
-}
-
-.gridpulse-bouncy-char {
+.gridpulse-get-started-title span {
   display: inline-block;
 
   opacity: 0;
 
   transform:
-    translateX(150%)
-    scaleX(0.5);
-
-  animation:
-    gridpulse-bounce-in
-    1.02s
-    cubic-bezier(0.22, 1, 0.36, 1)
-    calc(0.05s * var(--char-index) + 0.35s)
-    forwards;
+    translateY(80px)
+    scale(0.7);
 }
 
-@keyframes gridpulse-bounce-in {
+
+/*
+ * Animation begins ONLY after
+ * IntersectionObserver adds .is-visible.
+ */
+
+.gridpulse-get-started.is-visible
+.gridpulse-get-started-title span {
+  animation:
+    gridpulse-bounce-letter
+    0.9s
+    cubic-bezier(0.22, 1.2, 0.36, 1)
+    forwards;
+
+  animation-delay:
+    calc(var(--char-index) * 0.08s);
+}
+
+
+.gridpulse-get-started-title {
+  margin: 0;
+
+  color: var(--color-text, #0f172a);
+
+  font-family: var(--font-sans, Inter, sans-serif);
+
+  font-size: clamp(4rem, 10vw, 9rem);
+
+  font-weight: 800;
+
+  line-height: 0.9;
+
+  letter-spacing: -0.06em;
+}
+
+
+@keyframes gridpulse-bounce-letter {
   0% {
     opacity: 0;
 
     transform:
-      translateX(150%)
-      scaleX(0.5);
+      translateY(80px)
+      scale(0.7);
   }
 
-  55% {
+  60% {
     opacity: 1;
+
+    transform:
+      translateY(-12px)
+      scale(1.05);
   }
 
-  75% {
+  80% {
     transform:
-      translateX(-8%)
-      scaleX(1.03);
+      translateY(5px)
+      scale(0.98);
   }
 
   100% {
     opacity: 1;
 
     transform:
-      translateX(0)
-      scaleX(1);
+      translateY(0)
+      scale(1);
   }
 }
 
-/* ============================================================
-   LOGIN / SIGN UP
-   ============================================================ */
+
+/* =========================================================
+   LOGIN / SIGN UP BUTTONS
+   ========================================================= */
+
+
+/*
+ * Initially hidden.
+ */
 
 .gridpulse-auth-actions {
   display: flex;
@@ -1583,146 +1472,292 @@ body {
 
   gap: 14px;
 
+  margin-top: 60px;
+
   opacity: 0;
 
-  transform:
-    translateY(20px)
-    scale(0.96);
+  transform: translateY(20px);
 
   pointer-events: none;
-
-  transition:
-    opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.gridpulse-auth-actions.is-visible {
-  opacity: 1;
 
-  transform:
-    translateY(0)
-    scale(1);
+/*
+ * Buttons appear after the GET STARTED
+ * letter animation has completed.
+ */
+
+.gridpulse-get-started.is-visible
+.gridpulse-auth-actions {
+  animation:
+    gridpulse-auth-reveal
+    0.8s
+    cubic-bezier(0.16, 1, 0.3, 1)
+    1.1s
+    forwards;
 
   pointer-events: auto;
 }
 
+
+@keyframes gridpulse-auth-reveal {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+}
+
+
+/* =========================================================
+   AUTH BUTTONS
+   ========================================================= */
+
 .gridpulse-auth-button {
-  min-width: 125px;
+  min-width: 150px;
 
   padding: 13px 28px;
 
   border-radius: 999px;
 
-  font-family: var(--font-sans);
+  font-family: var(--font-mono, monospace);
 
-  font-size: 0.9rem;
+  font-size: 11px;
 
   font-weight: 600;
 
-  text-decoration: none;
+  letter-spacing: 0.16em;
+
+  cursor: pointer;
 
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease,
-    background-color 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease,
     border-color 0.25s ease;
 }
+
 
 .gridpulse-auth-button:hover {
   transform: translateY(-3px);
 }
 
+
+/* Primary */
+
 .gridpulse-auth-primary {
-  background: var(--color-primary);
+  border: 1px solid var(--color-primary, #059669);
+
+  background: var(--color-primary, #059669);
 
   color: #ffffff;
 
   box-shadow:
-    0 6px 22px rgba(16, 185, 129, 0.2);
+    0 8px 24px
+    rgba(5, 150, 105, 0.18);
 }
+
 
 .gridpulse-auth-primary:hover {
   box-shadow:
-    0 8px 30px rgba(16, 185, 129, 0.3);
+    0 12px 30px
+    rgba(5, 150, 105, 0.28);
 }
+
+
+/* Secondary */
 
 .gridpulse-auth-secondary {
-  border: 1px solid #cbd5e1;
+  border: 1px solid
+    var(--color-border, #cbd5e1);
 
-  color: #0f172a;
+  background: transparent;
 
-  background: rgba(255, 255, 255, 0.75);
-
-  backdrop-filter: blur(10px);
-
-  box-shadow:
-    0 4px 15px rgba(15, 23, 42, 0.05);
+  color: var(--color-text, #0f172a);
 }
+
 
 .gridpulse-auth-secondary:hover {
-  border-color: var(--color-primary);
+  border-color:
+    var(--color-primary, #059669);
 
-  background: rgba(16, 185, 129, 0.05);
+  color:
+    var(--color-primary, #059669);
 }
 
-/* ============================================================
-   RESPONSIVE
-   ============================================================ */
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
 
 @media (max-width: 768px) {
+
+  .gridpulse-hero-content {
+    width: 94vw;
+  }
+
+
+  .gridpulse-title-svg {
+    height: 180px;
+  }
+
+
+  .gridpulse-title-stroke,
+  .gridpulse-title-fill {
+    font-size: 130px;
+
+    letter-spacing: -4px;
+  }
+
+
   .gridpulse-tagline {
+    font-size: 0.55rem;
+
     letter-spacing: 0.2em;
   }
 
+
+  .gridpulse-scroll-indicator {
+    bottom: 24px;
+  }
+
+
   .gridpulse-description {
+    min-height: 100vh;
+
     padding: 80px 24px;
   }
+
 
   .gridpulse-description-text {
-    font-size: clamp(1.25rem, 6vw, 2rem);
+    font-size:
+      clamp(
+        1.25rem,
+        6vw,
+        2rem
+      );
   }
 
+
+  .gridpulse-description-label {
+    margin-bottom: 24px;
+
+    font-size: 8px;
+
+    letter-spacing: 0.2em;
+  }
+
+
   .gridpulse-get-started {
+    min-height: 100vh;
+
     padding: 80px 24px;
   }
 
+
   .gridpulse-get-started-title {
-    font-size: clamp(3rem, 16vw, 6rem);
+    font-size:
+      clamp(
+        3rem,
+        16vw,
+        6rem
+      );
   }
+
 
   .gridpulse-auth-actions {
     flex-direction: column;
 
     width: 100%;
+
+    margin-top: 45px;
   }
+
 
   .gridpulse-auth-button {
     width: min(280px, 90vw);
   }
+
 }
 
-/* ============================================================
+
+/* =========================================================
    REDUCED MOTION
-   ============================================================ */
+   ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
+
   .gridpulse-title-stroke,
   .gridpulse-title-fill,
   .gridpulse-tagline,
-  .gridpulse-mouse-wheel,
-  .gridpulse-description-char,
-  .gridpulse-bouncy-char {
+  .gridpulse-scroll-line::after,
+  .gridpulse-description-text span,
+  .gridpulse-get-started-title span,
+  .gridpulse-auth-actions {
     animation: none !important;
+
+    transition: none !important;
   }
+
 
   .gridpulse-hero-content {
     opacity: 1;
+
     transform: none;
   }
 
-  .gridpulse-description-char,
-  .gridpulse-bouncy-char {
+
+  .gridpulse-description-text span {
     opacity: 1;
+
+    transform: none;
+
+    filter: none;
+  }
+
+
+  .gridpulse-get-started-title span {
+    opacity: 1;
+
     transform: none;
   }
+
+
+  .gridpulse-auth-actions {
+    opacity: 1;
+
+    transform: none;
+
+    pointer-events: auto;
+  }
+
+}
+
+/* =====================================================
+   GRIDPULSE WEBGL BACKGROUND
+   ===================================================== */
+
+.gridpulse-background-animation {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.gridpulse-background-animation canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
 }

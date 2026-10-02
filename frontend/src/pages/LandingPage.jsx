@@ -1,115 +1,132 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import BackgroundAnimation from '../components/BackgroundAnimation';
 
-const DESCRIPTION =
+const descriptionText =
   'GridPulse is an intelligent energy management platform that predicts energy consumption, optimizes future demand, and helps reduce energy costs for a more sustainable future.';
 
-const splitText = (text) =>
-  text.split('').map((char, index) => (
-    <span
-      key={`${char}-${index}`}
-      className="gridpulse-description-char"
-      style={{ '--char-index': index }}
-    >
-      {char === ' ' ? '\u00A0' : char}
-    </span>
-  ));
-
-const splitBouncyText = (text) =>
-  text.split('').map((char, index) => (
-    <span
-      key={`${char}-${index}`}
-      className="gridpulse-bouncy-char"
-      style={{ '--char-index': index }}
-    >
-      {char === ' ' ? '\u00A0' : char}
-    </span>
-  ));
-
 export const LandingPage = () => {
-  const [showCtaButtons, setShowCtaButtons] = useState(false);
-  const [heroReady, setHeroReady] = useState(false);
+  const navigate = useNavigate();
+
+  const descriptionRef = useRef(null);
+  const getStartedRef = useRef(null);
+
+  const [descriptionVisible, setDescriptionVisible] = useState(false);
+  const [getStartedVisible, setGetStartedVisible] = useState(false);
+
+  /*
+   * ---------------------------------------------------------
+   * HERO ANIMATION
+   * ---------------------------------------------------------
+   * The hero is visible immediately when the page loads.
+   * Its SVG title animation is controlled entirely by CSS.
+   */
+
+  /*
+   * ---------------------------------------------------------
+   * SCROLL-TRIGGERED ANIMATIONS
+   * ---------------------------------------------------------
+   *
+   * Description animation:
+   * Starts only when the description section enters the viewport.
+   *
+   * Get Started animation:
+   * Starts only when the Get Started section enters the viewport.
+   */
 
   useEffect(() => {
-    const timer = window.setTimeout(() => {
-      setHeroReady(true);
-    }, 100);
+    const observers = [];
 
-    return () => window.clearTimeout(timer);
-  }, []);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setShowCtaButtons(false);
-
-          const timer = window.setTimeout(() => {
-            setShowCtaButtons(true);
-          }, 2600);
-
-          return () => window.clearTimeout(timer);
+    // Description observer
+    if (descriptionRef.current) {
+      const descriptionObserver = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setDescriptionVisible(true);
+            descriptionObserver.disconnect();
+          }
+        },
+        {
+          threshold: 0.35,
         }
-      },
-      {
-        threshold: 0.65
-      }
-    );
+      );
 
-    const section = document.querySelector('.gridpulse-get-started');
-
-    if (section) {
-      observer.observe(section);
+      descriptionObserver.observe(descriptionRef.current);
+      observers.push(descriptionObserver);
     }
 
-    return () => observer.disconnect();
+    // Get Started observer
+    if (getStartedRef.current) {
+      const getStartedObserver = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setGetStartedVisible(true);
+            getStartedObserver.disconnect();
+          }
+        },
+        {
+          threshold: 0.35,
+        }
+      );
+
+      getStartedObserver.observe(getStartedRef.current);
+      observers.push(getStartedObserver);
+    }
+
+    return () => {
+      observers.forEach((observer) => observer.disconnect());
+    };
   }, []);
 
-  const scrollToDescription = () => {
-    document
-      .querySelector('.gridpulse-description')
-      ?.scrollIntoView({ behavior: 'smooth' });
-  };
+  /*
+   * ---------------------------------------------------------
+   * DESCRIPTION CHARACTERS
+   * ---------------------------------------------------------
+   */
+
+  const descriptionCharacters = descriptionText.split('');
+
+  /*
+   * ---------------------------------------------------------
+   * GET STARTED CHARACTERS
+   * ---------------------------------------------------------
+   */
+
+  const getStartedText = 'GET STARTED';
+
+  const getStartedCharacters = getStartedText.split('');
 
   return (
     <main className="gridpulse-landing">
+
       {/* =====================================================
-          HERO
-      ====================================================== */}
+          HERO SECTION
+          ===================================================== */}
+
       <section className="gridpulse-hero">
-        <video
-          className="gridpulse-hero-video"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-        >
-          <source
-            src="/gridpulse-energy.webm"
-            type="video/webm"
-          />
-        </video>
 
+        {/* Background video */}
+        <BackgroundAnimation/>
+
+        {/* Light overlay */}
         <div className="gridpulse-hero-overlay" />
-        <div className="gridpulse-hero-glow" />
 
-        <div
-          className={`gridpulse-hero-content ${
-            heroReady ? 'is-visible' : ''
-          }`}
-        >
-          {/* GridPulse title */}
+        {/* Hero content */}
+        <div className="gridpulse-hero-content is-visible">
+
+          {/* GridPulse SVG title */}
           <div className="gridpulse-title-wrapper">
+
             <svg
               className="gridpulse-title-svg"
-              viewBox="0 0 1400 260 "
-              role="img" 
+              viewBox="0 0 1400 260"
+              role="img"
               aria-label="GridPulse"
             >
+              {/* Stroke drawing */}
               <text
                 x="50%"
-                y="60%"
+                y="62%"
                 textAnchor="middle"
                 fontWeight="800"
                 className="gridpulse-title-stroke"
@@ -117,91 +134,127 @@ export const LandingPage = () => {
                 GridPulse
               </text>
 
+              {/* Filled text */}
               <text
                 x="50%"
-                y="58%"
+                y="62%"
                 textAnchor="middle"
+                fontWeight="800"
                 className="gridpulse-title-fill"
               >
                 GridPulse
               </text>
             </svg>
+
           </div>
 
           {/* Tagline */}
           <p className="gridpulse-tagline">
             Predict. Optimize. Sustain.
           </p>
+
         </div>
 
         {/* Scroll indicator */}
-        <button
-          type="button"
-          className="gridpulse-scroll-indicator"
-          onClick={scrollToDescription}
-          aria-label="Scroll to description"
-        >
-          <span className="gridpulse-mouse">
-            <span className="gridpulse-mouse-wheel" />
+        <div className="gridpulse-scroll-indicator">
+          <span className="gridpulse-scroll-text">
+            SCROLL
           </span>
 
-          <span className="gridpulse-scroll-label">
-            Scroll
-          </span>
-        </button>
+          <span className="gridpulse-scroll-line" />
+        </div>
+
       </section>
 
-      {/* =====================================================
-          DESCRIPTION
-      ====================================================== */}
-      <section className="gridpulse-description">
-        <div className="gridpulse-description-inner">
-          <span className="gridpulse-section-label">
-            INTELLIGENT ENERGY MANAGEMENT
-          </span>
 
-          <div className="gridpulse-description-line" />
+      {/* =====================================================
+          DESCRIPTION SECTION
+          ===================================================== */}
+
+      <section
+        ref={descriptionRef}
+        className={`gridpulse-description ${
+          descriptionVisible ? 'is-visible' : ''
+        }`}
+      >
+
+        <div className="gridpulse-description-inner">
+
+          <p className="gridpulse-description-label">
+            INTELLIGENT ENERGY MANAGEMENT
+          </p>
 
           <p className="gridpulse-description-text">
-            {splitText(DESCRIPTION)}
+            {descriptionCharacters.map((char, index) => (
+              <span
+                key={`${char}-${index}`}
+                style={{
+                  '--char-index': index,
+                }}
+              >
+                {char === ' ' ? '\u00A0' : char}
+              </span>
+            ))}
           </p>
+
         </div>
+
       </section>
+
 
       {/* =====================================================
-          GET STARTED
-      ====================================================== */}
-      <section className="gridpulse-get-started">
-        <div className="gridpulse-get-started-inner">
-          <span className="gridpulse-section-label">
-            TAKE CONTROL OF YOUR ENERGY
-          </span>
+          GET STARTED SECTION
+          ===================================================== */}
 
+      <section
+        ref={getStartedRef}
+        className={`gridpulse-get-started ${
+          getStartedVisible ? 'is-visible' : ''
+        }`}
+      >
+
+        <div className="gridpulse-get-started-inner">
+
+          {/* GET STARTED animated text */}
           <h2 className="gridpulse-get-started-title">
-            {splitBouncyText('GET STARTED')}
+            {getStartedCharacters.map((char, index) => (
+              <span
+                key={`${char}-${index}`}
+                style={{
+                  '--char-index': index,
+                }}
+              >
+                {char === ' ' ? '\u00A0' : char}
+              </span>
+            ))}
           </h2>
 
-          <div
-            className={`gridpulse-auth-actions ${
-              showCtaButtons ? 'is-visible' : ''
-            }`}
-          >
-            <Link
-              to="/login"
-              className="gridpulse-auth-button gridpulse-auth-primary"
-            >
-              Login
-            </Link>
 
-            <Link
-              to="/register"
-              className="gridpulse-auth-button gridpulse-auth-secondary"
+          {/* Authentication buttons */}
+          <div className="gridpulse-auth-actions">
+
+            <button
+              type="button"
+              className="gridpulse-auth-button gridpulse-auth-primary"
+              onClick={() => navigate('/login')}
             >
-              Sign Up
-            </Link>
+              LOGIN
+            </button>
+
+            <button
+              type="button"
+              className="gridpulse-auth-button gridpulse-auth-secondary"
+              onClick={() => navigate('/register')}
+            >
+              SIGN UP
+            </button>
+
           </div>
+
         </div>
+
       </section>
+
     </main>
   );
 };
