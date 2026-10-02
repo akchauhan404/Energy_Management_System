@@ -14,7 +14,7 @@ export const Settings = () => {
   };
 
   return (
-    <div className="space-y-8 max-w-4xl">
+    <div className="space-y-8 w-full">
       <div>
         <h2 className="text-xl font-bold tracking-tight text-theme-text font-mono">
           Workspace Settings

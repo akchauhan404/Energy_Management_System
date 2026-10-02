@@ -717,3 +717,184 @@ body {
     scroll-behavior: auto !important;
   }
 }
+
+/* ═══════════════════════════════════════════════════════
+   APP CONTENT READABILITY
+   ═══════════════════════════════════════════════════════ */
+
+.app-content .text-xs {
+  font-size: 0.8125rem !important; /* 13px */
+  line-height: 1.45;
+}
+
+.app-content .text-sm {
+  font-size: 0.9375rem !important; /* 15px */
+  line-height: 1.45;
+}
+
+.app-content [class~="text-[10px]"] {
+  font-size: 0.6875rem !important; /* 11px */
+  line-height: 1.4;
+}
+
+.app-content [class~="text-[11px]"] {
+  font-size: 0.75rem !important; /* 12px */
+  line-height: 1.4;
+}
+
+.app-content .eyebrow {
+  font-size: 0.75rem;
+  line-height: 1.4;
+}
+/* ═══════════════════════════════════════════════════════
+   THEME SELECTOR POPUP
+   ═══════════════════════════════════════════════════════ */
+
+@keyframes themePopoverIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.theme-popover {
+  transform-origin: top right;
+  animation: themePopoverIn 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+
+/* ═══════════════════════════════════════════════════════
+   THEME OPTION CARDS
+   ═══════════════════════════════════════════════════════ */
+
+.theme-option {
+  position: relative;
+  min-height: 112px;
+  padding: 14px;
+  border-radius: 12px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  text-align: left;
+
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+
+  box-shadow:
+    0 5px 14px rgba(0, 0, 0, 0.08);
+
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    border-color 0.18s ease,
+    background-color 0.18s ease;
+}
+
+.theme-option:hover {
+  transform: translateY(-2px);
+
+  border-color: var(--color-primary);
+
+  box-shadow:
+    0 9px 22px rgba(0, 0, 0, 0.14);
+}
+
+.theme-option:active {
+  transform: translateY(0);
+}
+
+
+/* ═══════════════════════════════════════════════════════
+   ACTIVE THEME
+   ═══════════════════════════════════════════════════════ */
+
+.theme-option-active {
+  border: 2px solid var(--color-primary);
+
+  background: var(--color-surface-strong);
+
+  box-shadow:
+    0 8px 22px rgba(0, 0, 0, 0.14),
+    0 0 0 1px var(--color-primary);
+}
+
+.theme-option-active:hover {
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.16),
+    0 0 0 1px var(--color-primary);
+}
+
+
+/* ═══════════════════════════════════════════════════════
+   ACTIVE CHECKMARK
+   ═══════════════════════════════════════════════════════ */
+
+.theme-active-check {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  width: 21px;
+  height: 21px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 999px;
+
+  background: var(--color-primary);
+
+  color: #ffffff;
+
+  box-shadow:
+    0 3px 8px rgba(0, 0, 0, 0.12);
+}
+
+
+/* ═══════════════════════════════════════════════════════
+   MORE SETTINGS CARD
+   ═══════════════════════════════════════════════════════ */
+
+.theme-more-option {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.theme-more-icon {
+  color: var(--color-primary);
+
+  background: color-mix(
+    in srgb,
+    var(--color-primary) 10%,
+    transparent
+  );
+
+  border: 1px solid color-mix(
+    in srgb,
+    var(--color-primary) 25%,
+    transparent
+  );
+}
+
+
+/* ═══════════════════════════════════════════════════════
+   RESPONSIVE POPUP
+   ═══════════════════════════════════════════════════════ */
+
+@media (max-width: 640px) {
+  .theme-popover {
+    width: min(360px, calc(100vw - 24px));
+  }
+
+  .theme-option {
+    min-height: 105px;
+  }
+}

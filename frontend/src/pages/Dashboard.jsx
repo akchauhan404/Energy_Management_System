@@ -160,52 +160,67 @@ export const Dashboard = () => {
         />
       )}
 
-      {/* Main Analytical Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {/* Section A: Energy Consumption Overview */}
-        <div className="glass-panel p-6">
-          <div className="flex items-center justify-between mb-4">
-            <div>
-              <h3 className="text-sm font-bold text-theme-text uppercase tracking-wider">
-                Historical Energy Consumption
-              </h3>
-              <p className="text-xs text-theme-muted">
-                Recent 30-minute normalized telemetry readings.
-              </p>
-            </div>
-            <Link
-              to="/energy-data"
-              className="text-xs text-[var(--color-primary)] hover:underline flex items-center gap-1 font-medium"
-            >
-              <span>Manage Data</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </Link>
-          </div>
-          <HistoricalEnergyChart records={records} height={260} />
-        </div>
+      {/* Main Analytical Stack */}
+<div className="flex flex-col gap-6">
 
-        {/* Section B: 24-Hour Forecast */}
-        <div className="glass-panel p-6">
-          <div className="flex items-center justify-between mb-4">
-            <div>
-              <h3 className="text-sm font-bold text-theme-text uppercase tracking-wider">
-                24-Hour Energy Forecast
-              </h3>
-              <p className="text-xs text-theme-muted">
-                Horizon-Specific Transformer 48-step forward trajectory.
-              </p>
-            </div>
-            <Link
-              to="/forecast"
-              className="text-xs text-[var(--color-primary)] hover:underline flex items-center gap-1 font-medium"
-            >
-              <span>Full Forecast</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </Link>
-          </div>
-          <ForecastChart points={forecast?.points || []} height={260} />
-        </div>
+  {/* Section A: Energy Consumption Overview */}
+  <div className="glass-panel p-6 sm:p-7 w-full min-h-[460px]">
+    <div className="flex items-center justify-between mb-5">
+      <div>
+        <h3 className="text-base sm:text-lg font-bold text-theme-text uppercase tracking-wider">
+          Historical Energy Consumption
+        </h3>
+
+        <p className="text-sm text-theme-muted mt-1">
+          Recent 30-minute normalized telemetry readings.
+        </p>
       </div>
+
+      <Link
+        to="/energy-data"
+        className="text-sm text-[var(--color-primary)] hover:underline flex items-center gap-1 font-medium"
+      >
+        <span>Manage Data</span>
+        <ArrowRight className="w-4 h-4" />
+      </Link>
+    </div>
+
+    <HistoricalEnergyChart
+      records={records}
+      height={360}
+    />
+  </div>
+
+
+  {/* Section B: 24-Hour Forecast */}
+  <div className="glass-panel p-6 sm:p-7 w-full min-h-[460px]">
+    <div className="flex items-center justify-between mb-5">
+      <div>
+        <h3 className="text-base sm:text-lg font-bold text-theme-text uppercase tracking-wider">
+          24-Hour Energy Forecast
+        </h3>
+
+        <p className="text-sm text-theme-muted mt-1">
+          Horizon-Specific Transformer 48-step forward trajectory.
+        </p>
+      </div>
+
+      <Link
+        to="/forecast"
+        className="text-sm text-[var(--color-primary)] hover:underline flex items-center gap-1 font-medium"
+      >
+        <span>Full Forecast</span>
+        <ArrowRight className="w-4 h-4" />
+      </Link>
+    </div>
+
+    <ForecastChart
+      points={forecast?.points || []}
+      height={360}
+    />
+  </div>
+
+</div>
 
       {/* Lower Analytical Row: Optimization Summary & Model Status */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
