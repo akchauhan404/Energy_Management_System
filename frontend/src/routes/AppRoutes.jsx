@@ -3,6 +3,9 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { AppShell } from '../components/layout/AppShell';
 
+// Landing
+import { LandingPage } from '../pages/LandingPage';
+
 // Auth Pages
 import { Login } from '../pages/Login';
 import { Register } from '../pages/Register';
@@ -24,98 +27,149 @@ import { ForecastPerformance } from '../pages/admin/ForecastPerformance';
 import { PPOPerformance } from '../pages/admin/PPOPerformance';
 import { AdminSettings } from '../pages/admin/AdminSettings';
 
-// Protected Route Guard
 const ProtectedRoute = ({ children }) => {
   const { user, loading } = useAuth();
+
   if (loading) return null;
-  if (!user) return <Navigate to="/login" replace />;
+
+  if (!user) {
+    return <Navigate to="/login" replace />;
+  }
+
   return children;
 };
 
-// Admin Route Guard
 const AdminRoute = ({ children }) => {
   const { user, isAdmin, loading } = useAuth();
+
   if (loading) return null;
-  if (!user) return <Navigate to="/login" replace />;
-  if (!isAdmin) return <Navigate to="/dashboard" replace />;
+
+  if (!user) {
+    return <Navigate to="/login" replace />;
+  }
+
+  if (!isAdmin) {
+    return <Navigate to="/dashboard" replace />;
+  }
+
   return children;
 };
 
 export const AppRoutes = () => {
   return (
     <Routes>
-      {/* Public Routes */}
+
+      {/* =====================================================
+          PUBLIC LANDING PAGE
+      ====================================================== */}
+      <Route path="/" element={<LandingPage />} />
+
+      {/* =====================================================
+          AUTH
+      ====================================================== */}
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
 
-      {/* Protected Routes inside AppShell */}
+      {/* =====================================================
+          PROTECTED APPLICATION
+      ====================================================== */}
       <Route
-        path="/"
         element={
           <ProtectedRoute>
             <AppShell />
           </ProtectedRoute>
         }
       >
-        <Route index element={<Navigate to="/dashboard" replace />} />
-        <Route path="dashboard" element={<Dashboard />} />
-        <Route path="energy-data" element={<EnergyData />} />
-        <Route path="forecast" element={<Forecast />} />
-        <Route path="optimization" element={<Optimization />} />
-        <Route path="profile" element={<Profile />} />
-        <Route path="settings" element={<Settings />} />
-
-        {/* Admin Protected Routes */}
         <Route
-          path="admin"
+          path="/dashboard"
+          element={<Dashboard />}
+        />
+
+        <Route
+          path="/energy-data"
+          element={<EnergyData />}
+        />
+
+        <Route
+          path="/forecast"
+          element={<Forecast />}
+        />
+
+        <Route
+          path="/optimization"
+          element={<Optimization />}
+        />
+
+        <Route
+          path="/profile"
+          element={<Profile />}
+        />
+
+        <Route
+          path="/settings"
+          element={<Settings />}
+        />
+
+        {/* ===================================================
+            ADMIN
+        ==================================================== */}
+
+        <Route
+          path="/admin"
           element={
             <AdminRoute>
               <AdminDashboard />
             </AdminRoute>
           }
         />
+
         <Route
-          path="admin/datasets"
+          path="/admin/datasets"
           element={
             <AdminRoute>
               <Datasets />
             </AdminRoute>
           }
         />
+
         <Route
-          path="admin/models"
+          path="/admin/models"
           element={
             <AdminRoute>
               <Models />
             </AdminRoute>
           }
         />
+
         <Route
-          path="admin/training"
+          path="/admin/training"
           element={
             <AdminRoute>
               <Training />
             </AdminRoute>
           }
         />
+
         <Route
-          path="admin/forecast-performance"
+          path="/admin/forecast-performance"
           element={
             <AdminRoute>
               <ForecastPerformance />
             </AdminRoute>
           }
         />
+
         <Route
-          path="admin/ppo-performance"
+          path="/admin/ppo-performance"
           element={
             <AdminRoute>
               <PPOPerformance />
             </AdminRoute>
           }
         />
+
         <Route
-          path="admin/settings"
+          path="/admin/settings"
           element={
             <AdminRoute>
               <AdminSettings />
@@ -124,8 +178,14 @@ export const AppRoutes = () => {
         />
       </Route>
 
-      {/* Catch-all fallback */}
-      <Route path="*" element={<Navigate to="/dashboard" replace />} />
+      {/* =====================================================
+          FALLBACK
+      ====================================================== */}
+      <Route
+        path="*"
+        element={<Navigate to="/" replace />}
+      />
+
     </Routes>
   );
 };
